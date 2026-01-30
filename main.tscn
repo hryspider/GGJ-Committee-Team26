@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://c74msvao2tkcv"]
+[gd_scene format=3 uid="uid://cvdnahnj0najw"]
 
 [ext_resource type="Texture2D" uid="uid://cffw8us0a351b" path="res://glorp.webp" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://csukiaki4c76s" path="res://character_body_2d.gd" id="3_h2yge"]
+[ext_resource type="Script" path="res://character_body_2d.gd" id="3_h2yge"]
 
 [node name="Node2D" type="Node2D" unique_id=108416939]
 
@@ -13,3 +13,5 @@ script = ExtResource("3_h2yge")
 [node name="Glorp" type="Sprite2D" parent="CharacterBody2D" unique_id=1708849540]
 scale = Vector2(1, 1.0000001)
 texture = ExtResource("1_ig7tw")
+
+[node name="Glorphouse" type="AudioStreamPlayer" parent="." unique_id=836130205]
