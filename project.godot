@@ -18,6 +18,13 @@ config/name="GGJ-Committee-Team"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=270
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
+
 [rendering]
 
 renderer/rendering_method="mobile"
