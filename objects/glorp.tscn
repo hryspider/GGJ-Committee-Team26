@@ -1,3 +1,85 @@
 [gd_scene format=3 uid="uid://bf44lvopd5hap"]
 
+[ext_resource type="Texture2D" uid="uid://dbleib7wl151h" path="res://images/glorp.png" id="1_cpklc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kamts"]
+atlas = ExtResource("1_cpklc")
+region = Rect2(0, 0, 73, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px7wq"]
+atlas = ExtResource("1_cpklc")
+region = Rect2(73, 0, 73, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pc3n"]
+atlas = ExtResource("1_cpklc")
+region = Rect2(0, 100, 73, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46fcl"]
+atlas = ExtResource("1_cpklc")
+region = Rect2(73, 100, 73, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohvfq"]
+atlas = ExtResource("1_cpklc")
+region = Rect2(146, 100, 73, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6ymi"]
+atlas = ExtResource("1_cpklc")
+region = Rect2(219, 100, 73, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pnw2"]
+atlas = ExtResource("1_cpklc")
+region = Rect2(292, 100, 73, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgt0l"]
+atlas = ExtResource("1_cpklc")
+region = Rect2(365, 100, 73, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2v56n"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kamts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_px7wq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pc3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46fcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohvfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6ymi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pnw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgt0l")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
 [node name="Glorp" type="Node2D" unique_id=780339623]
+
+[node name="Glorp" type="AnimatedSprite2D" parent="." unique_id=1987429908]
+position = Vector2(240, 32)
+sprite_frames = SubResource("SpriteFrames_2v56n")
+animation = &"walk"
+frame_progress = 0.27082285
