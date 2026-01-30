@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bf44lvopd5hap"]
 
 [ext_resource type="Texture2D" uid="uid://dbleib7wl151h" path="res://images/glorp.png" id="1_cpklc"]
+[ext_resource type="Script" uid="uid://jb25spvix1fr" path="res://objects/glorp.gd" id="1_px7wq"]
 [ext_resource type="Texture2D" uid="uid://bsctgf3e7i7do" path="res://images/glorpeye.png" id="2_kamts"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kamts"]
@@ -78,13 +79,16 @@ animations = [{
 }]
 
 [node name="Glorp" type="Node2D" unique_id=780339623]
+script = ExtResource("1_px7wq")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1987429908]
 clip_children = 2
 sprite_frames = SubResource("SpriteFrames_2v56n")
 animation = &"idle"
-frame_progress = 0.5246108
+frame_progress = 0.7433877
 
 [node name="Eye" type="Sprite2D" parent="Sprite" unique_id=1074757804]
 position = Vector2(0, -16)
 texture = ExtResource("2_kamts")
+
+[connection signal="animation_changed" from="Sprite" to="." method="_on_sprite_animation_changed"]
