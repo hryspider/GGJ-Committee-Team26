@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+ShaderGlobals="*uid://m7a6cafqubqu"
 LangaugeGlobals="*uid://dfyrygyakv53w"
 
 [display]
@@ -100,5 +101,5 @@ jitterstrength={
 }
 jitterscale={
 "type": "float",
-"value": 0.0
+"value": 1.0
 }

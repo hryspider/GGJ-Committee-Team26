@@ -5,7 +5,7 @@ var words = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	set_text("i want food")
+	set_text("me want food")
 	set_instance_shader_parameter("color", Color.WHITE)
 	
 func set_text(new_text):
