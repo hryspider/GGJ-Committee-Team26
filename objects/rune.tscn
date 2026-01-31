@@ -21,6 +21,8 @@ custom_minimum_size = Vector2(100, 50)
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(0.8, 0.8)
+pivot_offset_ratio = Vector2(-2, -2)
+mouse_filter = 2
 script = ExtResource("1_hsiy3")
 rune_color_faded = Color(0.4117647, 0.4117647, 0.4117647, 0.8627451)
 

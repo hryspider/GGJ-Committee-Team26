@@ -1,6 +1,6 @@
 extends Node
 
-@export var lines : PackedStringArray
+@export var data : Array[DialogLine]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -19,6 +19,8 @@ mouse_filter = 2
 script = ExtResource("1_71f5y")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1242209740]
+material = ExtResource("3_o2lu5")
+instance_shader_parameters/localjitterscale = -1.0
 texture = ExtResource("2_71f5y")
 centered = false
 
