@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://v34j4uwqvkvk"]
+
+[ext_resource type="Shader" uid="uid://btxr4e7dfnmlk" path="res://shaders/pixel_jitter.gdshader" id="1_6cd5x"]
+
+[resource]
+shader = ExtResource("1_6cd5x")
