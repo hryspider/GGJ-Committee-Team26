@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://jb25spvix1fr" path="res://objects/glorp.gd" id="1_px7wq"]
 [ext_resource type="Texture2D" uid="uid://bsctgf3e7i7do" path="res://images/glorpeye.png" id="2_kamts"]
 [ext_resource type="Texture2D" uid="uid://bbal5p570v2i4" path="res://images/masks.png" id="4_2pc3n"]
+[ext_resource type="AudioStream" uid="uid://utd25ugqkjey" path="res://audio/sfx/step.ogg" id="5_46fcl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kamts"]
 atlas = ExtResource("1_cpklc")
@@ -12,6 +13,10 @@ region = Rect2(0, 0, 73, 100)
 [sub_resource type="AtlasTexture" id="AtlasTexture_px7wq"]
 atlas = ExtResource("1_cpklc")
 region = Rect2(73, 0, 73, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgt0l"]
+atlas = ExtResource("1_cpklc")
+region = Rect2(365, 100, 73, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2pc3n"]
 atlas = ExtResource("1_cpklc")
@@ -33,10 +38,6 @@ region = Rect2(219, 100, 73, 100)
 atlas = ExtResource("1_cpklc")
 region = Rect2(292, 100, 73, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pgt0l"]
-atlas = ExtResource("1_cpklc")
-region = Rect2(365, 100, 73, 100)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_2v56n"]
 animations = [{
 "frames": [],
@@ -57,6 +58,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_pgt0l")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_2pc3n")
 }, {
 "duration": 1.0,
@@ -70,9 +74,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8pnw2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pgt0l")
 }],
 "loop": true,
 "name": &"walk",
@@ -82,20 +83,26 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pc3n"]
 size = Vector2(34, 35)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ohvfq"]
+playback_mode = 1
+random_pitch = 1.0905077
+streams_count = 1
+stream_0/stream = ExtResource("5_46fcl")
+
 [node name="Glorp" type="CharacterBody2D" unique_id=26475291 groups=["player"]]
 script = ExtResource("1_px7wq")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1987429908]
 clip_children = 2
 sprite_frames = SubResource("SpriteFrames_2v56n")
-animation = &"idle"
-frame_progress = 0.8913598
+animation = &"walk"
 
 [node name="Eye" type="Sprite2D" parent="Sprite" unique_id=1074757804]
 position = Vector2(-1, -16)
 texture = ExtResource("2_kamts")
 
 [node name="Mask Sprite" type="Sprite2D" parent="." unique_id=899667152]
+visible = false
 position = Vector2(-3, -5)
 texture = ExtResource("4_2pc3n")
 hframes = 3
@@ -106,4 +113,8 @@ frame = 2
 position = Vector2(0, 24.5)
 shape = SubResource("RectangleShape2D_2pc3n")
 
+[node name="Splat" type="AudioStreamPlayer" parent="." unique_id=537654929]
+stream = SubResource("AudioStreamRandomizer_ohvfq")
+
 [connection signal="animation_changed" from="Sprite" to="." method="_on_sprite_animation_changed"]
+[connection signal="frame_changed" from="Sprite" to="." method="_on_sprite_frame_changed"]

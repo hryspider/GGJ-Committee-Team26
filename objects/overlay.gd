@@ -27,7 +27,6 @@ func _process(delta):
 func appear():
 	can_close = false
 	open = true
-	print("gup")
 	show()
 	
 	

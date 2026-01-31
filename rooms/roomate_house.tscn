@@ -126,6 +126,7 @@ position = Vector2(297, 139)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1435858066]
 stream = ExtResource("8_qutpp")
+volume_db = -10.0
 pitch_scale = 0.95
 autoplay = true
 
@@ -139,6 +140,8 @@ spriteframes = SubResource("SpriteFrames_gcgwm")
 
 [node name="Milk Overlay" parent="." unique_id=217854680 instance=ExtResource("10_vlxrc")]
 visible = false
+
+[node name="Node" type="Node" parent="." unique_id=1529247320]
 
 [connection signal="talk" from="NPC2" to="Milk Overlay" method="appear"]
 [connection signal="finished" from="Milk Overlay" to="NPC2" method="finished_dialog"]

@@ -5,6 +5,7 @@
 [ext_resource type="Material" uid="uid://v34j4uwqvkvk" path="res://shaders/pixel_jitter_material.tres" id="2_qf51l"]
 [ext_resource type="Shader" uid="uid://btxr4e7dfnmlk" path="res://shaders/pixel_jitter.gdshader" id="3_g5hlc"]
 [ext_resource type="Texture2D" uid="uid://deau4sxf2tbd7" path="res://images/milkhand.png" id="3_qf51l"]
+[ext_resource type="FontFile" uid="uid://bheug0blsloux" path="res://text/retro-pixel-thick.ttf" id="4_48u2n"]
 [ext_resource type="Script" uid="uid://kp6pgxri0cns" path="res://objects/randomjitter.gd" id="4_p3vkp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qf51l"]
@@ -16,14 +17,23 @@ script = ExtResource("1_c6876")
 
 [node name="Milkbg" type="Sprite2D" parent="." unique_id=609745426]
 material = ExtResource("2_qf51l")
+instance_shader_parameters/localjitterscale = -1.0
 texture = ExtResource("2_g5hlc")
 centered = false
+
+[node name="Label" type="Label" parent="." unique_id=1675948346]
+offset_left = 353.0
+offset_top = 238.0
+offset_right = 466.0
+offset_bottom = 261.0
+theme_override_fonts/font = ExtResource("4_48u2n")
+text = "(...it's empty...)"
+
+[node name="Node" type="Node" parent="Label" unique_id=1001083108]
+script = ExtResource("4_p3vkp")
+intensity = 0.7
 
 [node name="Milkhand" type="Sprite2D" parent="." unique_id=943507470]
 material = SubResource("ShaderMaterial_qf51l")
 position = Vector2(265, 144)
 texture = ExtResource("3_qf51l")
-
-[node name="Node" type="Node" parent="Milkhand" unique_id=1001083108]
-script = ExtResource("4_p3vkp")
-intensity = 1

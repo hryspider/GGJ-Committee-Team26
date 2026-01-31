@@ -7,7 +7,7 @@ var speed = 200
 			#animation = value
 			#sprite.animation = value
 
-
+@onready var splat = $Splat
 @onready var sprite = $Sprite
 @onready var eye = $Sprite/Eye
 @onready var mask_sprite = $"Mask Sprite"
@@ -75,3 +75,8 @@ func mask_behaviour():
 func _on_sprite_animation_changed():
 	eye.visible = sprite.animation == "idle"
 	
+
+
+
+func _on_sprite_frame_changed():
+	if sprite.animation == "walk" and fmod(sprite.frame, 3) == 1: splat.play()

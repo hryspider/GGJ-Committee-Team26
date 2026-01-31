@@ -16,6 +16,7 @@ radius = 33.0
 height = 72.0
 
 [node name="DictionaryRune" type="RigidBody2D" unique_id=82018957]
+scale = Vector2(0.5, 0.5)
 physics_material_override = SubResource("PhysicsMaterial_31lh2")
 gravity_scale = 0.0
 script = ExtResource("1_31lh2")

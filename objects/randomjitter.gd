@@ -1,6 +1,6 @@
 extends Node
 
-@export var intensity := 0
+@export var intensity := 0.0
 @onready var base_pos
 
 func _ready():
