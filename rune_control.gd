@@ -25,3 +25,6 @@ func set_rune_fade(faded):
 
 func get_rune_text():
 	return rune_label.text
+
+func put_text_overlay_below():
+	text_label.position.y = 0

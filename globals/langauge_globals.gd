@@ -1,24 +1,45 @@
 extends Node
 
+var MAX_LENGTH = 5 #Longest possible guess
+
 @onready var player_dictionary = {
-	"da":"food"
 }
 
 @onready var english_to_gleep = {
+	"hello":"d",
 	"me":"db",
 	"want":"od",
 	"food":"da",
-	"milk":"mg"
+	"milk":"mg",
+	"test":"a",
+	"bepis":"tf",
+	"slop":"eee"
 }
 
 var gleep_to_english = {}
 
 var mentioned_words = [
 	"mg",
-	"da"
+	"da",
+	"d",
+	"od",
+	"eee",
+	"tf",
+	"a"
 ]
 var confirmed_words = [
-	
+	"mg",
+	"da",
+	"d",
+	"tf",
+	"a",
+	"d",
+	"d",
+	"d",
+	"d",
+	"d",
+	"d"
+	"d",
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -28,7 +49,7 @@ func _ready() -> void:
 
 func get_player_guess(gleep) -> String:
 	if player_dictionary.has(gleep): return player_dictionary[gleep]
-	return "???"
+	return ""
 
 func is_known(gleep):
 	return confirmed_words.has(gleep)

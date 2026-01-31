@@ -1,4 +1,6 @@
 extends Sprite2D
+@onready var don = $Don
+@onready var takeoff = $Takeoff
 
 
 var index := 0
@@ -15,6 +17,10 @@ func _process(delta):
 		offset = Vector2(sin(timer),cos(timer))
 
 func appear():
+	don.play()
 	show()
 	timer = 0
 	frame_coords.x = 0
+func disappear():
+	takeoff.play()
+	hide()

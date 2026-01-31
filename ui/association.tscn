@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dpom7ehtfuw46"]
+
+[ext_resource type="Script" uid="uid://dgwwp2a0pge6c" path="res://ui/association.gd" id="1_8cyn7"]
+[ext_resource type="FontFile" uid="uid://cpr4cgq64ufh" path="res://text/GloopGleep.ttf" id="1_v0dtb"]
+[ext_resource type="FontFile" uid="uid://bheug0blsloux" path="res://text/retro-pixel-thick.ttf" id="2_8cyn7"]
+
+[node name="Association" type="HBoxContainer" unique_id=800499340]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8cyn7")
+
+[node name="Gleep" type="Label" parent="." unique_id=1673424045]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_v0dtb")
+text = "penis"
+
+[node name="Label2" type="Label" parent="." unique_id=1376211747]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("2_8cyn7")
+text = "="
+
+[node name="Human" type="Label" parent="." unique_id=1926969177]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("2_8cyn7")
+text = "word"
