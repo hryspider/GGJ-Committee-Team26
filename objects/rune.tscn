@@ -25,6 +25,7 @@ rune_color_faded = Color(0.4117647, 0.4117647, 0.4117647, 0.8627451)
 
 [node name="RuneLabel" type="Label" parent="." unique_id=1947407639]
 material = ExtResource("4_ru05i")
+instance_shader_parameters/localjitterscale = 2.5
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -45,6 +46,7 @@ vertical_alignment = 1
 [node name="TextOverlay" type="Label" parent="." unique_id=1319333999]
 material = ExtResource("4_ru05i")
 instance_shader_parameters/color = Color(0, 0, 0, 1)
+instance_shader_parameters/localjitterscale = 2.5
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
