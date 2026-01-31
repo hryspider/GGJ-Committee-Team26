@@ -8,12 +8,12 @@ friction = 0.59
 bounce = 0.65
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_31lh2"]
-radius = 25.0
-height = 80.0
+radius = 41.0
+height = 98.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2gwdq"]
-radius = 17.0
-height = 60.0
+radius = 33.0
+height = 72.0
 
 [node name="DictionaryRune" type="RigidBody2D" unique_id=82018957]
 physics_material_override = SubResource("PhysicsMaterial_31lh2")

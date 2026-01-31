@@ -26,4 +26,4 @@ texture = ExtResource("3_qf51l")
 
 [node name="Node" type="Node" parent="Milkhand" unique_id=1001083108]
 script = ExtResource("4_p3vkp")
-intensity = 4
+intensity = 1

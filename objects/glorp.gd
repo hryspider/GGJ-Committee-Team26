@@ -64,7 +64,8 @@ func mask_behaviour():
 			nothing_held = false
 		else:
 			masks[i] = false
-			arms[i].hide()
+			if arms[i].visible:
+				arms[i].disappear()
 		if Input.is_action_just_pressed(maskinput):
 			current_emotion = i
 			arms[i].appear()

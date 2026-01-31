@@ -2,11 +2,20 @@
 
 [ext_resource type="Script" uid="uid://bo8885v37ypnu" path="res://ui/dictionary.gd" id="1_71f5y"]
 [ext_resource type="Texture2D" uid="uid://174bf3sqftxm" path="res://images/dictionaryoverlay.png" id="2_71f5y"]
+[ext_resource type="Material" uid="uid://v34j4uwqvkvk" path="res://shaders/pixel_jitter_material.tres" id="3_o2lu5"]
+[ext_resource type="FontFile" uid="uid://bheug0blsloux" path="res://text/retro-pixel-thick.ttf" id="3_sbnrd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cbj34"]
 normal = Vector2(1, 0)
 
-[node name="Dictionary" type="Node2D" unique_id=1655798945]
+[node name="Dictionary" type="Control" unique_id=2107590402]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_71f5y")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1242209740]
@@ -20,8 +29,8 @@ position = Vector2(16, 0)
 shape = SubResource("WorldBoundaryShape2D_cbj34")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=69633386]
-position = Vector2(464, 0)
-rotation = 3.1415927
+position = Vector2(377.00003, 121)
+rotation = 3.5290098
 shape = SubResource("WorldBoundaryShape2D_cbj34")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=171207840]
@@ -38,3 +47,70 @@ shape = SubResource("WorldBoundaryShape2D_cbj34")
 position = Vector2(233, 16)
 rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_cbj34")
+
+[node name="Label" type="Label" parent="." unique_id=1009622470]
+material = ExtResource("3_o2lu5")
+instance_shader_parameters/color = Color(0, 0, 0, 1)
+instance_shader_parameters/localjitterscale = 1.0
+layout_mode = 0
+offset_left = 17.0
+offset_top = 11.0
+offset_right = 219.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0, 0.75, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sbnrd")
+theme_override_font_sizes/font_size = 32
+text = "Unknown words"
+
+[node name="KnownWords" type="ColorRect" parent="." unique_id=14176070]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -214.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0, 0, 0, 0.84313726)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="KnownWords" unique_id=1138099404]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_right = -15.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="KnownWords/ScrollContainer" unique_id=1774130346]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="." unique_id=2058017802]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -124.0
+offset_top = -55.0
+offset_right = -10.0
+offset_bottom = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 1
+theme_override_fonts/font = ExtResource("3_sbnrd")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Confirmed
+words"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -2,9 +2,19 @@
 
 [ext_resource type="Texture2D" uid="uid://illlw1ly48p2" path="res://images/arms.png" id="1_hbjii"]
 [ext_resource type="Script" uid="uid://b3vjt2n7ynufy" path="res://objects/glorparm.gd" id="2_svm1i"]
+[ext_resource type="AudioStream" uid="uid://cckd8736k1eyf" path="res://audio/sfx/don_mask.ogg" id="3_jfxda"]
+[ext_resource type="AudioStream" uid="uid://cbqyjvomdsq6r" path="res://audio/sfx/takeoff_mask.ogg" id="4_6swti"]
 
 [node name="AnimatedSprite2D" type="Sprite2D" unique_id=1548897869]
 texture = ExtResource("1_hbjii")
 hframes = 2
 vframes = 3
 script = ExtResource("2_svm1i")
+
+[node name="Don" type="AudioStreamPlayer" parent="." unique_id=2072627273]
+stream = ExtResource("3_jfxda")
+volume_db = -4.0
+
+[node name="Takeoff" type="AudioStreamPlayer" parent="." unique_id=2124795398]
+stream = ExtResource("4_6swti")
+volume_db = -4.0
