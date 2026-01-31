@@ -40,6 +40,7 @@ func edit_finished():
 
 
 func _on_button_pressed():
+	button.focus_mode = false
 	on_known_words_menu = !on_known_words_menu
 	button.text = "Back" if on_known_words_menu else "Confirmed\nwords"
 	known_words.visible = on_known_words_menu

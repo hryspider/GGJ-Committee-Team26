@@ -14,7 +14,7 @@ script = ExtResource("1_8cyn7")
 
 [node name="Gleep" type="Label" parent="." unique_id=1673424045]
 layout_mode = 2
-size_flags_horizontal = 2
+size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("1_v0dtb")
 text = "penis"
 
@@ -26,6 +26,6 @@ text = "="
 
 [node name="Human" type="Label" parent="." unique_id=1926969177]
 layout_mode = 2
-size_flags_horizontal = 10
+size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("2_8cyn7")
 text = "word"
