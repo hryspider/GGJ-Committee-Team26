@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var interactbubble = $Interactbubble
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@export var spriteframes : SpriteFrames
 
 signal talk
 
@@ -10,6 +11,11 @@ var talking = false:
 		interactbubble.visible = false
 		talking = value
 		animated_sprite_2d.play("talk" if value else "idle")
+
+func _ready():
+	if spriteframes:
+		animated_sprite_2d.sprite_frames = spriteframes
+	animated_sprite_2d.play("idle")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
