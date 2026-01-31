@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cxi1s7yovutcc"]
+
+[ext_resource type="Script" uid="uid://s5h05twrmbuc" path="res://objects/overlay.gd" id="1_c6876"]
+[ext_resource type="Texture2D" uid="uid://b0tqygjcb2amt" path="res://images/milkbg.png" id="2_g5hlc"]
+[ext_resource type="Material" uid="uid://v34j4uwqvkvk" path="res://shaders/pixel_jitter_material.tres" id="2_qf51l"]
+[ext_resource type="Shader" uid="uid://btxr4e7dfnmlk" path="res://shaders/pixel_jitter.gdshader" id="3_g5hlc"]
+[ext_resource type="Texture2D" uid="uid://deau4sxf2tbd7" path="res://images/milkhand.png" id="3_qf51l"]
+[ext_resource type="Script" uid="uid://kp6pgxri0cns" path="res://objects/randomjitter.gd" id="4_p3vkp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qf51l"]
+shader = ExtResource("3_g5hlc")
+
+[node name="Milk Overlay" type="CanvasGroup" unique_id=49455143]
+z_index = 999
+script = ExtResource("1_c6876")
+
+[node name="Milkbg" type="Sprite2D" parent="." unique_id=609745426]
+material = ExtResource("2_qf51l")
+texture = ExtResource("2_g5hlc")
+centered = false
+
+[node name="Milkhand" type="Sprite2D" parent="." unique_id=943507470]
+material = SubResource("ShaderMaterial_qf51l")
+position = Vector2(265, 144)
+texture = ExtResource("3_qf51l")
+
+[node name="Node" type="Node" parent="Milkhand" unique_id=1001083108]
+script = ExtResource("4_p3vkp")
+intensity = 4

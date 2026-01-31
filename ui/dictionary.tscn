@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bnvntx833xl5m"]
+
+[ext_resource type="Script" uid="uid://bo8885v37ypnu" path="res://ui/dictionary.gd" id="1_71f5y"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cbj34"]
+normal = Vector2(1, 0)
+
+[node name="Dictionary" type="Node2D" unique_id=1655798945]
+script = ExtResource("1_71f5y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=584298606]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=917974471]
+position = Vector2(16, 0)
+shape = SubResource("WorldBoundaryShape2D_cbj34")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=69633386]
+position = Vector2(464, 0)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_cbj34")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=171207840]
+position = Vector2(239, 246)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_cbj34")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=683778775]
+position = Vector2(239, 246)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_cbj34")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1710814418]
+position = Vector2(233, 16)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_cbj34")

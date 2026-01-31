@@ -1,16 +1,15 @@
-[gd_scene format=3 uid="uid://c0n0vbdml0yvr"]
+[gd_scene format=3 uid="uid://ctutqfn3ctx3"]
 
 [ext_resource type="Texture2D" uid="uid://b2r31vut8s8wn" path="res://images/ui/speech_bubble_the_long_way.png" id="1_1jhtw"]
 [ext_resource type="Shader" uid="uid://btxr4e7dfnmlk" path="res://shaders/pixel_jitter.gdshader" id="1_l3rl6"]
-[ext_resource type="PackedScene" uid="uid://c51y5j28tked8" path="res://objects/rune.tscn" id="2_l3rl6"]
-[ext_resource type="Script" uid="uid://di3xm10lmgwvf" path="res://objects/speech_bubble.gd" id="3_tigkg"]
+[ext_resource type="PackedScene" uid="uid://5l0cney3hjrd" path="res://objects/rune.tscn" id="2_l3rl6"]
+[ext_resource type="Script" path="res://objects/speech_bubble.gd" id="3_tigkg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tigkg"]
 shader = ExtResource("1_l3rl6")
 
 [node name="SpeechBubble" type="TextureRect" unique_id=978684587]
 material = SubResource("ShaderMaterial_tigkg")
-instance_shader_parameters/color = Color(0.6542321, 0.6542321, 0.654232, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

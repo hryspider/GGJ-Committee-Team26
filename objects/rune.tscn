@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://c51y5j28tked8"]
+[gd_scene format=3 uid="uid://5l0cney3hjrd"]
 
-[ext_resource type="Script" uid="uid://wxo5ygaf8ic1" path="res://rune_control.gd" id="1_hsiy3"]
+[ext_resource type="Script" path="res://rune_control.gd" id="1_hsiy3"]
 [ext_resource type="FontFile" uid="uid://cpr4cgq64ufh" path="res://text/GloopGleep.ttf" id="2_2u00m"]
 [ext_resource type="FontFile" uid="uid://bheug0blsloux" path="res://text/retro-pixel-thick.ttf" id="3_2u00m"]
 [ext_resource type="Material" uid="uid://v34j4uwqvkvk" path="res://shaders/pixel_jitter_material.tres" id="4_ru05i"]
@@ -25,7 +25,6 @@ rune_color_faded = Color(0.4117647, 0.4117647, 0.4117647, 0.8627451)
 
 [node name="RuneLabel" type="Label" parent="." unique_id=1947407639]
 material = ExtResource("4_ru05i")
-instance_shader_parameters/localjitterscale = 2.0
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -45,8 +44,7 @@ vertical_alignment = 1
 
 [node name="TextOverlay" type="Label" parent="." unique_id=1319333999]
 material = ExtResource("4_ru05i")
-instance_shader_parameters/color = Color(0.914, 0.529, 0.306, 1)
-instance_shader_parameters/localjitterscale = 2.0
+instance_shader_parameters/color = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

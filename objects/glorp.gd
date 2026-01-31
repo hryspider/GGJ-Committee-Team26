@@ -70,7 +70,6 @@ func mask_behaviour():
 			arms[i].appear()
 	if nothing_held:
 		current_emotion = -1
-	print(current_emotion)
 
 func _on_sprite_animation_changed():
 	eye.visible = sprite.animation == "idle"
