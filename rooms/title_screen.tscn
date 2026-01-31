@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bb4duxx2x4j83"]
+
+[ext_resource type="Texture2D" uid="uid://c316mdj02xdch" path="res://images/title_screen/hello.png" id="1_puy4s"]
+[ext_resource type="Script" uid="uid://dop0qqmmwty3u" path="res://rooms/button.gd" id="2_rgemh"]
+
+[node name="Control" type="Control" unique_id=1745649473]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=640183750]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=978382427]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=132365223]
+layout_mode = 2
+texture = ExtResource("1_puy4s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1238005420]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 49
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=245157957]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Proceed"
+script = ExtResource("2_rgemh")
+
+[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1467249269]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Settings"
+
+[node name="Button3" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=931743895]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Button" to="MarginContainer/HBoxContainer/VBoxContainer/Button" method="_on_pressed"]
