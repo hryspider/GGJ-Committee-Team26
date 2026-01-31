@@ -10,27 +10,63 @@ var speed = 200
 
 @onready var sprite = $Sprite
 @onready var eye = $Sprite/Eye
+@onready var mask_sprite = $"Mask Sprite"
+@onready var arms = []
+@onready var arm_scene = load("res://objects/glorparm.tscn")
+
 var eye_direction = 0
+var can_move = true
+var masks = [false, false, false]
+var current_emotion = -1:
+	set(value):
+		current_emotion = value
+		mask_sprite.frame = value
+		mask_sprite.visible = value != -1
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var arm_inst
+	for i in range(3):
+		arm_inst = arm_scene.instantiate()
+		arm_inst.index = i
+		mask_sprite.add_child(arm_inst)
+		arms.append(arm_inst)
 
 
 func _physics_process(delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
+	speed = 200 if current_emotion == -1 else 100
 	velocity = direction * speed
-	if direction:
+	if direction and can_move and current_emotion == -1:
 		sprite.play("walk")
 		sprite.flip_h = direction.x >= 0
 	else:
 		sprite.play("idle")
+	mask_behaviour()
 	point_eye_to_mouse()
 	move_and_slide()
 
 func point_eye_to_mouse():
 	eye.offset = (eye.global_position - get_global_mouse_position()).normalized() * -2
+
+func mask_behaviour():
+	var nothing_held = true
+	var maskinput = ""
+	for i in range(3):
+		maskinput = "mask%s" % i
+		if Input.is_action_pressed(maskinput):
+			masks[i] = true
+			nothing_held = false
+		else:
+			masks[i] = false
+			arms[i].hide()
+		if Input.is_action_just_pressed(maskinput):
+			current_emotion = i
+			arms[i].appear()
+	if nothing_held:
+		current_emotion = -1
+	print(current_emotion)
 
 func _on_sprite_animation_changed():
 	eye.visible = sprite.animation == "idle"

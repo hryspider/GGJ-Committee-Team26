@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dbleib7wl151h" path="res://images/glorp.png" id="1_cpklc"]
 [ext_resource type="Script" uid="uid://jb25spvix1fr" path="res://objects/glorp.gd" id="1_px7wq"]
 [ext_resource type="Texture2D" uid="uid://bsctgf3e7i7do" path="res://images/glorpeye.png" id="2_kamts"]
+[ext_resource type="Texture2D" uid="uid://bbal5p570v2i4" path="res://images/masks.png" id="4_2pc3n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kamts"]
 atlas = ExtResource("1_cpklc")
@@ -85,10 +86,17 @@ script = ExtResource("1_px7wq")
 clip_children = 2
 sprite_frames = SubResource("SpriteFrames_2v56n")
 animation = &"idle"
-frame_progress = 0.61501914
+frame_progress = 0.8913598
 
 [node name="Eye" type="Sprite2D" parent="Sprite" unique_id=1074757804]
 position = Vector2(-1, -16)
 texture = ExtResource("2_kamts")
+
+[node name="Mask Sprite" type="Sprite2D" parent="." unique_id=899667152]
+position = Vector2(-3, -5)
+texture = ExtResource("4_2pc3n")
+hframes = 3
+vframes = 2
+frame = 2
 
 [connection signal="animation_changed" from="Sprite" to="." method="_on_sprite_animation_changed"]

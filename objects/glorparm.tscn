@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cbr2unn7omqav"]
+
+[ext_resource type="Texture2D" uid="uid://illlw1ly48p2" path="res://images/arms.png" id="1_hbjii"]
+[ext_resource type="Script" uid="uid://b3vjt2n7ynufy" path="res://objects/glorparm.gd" id="2_svm1i"]
+
+[node name="AnimatedSprite2D" type="Sprite2D" unique_id=1548897869]
+texture = ExtResource("1_hbjii")
+hframes = 2
+vframes = 3
+script = ExtResource("2_svm1i")
