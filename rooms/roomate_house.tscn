@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://7xc8gdaju5jt" path="res://images/pinkroomie.png" id="9_vlxrc"]
 [ext_resource type="Texture2D" uid="uid://k6n7jgx8110j" path="res://images/blueroomie.png" id="10_jj6hg"]
 [ext_resource type="PackedScene" uid="uid://cxi1s7yovutcc" path="res://ui/milk_overlay.tscn" id="10_vlxrc"]
+[ext_resource type="Material" uid="uid://mnx2ug0qmck6" path="res://shaders/background_material.tres" id="12_u4kp1"]
+[ext_resource type="Texture2D" uid="uid://bd5fywco1xi42" path="res://images/ui/white_background.png" id="13_cf0wr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kiath"]
 texture = ExtResource("1_ovko6")
@@ -325,6 +327,14 @@ spriteframes = SubResource("SpriteFrames_gcgwm")
 visible = false
 
 [node name="Node" type="Node" parent="." unique_id=1529247320]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=706171653]
+visible = false
+material = ExtResource("12_u4kp1")
+instance_shader_parameters/primary_color = Color(0.29523352, 0.09350002, 0.85, 0.3882353)
+instance_shader_parameters/secondary_color = Color(0.20699991, 0, 0.46, 0.4627451)
+texture = ExtResource("13_cf0wr")
+centered = false
 
 [connection signal="talk" from="NPC2" to="Milk Overlay" method="appear"]
 [connection signal="finished" from="Milk Overlay" to="NPC2" method="finished_dialog"]

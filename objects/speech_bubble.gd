@@ -5,6 +5,7 @@ var words = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	hide()
 	set_text("me want food want me food")
 	set_instance_shader_parameter("color", Color.WHITE)
 	
@@ -25,7 +26,6 @@ func refresh_text():
 			var new_text = LangaugeGlobals.player_dictionary.get(runes[i].get_rune_text(), "")
 			if new_text: runes[i].set_text_overlay(new_text)
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func set_visible_words(n):
+	for i in range(runes.size()):
+		runes[i].visible = i<n

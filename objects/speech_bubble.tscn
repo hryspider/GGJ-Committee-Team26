@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c0n0vbdml0yvr"]
+[gd_scene format=3 uid="uid://ctutqfn3ctx3"]
 
 [ext_resource type="Shader" uid="uid://btxr4e7dfnmlk" path="res://shaders/pixel_jitter.gdshader" id="1_l3rl6"]
 [ext_resource type="PackedScene" uid="uid://5l0cney3hjrd" path="res://objects/rune.tscn" id="2_l3rl6"]

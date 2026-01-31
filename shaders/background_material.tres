@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://0sfqatycqqod"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://mnx2ug0qmck6"]
 
 [ext_resource type="Shader" uid="uid://j5qayf1eov70" path="res://shaders/background_pattern.gdshader" id="1_lpcxm"]
 
