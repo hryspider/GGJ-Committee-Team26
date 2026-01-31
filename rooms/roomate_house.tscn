@@ -314,7 +314,7 @@ position = Vector2(73, 113)
 spriteframes = SubResource("SpriteFrames_cf0wr")
 
 [node name="NPC3" parent="." unique_id=1502806247 instance=ExtResource("6_jj6hg")]
-position = Vector2(219, 24)
+position = Vector2(234, 225)
 spriteframes = SubResource("SpriteFrames_e4khp")
 
 [node name="NPC2" parent="." unique_id=1470391285 instance=ExtResource("6_jj6hg")]
