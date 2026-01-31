@@ -75,20 +75,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 10.0
 }]
 
-[node name="Glorp" type="Node2D" unique_id=780339623]
+[node name="Glorp" type="CharacterBody2D" unique_id=26475291]
 script = ExtResource("1_px7wq")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1987429908]
 clip_children = 2
 sprite_frames = SubResource("SpriteFrames_2v56n")
 animation = &"idle"
-frame_progress = 0.7433877
+frame_progress = 0.61501914
 
 [node name="Eye" type="Sprite2D" parent="Sprite" unique_id=1074757804]
-position = Vector2(0, -16)
+position = Vector2(-1, -16)
 texture = ExtResource("2_kamts")
 
 [connection signal="animation_changed" from="Sprite" to="." method="_on_sprite_animation_changed"]
