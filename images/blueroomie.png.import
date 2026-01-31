@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cam77s4e72kpq"
-path="res://.godot/imported/roomie.png-cf305844cb22e8cda1865ffb449ea7d1.ctex"
+uid="uid://k6n7jgx8110j"
+path="res://.godot/imported/blueroomie.png-111406160512c6958a6a2cd43a376927.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/roomie.png"
-dest_files=["res://.godot/imported/roomie.png-cf305844cb22e8cda1865ffb449ea7d1.ctex"]
+source_file="res://images/blueroomie.png"
+dest_files=["res://.godot/imported/blueroomie.png-111406160512c6958a6a2cd43a376927.ctex"]
 
 [params]
 
