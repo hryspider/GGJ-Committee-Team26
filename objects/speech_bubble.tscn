@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://c0n0vbdml0yvr"]
+
+[ext_resource type="Texture2D" uid="uid://b2r31vut8s8wn" path="res://images/ui/speech_bubble_the_long_way.png" id="1_1jhtw"]
+[ext_resource type="Shader" uid="uid://btxr4e7dfnmlk" path="res://shaders/pixel_jitter.gdshader" id="1_l3rl6"]
+[ext_resource type="PackedScene" uid="uid://c51y5j28tked8" path="res://objects/rune.tscn" id="2_l3rl6"]
+[ext_resource type="Script" uid="uid://di3xm10lmgwvf" path="res://objects/speech_bubble.gd" id="3_tigkg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tigkg"]
+shader = ExtResource("1_l3rl6")
+
+[node name="SpeechBubble" type="TextureRect" unique_id=978684587]
+material = SubResource("ShaderMaterial_tigkg")
+instance_shader_parameters/color = Color(0.6542321, 0.6542321, 0.654232, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1jhtw")
+expand_mode = 1
+script = ExtResource("3_tigkg")
+
+[node name="Control" type="Control" parent="." unique_id=2139076965]
+anchors_preset = 0
+offset_left = 140.0
+offset_top = 189.0
+offset_right = 180.0
+offset_bottom = 229.0
+
+[node name="Rune1" parent="Control" unique_id=286204624 instance=ExtResource("2_l3rl6")]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 25.0
+offset_right = 28.0
+offset_bottom = 25.0
+scale = Vector2(0.9, 0.9)
+rune_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
+rune_color_faded = Color(0.8132577, 0.81325775, 0.8132574, 1)
+default_rune_text = "ab"
+
+[node name="Rune2" parent="Control" unique_id=1261957074 instance=ExtResource("2_l3rl6")]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 25.0
+offset_right = 99.0
+offset_bottom = 25.0
+scale = Vector2(0.9, 0.9)
+rune_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
+rune_color_faded = Color(0.8132577, 0.81325775, 0.8132574, 1)
+default_label_text = "goodbye"
+default_rune_text = "dc"
+
+[node name="Rune3" parent="Control" unique_id=136487217 instance=ExtResource("2_l3rl6")]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 24.0
+offset_right = 173.0
+offset_bottom = 24.0
+scale = Vector2(0.9, 0.9)
+rune_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
+rune_color_faded = Color(0.8132577, 0.81325775, 0.8132574, 1)
+default_label_text = "goodbye"
+default_rune_text = "dc"
+
+[node name="Rune4" parent="Control" unique_id=787395564 instance=ExtResource("2_l3rl6")]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 23.0
+offset_right = 246.0
+offset_bottom = 23.0
+scale = Vector2(0.9, 0.9)
+rune_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
+rune_color_faded = Color(0.8132577, 0.81325775, 0.8132574, 1)
+default_label_text = "goodbye"
+default_rune_text = "dc"
