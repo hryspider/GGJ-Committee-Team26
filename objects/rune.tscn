@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5l0cney3hjrd"]
 
-[ext_resource type="Script" path="res://rune_control.gd" id="1_hsiy3"]
+[ext_resource type="Script" uid="uid://wxo5ygaf8ic1" path="res://rune_control.gd" id="1_hsiy3"]
 [ext_resource type="FontFile" uid="uid://cpr4cgq64ufh" path="res://text/GloopGleep.ttf" id="2_2u00m"]
 [ext_resource type="FontFile" uid="uid://bheug0blsloux" path="res://text/retro-pixel-thick.ttf" id="3_2u00m"]
 [ext_resource type="Material" uid="uid://v34j4uwqvkvk" path="res://shaders/pixel_jitter_material.tres" id="4_ru05i"]

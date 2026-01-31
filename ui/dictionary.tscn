@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://bnvntx833xl5m"]
 
 [ext_resource type="Script" uid="uid://bo8885v37ypnu" path="res://ui/dictionary.gd" id="1_71f5y"]
+[ext_resource type="Texture2D" uid="uid://174bf3sqftxm" path="res://images/dictionaryoverlay.png" id="2_71f5y"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cbj34"]
 normal = Vector2(1, 0)
 
 [node name="Dictionary" type="Node2D" unique_id=1655798945]
 script = ExtResource("1_71f5y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1242209740]
+texture = ExtResource("2_71f5y")
+centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=584298606]
 
