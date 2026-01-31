@@ -20,8 +20,11 @@ var masks = [false, false, false]
 var current_emotion = -1:
 	set(value):
 		current_emotion = value
-		mask_sprite.frame = value
-		mask_sprite.visible = value != -1
+		if value == -1:
+			mask_sprite.hide()
+		else:
+			mask_sprite.show()
+			mask_sprite.frame = value
 
 
 # Called when the node enters the scene tree for the first time.
@@ -35,17 +38,18 @@ func _ready():
 
 
 func _physics_process(delta):
-	var direction = Input.get_vector("left", "right", "up", "down")
-	speed = 200 if current_emotion == -1 else 100
-	velocity = direction * speed
-	if direction and can_move and current_emotion == -1:
-		sprite.play("walk")
-		sprite.flip_h = direction.x >= 0
-	else:
-		sprite.play("idle")
+	if can_move:
+		var direction = Input.get_vector("left", "right", "up", "down")
+		speed = 200 if current_emotion == -1 else 100
+		velocity = direction * speed
+		if direction and current_emotion == -1:
+			sprite.play("walk")
+			sprite.flip_h = direction.x >= 0
+		else:
+			sprite.play("idle")
+		point_eye_to_mouse()
+		move_and_slide()
 	mask_behaviour()
-	point_eye_to_mouse()
-	move_and_slide()
 
 func point_eye_to_mouse():
 	eye.offset = (eye.global_position - get_global_mouse_position()).normalized() * -2

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://4lbbfd2e5la3"]
+
+[ext_resource type="Texture2D" uid="uid://bvyqtktqvee1x" path="res://images/roomatewoodplank.png" id="1_ovko6"]
+[ext_resource type="Texture2D" uid="uid://ca1l0c4b2h3er" path="res://images/roomatewalls.png" id="2_feemj"]
+[ext_resource type="Texture2D" uid="uid://bxpmhkic5eybk" path="res://images/rug.png" id="3_qutpp"]
+[ext_resource type="Texture2D" uid="uid://bidoytke4rwqn" path="res://images/fridge.png" id="4_gcgwm"]
+[ext_resource type="Texture2D" uid="uid://dfdiusnpug5y2" path="res://images/roommate_chair.png" id="5_vlxrc"]
+[ext_resource type="PackedScene" uid="uid://uqyc7ltu8uf1" path="res://objects/npc.tscn" id="6_jj6hg"]
+[ext_resource type="PackedScene" uid="uid://bf44lvopd5hap" path="res://objects/glorp.tscn" id="7_feemj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kiath"]
+texture = ExtResource("1_ovko6")
+texture_region_size = Vector2i(32, 32)
+0:0/next_alternative_id = 3
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/modulate = Color(0, 0, 0, 1)
+0:0/2 = 2
+0:0/2/modulate = Color(0.466142, 0.22741532, 0.22093752, 1)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u4kp1"]
+texture = ExtResource("2_feemj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16, -16, -16)
+
+[sub_resource type="TileSet" id="TileSet_cf0wr"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_kiath")
+sources/1 = SubResource("TileSetAtlasSource_u4kp1")
+
+[node name="RoomateHouse" type="Node2D" unique_id=848884293]
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1681764917]
+tile_set = SubResource("TileSet_cf0wr")
+rendering_quadrant_size = 32
+format = 2
+layer_0/name = "BG"
+layer_0/tile_data = PackedInt32Array(0, 1, 1879048194, 1, 1, 1610612737, 2, 1, 1610612737, 3, 1, 1610612737, 4, 1, 1610612737, 5, 1, 1610612737, 6, 1, 1610612737, 7, 1, 1610612737, 8, 1, 1610612737, 65545, 0, 0, 65546, 0, 0, 65547, 1, 1, 65548, 0, 65536, 65549, 0, 65536, 13, 0, 65536, 14, 0, 65536, 12, 0, 65536, 11, 1, 1610612738, 10, 1, 1610612737, 9, 1, 1610612737, 65541, 0, 0, 65540, 0, 0, 65539, 0, 0, 65538, 0, 0, 65537, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65536, 1, 805306369, 131072, 1, 805306369, 131073, 0, 0, 196609, 0, 0, 196610, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131074, 0, 0, 196608, 1, 805306369, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 131082, 0, 0, 131083, 1, 1610612736, 131084, 1, 1610612737, 131080, 0, 0, 131081, 0, 0, 262144, 1, 805306369, 327680, 1, 805306369, 393216, 1, 805306369, 458752, 1, 805306369, 524288, 1, 268435458, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 131072, 524289, 1, 1342177281, 262146, 0, 0, 327682, 0, 0, 393218, 0, 131072, 458754, 0, 131072, 524290, 1, 1342177281, 262147, 0, 0, 327683, 0, 0, 393219, 0, 131072, 458755, 0, 131072, 524291, 1, 1342177281, 262148, 0, 0, 327684, 0, 0, 393220, 0, 131072, 458756, 0, 131072, 524292, 1, 1342177281, 262149, 0, 0, 327685, 0, 0, 393221, 0, 131072, 458757, 0, 131072, 524293, 1, 1342177281, 262150, 0, 0, 327686, 0, 0, 393222, 0, 131072, 458758, 0, 131072, 524294, 1, 1342177281, 262151, 0, 0, 327687, 0, 0, 393223, 0, 131072, 458759, 0, 131072, 524295, 1, 1342177281, 262152, 0, 0, 327688, 0, 0, 393224, 0, 131072, 458760, 0, 131072, 524296, 1, 1342177281, 262153, 0, 0, 327689, 0, 0, 393225, 0, 131072, 458761, 0, 131072, 524297, 1, 1342177281, 196618, 0, 0, 262154, 0, 0, 327690, 0, 131072, 393226, 0, 131072, 458762, 0, 131072, 524298, 1, 1342177281, 196619, 0, 0, 262155, 0, 0, 327691, 0, 131072, 393227, 0, 131072, 458763, 0, 131072, 524299, 1, 1342177281, 196620, 0, 0, 262156, 0, 0, 327692, 0, 0, 393228, 0, 131072, 458764, 0, 131072, 524300, 1, 1342177281, 131085, 1, 1610612737, 196621, 0, 0, 262157, 0, 0, 327693, 0, 0, 393229, 0, 131072, 458765, 0, 131072, 524301, 1, 1342177281, 65550, 0, 65536, 131086, 1, 536870914, 196622, 1, 1, 262158, 1, 1, 327694, 1, 1, 393230, 1, 1, 458766, 1, 1, 524302, 1, 2)
+
+[node name="Rug" type="Sprite2D" parent="." unique_id=1613650201]
+modulate = Color(0.88, 0.39027998, 0.3256, 1)
+position = Vector2(147, 93)
+texture = ExtResource("3_qutpp")
+
+[node name="Fridge" type="Sprite2D" parent="." unique_id=94779261]
+position = Vector2(399, 143)
+texture = ExtResource("4_gcgwm")
+
+[node name="RoommateChair" type="Sprite2D" parent="." unique_id=929738068]
+position = Vector2(79, 43)
+texture = ExtResource("5_vlxrc")
+
+[node name="NPC" parent="." unique_id=1006169553 instance=ExtResource("6_jj6hg")]
+position = Vector2(106, 147)
+
+[node name="Glorp" parent="." unique_id=26475291 instance=ExtResource("7_feemj")]
+position = Vector2(297, 139)

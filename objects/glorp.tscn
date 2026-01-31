@@ -79,7 +79,10 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Glorp" type="CharacterBody2D" unique_id=26475291]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pc3n"]
+size = Vector2(34, 35)
+
+[node name="Glorp" type="CharacterBody2D" unique_id=26475291 groups=["player"]]
 script = ExtResource("1_px7wq")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1987429908]
@@ -98,5 +101,9 @@ texture = ExtResource("4_2pc3n")
 hframes = 3
 vframes = 2
 frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1641388509]
+position = Vector2(0, 24.5)
+shape = SubResource("RectangleShape2D_2pc3n")
 
 [connection signal="animation_changed" from="Sprite" to="." method="_on_sprite_animation_changed"]
