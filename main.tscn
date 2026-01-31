@@ -1,9 +1,17 @@
 [gd_scene format=3 uid="uid://cvdnahnj0najw"]
 
 [ext_resource type="Texture2D" uid="uid://cffw8us0a351b" path="res://glorp.webp" id="1_ig7tw"]
+[ext_resource type="Material" uid="uid://0sfqatycqqod" path="res://shaders/background_material.tres" id="3_1bvp3"]
 [ext_resource type="Script" path="res://character_body_2d.gd" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://bd5fywco1xi42" path="res://images/ui/white_background.png" id="4_1bvp3"]
 
-[node name="Node2D" type="Node2D" unique_id=108416939]
+[node name="Node2D" type="Control" unique_id=947331922]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=565222465]
 position = Vector2(220.00002, 89.99999)
@@ -15,3 +23,14 @@ scale = Vector2(1, 1.0000001)
 texture = ExtResource("1_ig7tw")
 
 [node name="Glorphouse" type="AudioStreamPlayer" parent="." unique_id=836130205]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1853846311]
+material = ExtResource("3_1bvp3")
+instance_shader_parameters/secondary_color = Color(0.4811349, 0.79775643, 0.90864927, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_1bvp3")

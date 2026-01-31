@@ -105,3 +105,15 @@ jitterscale={
 "type": "float",
 "value": 1.0
 }
+background_rotation={
+"type": "float",
+"value": 32.0
+}
+background_scale={
+"type": "float",
+"value": 10.0
+}
+background_speed={
+"type": "float",
+"value": 1.0
+}
