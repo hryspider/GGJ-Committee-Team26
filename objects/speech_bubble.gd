@@ -1,16 +1,16 @@
 extends TextureRect
 
-@onready var runes := [$Control/Rune1, $Control/Rune2, $Control/Rune3, $Control/Rune4]
+@onready var runes := [$Control/Rune1, $Control/Rune2, $Control/Rune3, $Control/Rune4, $Control/Rune5, $Control/Rune6]
 var words = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	set_text("me want food")
+	set_text("me want food want me food")
 	set_instance_shader_parameter("color", Color.WHITE)
 	
 func set_text(new_text):
-	words = new_text.split(" ",false,4)
-	for i in range(4):
+	words = new_text.split(" ",false,len(runes))
+	for i in range(len(runes)):
 		if i < len(words):
 			var w = words[i]
 			runes[i].set_rune_text(LangaugeGlobals.english_to_gleep[w])
@@ -20,7 +20,7 @@ func set_text(new_text):
 	refresh_text()
 			
 func refresh_text():
-	for i in range(4):
+	for i in range(len(runes)):
 		if i < len(words):
 			var new_text = LangaugeGlobals.player_dictionary.get(runes[i].get_rune_text(), "")
 			if new_text: runes[i].set_text_overlay(new_text)

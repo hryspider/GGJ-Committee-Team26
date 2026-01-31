@@ -17,6 +17,7 @@ font_size = 32
 font_color = Color(0.9137255, 0.5294118, 0.30588236, 1)
 
 [node name="Rune" type="Control" unique_id=1261957074]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(0.8, 0.8)
@@ -26,8 +27,7 @@ rune_color_faded = Color(0.4117647, 0.4117647, 0.4117647, 0.8627451)
 [node name="RuneLabel" type="Label" parent="." unique_id=1947407639]
 material = ExtResource("4_ru05i")
 instance_shader_parameters/localjitterscale = 2.5
-layout_mode = 1
-anchors_preset = 8
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -47,8 +47,7 @@ vertical_alignment = 1
 material = ExtResource("4_ru05i")
 instance_shader_parameters/color = Color(0, 0, 0, 1)
 instance_shader_parameters/localjitterscale = 2.5
-layout_mode = 1
-anchors_preset = 8
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
