@@ -1,28 +1,30 @@
 extends Control
 
-var word = ""
-var aliases = []
-var correct = false
+@export var word = ""
+@export var instructions = ""
+@export var aliases = []
+@onready var instructions_label = $Instructions
+@onready var word_label = $Word
 
-signal questionerCorrect
+var active = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	#$Label3.text = word
-	pass # Replace with function body.
+signal satisfied
 
-func start():
-	$Label3.text = word
+func _ready():
+	hide()
+	word_label.text = LangaugeGlobals.english_to_gleep[word]
+	instructions_label.text = instructions
+	
+	
+func activate():
+	visible = true
+	await get_tree().create_timer(1.0).timeout
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if aliases.has(LangaugeGlobals.get_player_guess(word)):
-		if !correct:
-			correct = true	
-			emit_signal("questionerCorrect")
-	else:
-		correct = false
-		
-func _input(event):
-	if event is InputEventKey and event.pressed:
-		visible = false 
+func _process(delta: float):
+	if active:
+		if visible:
+			if Input.is_action_just_pressed("click"): visible = false
+		else:
+			if aliases.has(LangaugeGlobals.player_dictionary[word]):
+				emit_signal("satisfied")
+				active = false

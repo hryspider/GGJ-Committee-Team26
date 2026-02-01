@@ -1,16 +1,23 @@
 extends Node2D
+@onready var questioner = $Questioner
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var flags = [false, false, false]:
+	set(value):
+		flags = value
+		if flags == [true, true, true]:
+			questioner.activate()
+
+func _on_dialog_manager_finished():
+	flags[0] = true
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_milk_overlay_finished():
+	flags[1] = true
 
-func check_actions_complete():
-	var done = true
-	for npc in get_tree().get_nodes_in_group("dialogmanager"):
-		done &= npc.complete
+
+func _on_money_overlay_finished():
+	flags[2] = true
+
+
+		

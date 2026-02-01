@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://4lbbfd2e5la3"]
 
+[ext_resource type="Script" uid="uid://dt5cla4rqs3xs" path="res://rooms/roomate_house.gd" id="1_7ofkf"]
 [ext_resource type="Texture2D" uid="uid://bvyqtktqvee1x" path="res://images/roomatewoodplank.png" id="1_ovko6"]
 [ext_resource type="Texture2D" uid="uid://ca1l0c4b2h3er" path="res://images/roomatewalls.png" id="2_feemj"]
 [ext_resource type="Texture2D" uid="uid://bxpmhkic5eybk" path="res://images/rug.png" id="3_qutpp"]
@@ -18,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cjbe6p8x0ecch" path="res://images/dolar.png" id="16_rxgj1"]
 [ext_resource type="PackedScene" uid="uid://b52srq1yj0mr5" path="res://ui/dictionary_manager.tscn" id="17_aesho"]
 [ext_resource type="Script" uid="uid://dy6gk2wb21yf2" path="res://ui/dialogline.gd" id="18_rxgj1"]
+[ext_resource type="PackedScene" uid="uid://b7fney6u15mkr" path="res://ui/questioner.tscn" id="20_gu4tk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kiath"]
 texture = ExtResource("1_ovko6")
@@ -493,6 +495,7 @@ metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [node name="RoomateHouse" type="Node2D" unique_id=848884293]
 y_sort_enabled = true
+script = ExtResource("1_7ofkf")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1681764917]
 tile_set = SubResource("TileSet_cf0wr")
@@ -571,10 +574,23 @@ texture = ExtResource("16_rxgj1")
 [node name="DialogManager" parent="." unique_id=167636923 instance=ExtResource("13_aesho")]
 data = Array[ExtResource("18_rxgj1")]([SubResource("Resource_rxgj1"), SubResource("Resource_7ofkf"), SubResource("Resource_gu4tk"), SubResource("Resource_yumyu"), SubResource("Resource_oynf4"), SubResource("Resource_q6hrm"), SubResource("Resource_cxmtu"), SubResource("Resource_gxmdy"), SubResource("Resource_bwj5o"), SubResource("Resource_0wht8"), SubResource("Resource_jffb1"), SubResource("Resource_neqdv"), SubResource("Resource_usfno"), SubResource("Resource_xx6cq"), SubResource("Resource_1osfp"), SubResource("Resource_uyig2"), SubResource("Resource_pdrys"), SubResource("Resource_e4khp"), SubResource("Resource_ioblm")])
 
+[node name="Questioner" parent="." unique_id=2128525150 instance=ExtResource("20_gu4tk")]
+z_index = 99
+offset_left = 237.0
+offset_top = 145.0
+offset_right = 237.0
+offset_bottom = 145.0
+word = "work"
+instructions = "The humans were talking a lot about this, Glorp. They might want you to get one... Open your dictionary with Q to make a guess."
+aliases = ["job", "work", "hire", "jobs"]
+
 [connection signal="talk" from="PinkNPC" to="DialogManager" method="start_dialog"]
 [connection signal="talk" from="NPC2" to="Milk Overlay" method="appear"]
 [connection signal="talk" from="NPC4" to="Money Overlay" method="appear"]
+[connection signal="finished" from="Milk Overlay" to="." method="_on_milk_overlay_finished"]
 [connection signal="finished" from="Milk Overlay" to="NPC2" method="finished_dialog"]
+[connection signal="finished" from="Money Overlay" to="." method="_on_money_overlay_finished"]
 [connection signal="finished" from="Money Overlay" to="Glorp" method="finished_dialog"]
 [connection signal="finished" from="Money Overlay" to="NPC4" method="finished_dialog"]
+[connection signal="finished" from="DialogManager" to="." method="_on_dialog_manager_finished"]
 [connection signal="finished" from="DialogManager" to="PinkNPC" method="finished_dialog"]

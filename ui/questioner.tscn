@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://b7fney6u15mkr"]
 
-[ext_resource type="Script" uid="uid://dt6cxvsep8h24" path="res://ui/questioner_wrapper.gd" id="1_f6n7q"]
 [ext_resource type="Material" uid="uid://v34j4uwqvkvk" path="res://shaders/pixel_jitter_material.tres" id="1_jwbwj"]
 [ext_resource type="Script" uid="uid://d3rimrqhll5f0" path="res://ui/questioner.gd" id="1_rrcm0"]
 [ext_resource type="FontFile" uid="uid://bheug0blsloux" path="res://text/retro-pixel-thick.ttf" id="2_78wh3"]
@@ -11,10 +10,7 @@
 font = ExtResource("4_qhjgo")
 font_size = 80
 
-[node name="QuestionerCanvas" type="CanvasLayer" unique_id=2030957626]
-script = ExtResource("1_f6n7q")
-
-[node name="Questioner" type="Control" parent="." unique_id=2128525150]
+[node name="Questioner" type="Control" unique_id=2128525150]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,21 +20,33 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_rrcm0")
 
-[node name="Sprite2D" type="Sprite2D" parent="Questioner" unique_id=1128165139]
+[node name="Sprite2D" type="TextureRect" parent="." unique_id=1199595506]
 material = ExtResource("1_jwbwj")
 instance_shader_parameters/localjitterscale = -1.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_qhjgo")
-centered = false
 
-[node name="Label" type="Label" parent="Questioner" unique_id=1166098225]
+[node name="Label" type="Label" parent="." unique_id=1166098225]
 material = ExtResource("1_jwbwj")
 instance_shader_parameters/color = Color(0.96862745, 0, 0, 1)
 instance_shader_parameters/localjitterscale = 1.0
-layout_mode = 0
-offset_left = 109.0
-offset_top = 47.0
-offset_right = 379.0
-offset_bottom = 87.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -84.0
+offset_right = 135.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0.75, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_78wh3")
@@ -46,33 +54,37 @@ theme_override_font_sizes/font_size = 32
 text = "What's That Word?"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Questioner" unique_id=1399972467]
+[node name="Instructions" type="Label" parent="." unique_id=1098329615]
 material = ExtResource("1_jwbwj")
 instance_shader_parameters/color = Color(0, 0, 0, 1)
 instance_shader_parameters/localjitterscale = 1.0
-layout_mode = 0
-offset_left = 126.0
-offset_top = 190.0
-offset_right = 548.0
-offset_bottom = 273.0
-scale = Vector2(0.56, 0.56)
-theme_override_colors/font_color = Color(0, 0.75, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -191.0
+offset_top = 38.5
+offset_right = 191.0
+offset_bottom = 121.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_78wh3")
-theme_override_font_sizes/font_size = 32
-text = "Put a guess in your DICTIONARY
-for this word."
+text = "instruction"
 horizontal_alignment = 1
+autowrap_mode = 2
 
-[node name="Label3" type="Label" parent="Questioner" unique_id=637386748]
+[node name="Word" type="Label" parent="." unique_id=637386748]
 material = ExtResource("1_jwbwj")
 instance_shader_parameters/color = Color(0, 0.60383826, 0.5069849, 1)
 instance_shader_parameters/localjitterscale = 1.0
-layout_mode = 0
-offset_left = 109.0
-offset_top = 101.0
-offset_right = 379.0
-offset_bottom = 181.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0.75, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_78wh3")
@@ -80,3 +92,4 @@ theme_override_font_sizes/font_size = 32
 text = "op"
 label_settings = SubResource("LabelSettings_rrcm0")
 horizontal_alignment = 1
+vertical_alignment = 1
