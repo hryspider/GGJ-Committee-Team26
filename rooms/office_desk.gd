@@ -41,8 +41,9 @@ func run_step():
 	t_selectp.queue_free()
 	var correct = questioner_aliases[current_step].has(LangaugeGlobals.gleep_to_english[t_select.return_var])
 	if !correct: wrong_answers += 1
-	$AnimatedSprite2D.play("pissed" if !correct else ["question","suspicious","talk","idle"][randi_range(0,3)])
+	$AnimatedSprite2D.play("pissed" if !correct else "approve")
 	await get_tree().create_timer(1.5).timeout
+	$AnimatedSprite2D.play(["question","suspicious","talk","idle"][randi_range(0,3)])
 	current_step += 1
 	
 
@@ -56,8 +57,8 @@ func _ready() -> void:
 			LangaugeGlobals.add_word_confirmed("uum")
 			$Wife.play("wife")
 			await $Wife.animation_finished
-		if wrong_answers > 2:
-			get_tree().change_scene_to_file("res://rooms/failure.tscn")
+		if wrong_answers > 9999:
+			get_tree().change_scene_to_file("res://rooms/failurelevel2.tscn")
 			return
 	await ending_dialogue.start_dialog()
 	get_tree().change_scene_to_file("res://rooms/23transition.tscn")
