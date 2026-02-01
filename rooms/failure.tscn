@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dhc0se6io4ksk"]
+[gd_scene format=3 uid="uid://dytxj302re2jk"]
 
 [ext_resource type="Material" uid="uid://mnx2ug0qmck6" path="res://shaders/background_material.tres" id="1_ls6s3"]
 [ext_resource type="Texture2D" uid="uid://bd5fywco1xi42" path="res://images/ui/white_background.png" id="2_xs0cm"]
@@ -84,5 +84,6 @@ theme_override_fonts/font = ExtResource("4_l5dl6")
 theme_override_font_sizes/font_size = 32
 text = "Retry"
 script = ExtResource("5_xs0cm")
+path = "res://rooms/train.tscn"
 
 [connection signal="pressed" from="TextureRect/Button" to="TextureRect/Button" method="_on_pressed"]

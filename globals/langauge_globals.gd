@@ -26,7 +26,10 @@ var initial_words = [
 	"here",
 	"go",
 	"but",
-	"you"
+	"you",
+	"live",
+	"home",
+	"good"
 ]
 
 var confirmed_words = [

@@ -84,5 +84,6 @@ theme_override_fonts/font = ExtResource("4_ad2s7")
 theme_override_font_sizes/font_size = 32
 text = "Retry"
 script = ExtResource("5_e36ef")
+path = "res://rooms/office_entrance.tscn"
 
 [connection signal="pressed" from="TextureRect/Button" to="TextureRect/Button" method="_on_pressed"]

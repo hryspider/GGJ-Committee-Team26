@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="GGJ-Committee-Team"
-run/main_scene="uid://byca1sh4f6l8f"
+run/main_scene="uid://bd3dksvp1b865"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
