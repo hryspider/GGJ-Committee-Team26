@@ -1,53 +1,53 @@
 [gd_scene format=3 uid="uid://duuwpcl1aixk6"]
 
-[ext_resource type="Texture2D" uid="uid://b81kq8vlqb777" path="res://images/bossoffice.png" id="1_7svm4"]
-[ext_resource type="AudioStream" uid="uid://bjir1bx1jxyl1" path="res://audio/bgm/bossinterview.ogg" id="3_7svm4"]
-[ext_resource type="Texture2D" uid="uid://daan3m16pogfl" path="res://images/boss_desk.png" id="4_jrkp6"]
-[ext_resource type="Texture2D" uid="uid://di3xtisq8b4yo" path="res://images/cherished.png" id="5_daa5c"]
-[ext_resource type="PackedScene" uid="uid://bf44lvopd5hap" path="res://objects/glorp.tscn" id="6_daa5c"]
+[ext_resource type="Texture2D" uid="uid://b81kq8vlqb777" path="res://images/bossoffice.png" id="1_se205"]
+[ext_resource type="PackedScene" uid="uid://bf44lvopd5hap" path="res://objects/glorp.tscn" id="2_wbdee"]
+[ext_resource type="AudioStream" uid="uid://bjir1bx1jxyl1" path="res://audio/bgm/bossinterview.ogg" id="3_ljy0p"]
+[ext_resource type="Texture2D" uid="uid://daan3m16pogfl" path="res://images/boss_desk.png" id="4_nmfii"]
+[ext_resource type="Texture2D" uid="uid://di3xtisq8b4yo" path="res://images/cherished.png" id="5_5wjrh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r2o6t"]
-atlas = ExtResource("4_jrkp6")
+atlas = ExtResource("4_nmfii")
 region = Rect2(0, 0, 200, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tvw4"]
-atlas = ExtResource("4_jrkp6")
+atlas = ExtResource("4_nmfii")
 region = Rect2(200, 0, 200, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_crxjg"]
-atlas = ExtResource("4_jrkp6")
+atlas = ExtResource("4_nmfii")
 region = Rect2(200, 450, 200, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8mea"]
-atlas = ExtResource("4_jrkp6")
+atlas = ExtResource("4_nmfii")
 region = Rect2(200, 300, 200, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b2idv"]
-atlas = ExtResource("4_jrkp6")
+atlas = ExtResource("4_nmfii")
 region = Rect2(0, 300, 200, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oj7cl"]
-atlas = ExtResource("4_jrkp6")
+atlas = ExtResource("4_nmfii")
 region = Rect2(400, 300, 200, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwgqt"]
-atlas = ExtResource("4_jrkp6")
+atlas = ExtResource("4_nmfii")
 region = Rect2(0, 450, 200, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rq21w"]
-atlas = ExtResource("4_jrkp6")
+atlas = ExtResource("4_nmfii")
 region = Rect2(400, 0, 200, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pv5sg"]
-atlas = ExtResource("4_jrkp6")
+atlas = ExtResource("4_nmfii")
 region = Rect2(0, 150, 200, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vdahv"]
-atlas = ExtResource("4_jrkp6")
+atlas = ExtResource("4_nmfii")
 region = Rect2(200, 150, 200, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2fp6q"]
-atlas = ExtResource("4_jrkp6")
+atlas = ExtResource("4_nmfii")
 region = Rect2(400, 150, 200, 150)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rv64t"]
@@ -138,22 +138,22 @@ animations = [{
 [node name="Node2D" type="Node2D" unique_id=1203436009]
 
 [node name="BG" type="Sprite2D" parent="." unique_id=559519409]
-texture = ExtResource("1_7svm4")
+texture = ExtResource("1_se205")
 centered = false
 
-[node name="Glorp" parent="." unique_id=26475291 instance=ExtResource("6_daa5c")]
+[node name="Glorp" parent="." unique_id=26475291 instance=ExtResource("2_wbdee")]
 position = Vector2(239, 206)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=328736916]
-stream = ExtResource("3_7svm4")
+stream = ExtResource("3_ljy0p")
 autoplay = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1565392650]
 position = Vector2(236, 68)
 sprite_frames = SubResource("SpriteFrames_rv64t")
 animation = &"pissed"
-frame_progress = 0.14688385
+frame_progress = 0.74619323
 
 [node name="Cherished" type="Sprite2D" parent="." unique_id=1379936919]
 position = Vector2(287, 138)
-texture = ExtResource("5_daa5c")
+texture = ExtResource("5_5wjrh")
