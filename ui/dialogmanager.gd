@@ -51,7 +51,7 @@ func start_dialog():
 		new_bubble.destroy_timer.wait_time = this_dialog.duration
 		new_bubble.play()
 		audio_stream_player.play_3()
-		await new_bubble.destroy_timer.timeout
+		await new_bubble.finished
 		curr_line += 1
 		emit_signal("newline")
 	complete = true

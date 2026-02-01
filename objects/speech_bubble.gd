@@ -10,6 +10,8 @@ var visible_chars = 0
 var is_question = false
 var is_exclamation = false
 
+signal finished
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
@@ -64,4 +66,10 @@ func _on_appear_timer_timeout():
 		destroy_timer.start()
 
 func _on_destroy_timer_timeout():
+	emit_signal("finished")
 	queue_free()
+
+func _process(delta):
+	if Input.is_action_just_pressed("interact"):
+		emit_signal("finished")
+		queue_free()
