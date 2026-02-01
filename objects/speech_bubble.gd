@@ -1,4 +1,4 @@
-extends Node2D
+extends TextureRect
 
 @onready var runes := [$Control/Rune1, $Control/Rune2, $Control/Rune3, $Control/Rune4, $Control/Rune5, $Control/Rune6]
 var words = []
