@@ -75,7 +75,7 @@ func is_known(gleep):
 	return confirmed_words.has(gleep)
 
 func add_word_mention(gleep):
-	if gleep_to_english.has(gleep) and not mentioned_words.has(gleep):
+	if english_to_gleep.has(gleep) and not mentioned_words.has(gleep):
 		mentioned_words.append(gleep)
 func add_word_confirmed(gleep):
 	if gleep_to_english.has(gleep) and not confirmed_words.has(gleep):
