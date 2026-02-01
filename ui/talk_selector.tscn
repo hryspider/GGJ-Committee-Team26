@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6m1jvesvfp3w"]
 
 [ext_resource type="Script" path="res://ui/talk_selector_wrapper.gd" id="1_60262"]
-[ext_resource type="Script" path="res://ui/talk_selector.gd" id="2_42hrp"]
+[ext_resource type="Script" uid="uid://eu2dubcanj3r" path="res://ui/talk_selector.gd" id="2_42hrp"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1214237214]
 script = ExtResource("1_60262")

@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://edncl0aocllb"]
+
+[ext_resource type="Script" uid="uid://1nvfn80xk62a" path="res://ui/questioner_accept.gd" id="1_di4fn"]
+[ext_resource type="FontFile" uid="uid://cpr4cgq64ufh" path="res://text/GloopGleep.ttf" id="2_6wyuq"]
+[ext_resource type="Material" uid="uid://v34j4uwqvkvk" path="res://shaders/pixel_jitter_material.tres" id="3_64o1w"]
+[ext_resource type="Texture2D" uid="uid://cjs6bw1qqvl4s" path="res://images/cloud.png" id="4_6huhe"]
+[ext_resource type="FontFile" uid="uid://bheug0blsloux" path="res://text/retro-pixel-thick.ttf" id="5_r36k0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rrcm0"]
+font = ExtResource("2_6wyuq")
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_di4fn"]
+font = ExtResource("5_r36k0")
+font_color = Color(0, 0, 0, 1)
+
+[node name="Questioner" type="Control" unique_id=2128525150]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_di4fn")
+
+[node name="Minihint" type="Label" parent="." unique_id=2065532270]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 80.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.9666667, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_6wyuq")
+theme_override_font_sizes/font_size = 32
+text = "c"
+horizontal_alignment = 2
+
+[node name="Main" type="Control" parent="." unique_id=817568808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="TextureRect" parent="Main" unique_id=1199595506]
+material = ExtResource("3_64o1w")
+instance_shader_parameters/localjitterscale = -1.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_6huhe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main" unique_id=1966316281]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_right = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Main/VBoxContainer" unique_id=1166098225]
+material = ExtResource("3_64o1w")
+instance_shader_parameters/color = Color(0.96862745, 0, 0, 1)
+instance_shader_parameters/localjitterscale = 1.0
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.75, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_r36k0")
+theme_override_font_sizes/font_size = 32
+text = "What's That Word?"
+horizontal_alignment = 1
+
+[node name="Word" type="Label" parent="Main/VBoxContainer" unique_id=637386748]
+material = ExtResource("3_64o1w")
+instance_shader_parameters/color = Color(0, 0.60383826, 0.5069849, 1)
+instance_shader_parameters/localjitterscale = 1.0
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.75, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_r36k0")
+theme_override_font_sizes/font_size = 32
+text = "c"
+label_settings = SubResource("LabelSettings_rrcm0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Instructions" type="Label" parent="Main/VBoxContainer" unique_id=1098329615]
+material = ExtResource("3_64o1w")
+instance_shader_parameters/color = Color(0, 0, 0, 1)
+instance_shader_parameters/localjitterscale = 1.0
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_r36k0")
+theme_override_font_sizes/font_size = 12
+text = "instruction"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TimerText" type="Label" parent="Main/VBoxContainer" unique_id=1646252089]
+layout_mode = 2
+text = "10"
+label_settings = SubResource("LabelSettings_di4fn")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1670233795]
+wait_time = 10.0
