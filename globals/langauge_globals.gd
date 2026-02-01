@@ -19,6 +19,8 @@ var MAX_LENGTH = 5 #Longest possible guess
 	"here":"lap",
 	"go":"ein",
 	"but":"ane",
+	"no":"oo",
+	"hi": "eee"
 }
 
 var gleep_to_english = {}
@@ -82,11 +84,16 @@ func add_word_confirmed(gleep):
 	if gleep_to_english.has(gleep) and not confirmed_words.has(gleep):
 		confirmed_words.append(gleep)
 		
-func spawn_questioner(gleep):
-	var questioner = load("res://ui/questioner.tscn")
-	var instance = questioner.instantiate()
+func spawn_questioner(gleep, gleep_aliases):
+	if has_node("Questioner"):
+		get_node("Questioner").visible = true
+	else:
+		var questioner_res = load("res://ui/questioner.tscn")
+		var instance = questioner_res.instantiate()
+		add_child(instance)
+		
+		instance.control.word = gleep
+		instance.control.aliases = gleep_aliases
+		
+		instance.control.start()
 	
-	instance.word = gleep
-	instance.move_to_front()
-	
-	add_child(instance)
