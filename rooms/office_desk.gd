@@ -12,6 +12,7 @@ extends Node2D
 ]
 
 @onready var ending_dialogue = $DialogManager9
+@onready var wife_dialogue = $DialogManager10
 
 @onready var selecter_scene = preload("res://ui/talk_selector.tscn")
 
@@ -51,6 +52,7 @@ func _ready() -> void:
 	for i in range(8):
 		await run_step()
 		if i == 6:
+			await wife_dialogue.start_dialog()
 			LangaugeGlobals.add_word_confirmed("uum")
 			$Wife.play("wife")
 			await $Wife.animation_finished

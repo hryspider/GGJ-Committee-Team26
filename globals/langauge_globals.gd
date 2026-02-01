@@ -25,7 +25,8 @@ var initial_words = [
 	"we",
 	"here",
 	"go",
-	"but"
+	"but",
+	"you"
 ]
 
 var confirmed_words = [
