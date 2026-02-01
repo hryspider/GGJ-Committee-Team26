@@ -14,7 +14,7 @@ func _ready() -> void:
 	set_rune_text(default_rune_text)
 
 func set_rune_text(new_text):
-	rune_color = LangaugeGlobals.rune_colors.get(LangaugeGlobals.gleep_to_english.get(new_text, ""), Color.WHITE)
+	rune_color = LangaugeGlobals.rune_colors.get(LangaugeGlobals.gleep_to_english.get(new_text, ""), Color.BLACK)
 	rune_color_faded = rune_color
 	rune_color_faded.a *= .3
 	rune_label.set_text(new_text)

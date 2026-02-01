@@ -351,8 +351,16 @@ texture = ExtResource("16_rxgj1")
 
 [node name="DictionaryManager" parent="." unique_id=925600434 instance=ExtResource("17_aesho")]
 
+[node name="DialogManager_Pink" parent="." unique_id=33405281 instance=ExtResource("13_aesho")]
+
+[node name="DialogManager_Blue" parent="." unique_id=167636923 instance=ExtResource("13_aesho")]
+
+[connection signal="talk" from="NPC" to="DialogManager_Pink" method="start_dialog"]
+[connection signal="talk" from="NPC3" to="DialogManager_Blue" method="start_dialog"]
 [connection signal="talk" from="NPC2" to="Milk Overlay" method="appear"]
 [connection signal="talk" from="NPC4" to="Money Overlay" method="appear"]
 [connection signal="finished" from="Milk Overlay" to="NPC2" method="finished_dialog"]
 [connection signal="finished" from="Money Overlay" to="Glorp" method="finished_dialog"]
 [connection signal="finished" from="Money Overlay" to="NPC4" method="finished_dialog"]
+[connection signal="finished" from="DialogManager_Pink" to="NPC" method="finished_dialog"]
+[connection signal="finished" from="DialogManager_Blue" to="NPC3" method="finished_dialog"]
