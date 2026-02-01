@@ -50,6 +50,7 @@ var confirmed_words = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	mentioned_words += confirmed_words
 	for k in english_to_gleep.keys():
 		gleep_to_english[english_to_gleep[k]] = k
 	for w in initial_words:
@@ -82,4 +83,10 @@ func spawn_questioner(gleep, gleep_aliases):
 		instance.control.aliases = gleep_aliases
 		
 		instance.control.start()
+
+func spawn_talk_selector():
+	var talk_selector_res = load("res://ui/talk_selector.tscn")
+	var instance = talk_selector_res.instantiate()
+	add_child(instance)
 	
+	instance.control.start()

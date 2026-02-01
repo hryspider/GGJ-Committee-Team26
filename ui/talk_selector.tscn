@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b6m1jvesvfp3w"]
+
+[ext_resource type="Script" uid="uid://btclgke3qnd2v" path="res://ui/talk_selector_wrapper.gd" id="1_60262"]
+[ext_resource type="Script" uid="uid://eu2dubcanj3r" path="res://ui/talk_selector.gd" id="2_42hrp"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1214237214]
+script = ExtResource("1_60262")
+
+[node name="TalkSelector" type="Control" parent="." unique_id=1173603143]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_42hrp")
+
+[node name="GridContainer" type="GridContainer" parent="TalkSelector" unique_id=1394089749]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -13.0
+offset_right = 448.0
+offset_bottom = 257.0
+columns = 4

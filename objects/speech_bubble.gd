@@ -5,6 +5,8 @@ var words = []
 var visible_chars = 0
 @onready var appear_timer = $AppearTimer
 @onready var destroy_timer = $DestroyTimer
+var is_question = false
+var is_exclamation = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,6 +15,12 @@ func _ready() -> void:
 	set_instance_shader_parameter("color", Color.WHITE)
 	
 func set_text(new_text):
+	if new_text[-1] == "?":
+		is_question = true
+		new_text = new_text.left(-1)
+	if new_text[-1] == "!":
+		is_question = true
+		new_text = new_text.left(-1)
 	words = new_text.split(" ",false,len(runes))
 	for i in range(len(runes)):
 		if i < len(words):
