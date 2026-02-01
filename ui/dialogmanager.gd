@@ -31,9 +31,3 @@ func start_dialog():
 		curr_line += 1
 	emit_signal("finished")
 	
-	
-	
-
-
-func _on_npc_3_talk() -> void:
-	pass # Replace with function body.

@@ -25,7 +25,7 @@ func _ready():
 			dict_rune_inst.connect("editing", editing, 1)
 			dict_rune_inst.connect("edit_finished", edit_finished)
 			dict_rune_inst.rune.set_text_overlay(LangaugeGlobals.get_player_guess(word))
-			dict_rune_inst.rune.set_rune_fade(true)
+			#dict_rune_inst.rune.set_rune_fade(true)
 
 func editing(rune_pos):
 	for r in rune_children:

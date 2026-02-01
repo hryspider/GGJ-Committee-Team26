@@ -22,7 +22,6 @@ func _physics_process(delta):
 			rune.set_text_overlay("...")
 			text = ""
 			emit_signal("editing", position)
-			print("gog")
 		elif being_edited:
 			finish_edit()
 

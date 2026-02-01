@@ -2,11 +2,11 @@ extends Control
 
 @onready var rune_label : Label = $RuneLabel
 @onready var text_label : Label = $TextOverlay
-@export var rune_color : Color = Color.WHITE
-@export var rune_color_faded : Color = Color.DIM_GRAY
-@export var text_color : Color = Color.INDIAN_RED
-@export var default_label_text := "hello"
-@export var default_rune_text := "abcd"
+var rune_color : Color = Color.WHITE
+var rune_color_faded : Color = Color.DIM_GRAY
+var text_color : Color = Color.INDIAN_RED
+var default_label_text := ""
+var default_rune_text := "abcd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +14,9 @@ func _ready() -> void:
 	set_rune_text(default_rune_text)
 
 func set_rune_text(new_text):
+	rune_color = LangaugeGlobals.rune_colors.get(LangaugeGlobals.gleep_to_english.get(new_text, ""), Color.WHITE)
+	rune_color_faded = rune_color
+	rune_color_faded.a *= .3
 	rune_label.set_text(new_text)
 
 func set_text_overlay(new_text):

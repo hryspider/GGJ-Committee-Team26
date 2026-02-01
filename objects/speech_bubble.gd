@@ -1,4 +1,4 @@
-extends Node2D
+extends TextureRect
 
 @onready var runes := [$Control/Rune1, $Control/Rune2, $Control/Rune3, $Control/Rune4, $Control/Rune5, $Control/Rune6]
 var words = []
@@ -33,6 +33,8 @@ func refresh_text():
 
 func play():
 	show()
+	for word in words:
+		LangaugeGlobals.add_word_mention(word)
 	set_visible_words(0)
 	appear_timer.start()
 
