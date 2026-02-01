@@ -2,11 +2,13 @@ extends Node
 
 @export var data : Array[DialogLine]
 @onready var curr_line = 0
+@onready var complete = false
 var speech_bubble = preload("res://objects/speech_bubble.tscn")
 signal finished
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	complete = data.size() == 0
 	pass # Replace with function body.
 
 
@@ -29,5 +31,6 @@ func start_dialog():
 		new_bubble.play()
 		await new_bubble.destroy_timer.timeout
 		curr_line += 1
+	complete = true
 	emit_signal("finished")
 	

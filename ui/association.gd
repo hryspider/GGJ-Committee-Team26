@@ -7,4 +7,4 @@ var word = ""
 
 func _ready():
 	gleep.text = word
-	human.text = LangaugeGlobals.gleep_to_english[word] 
+	human.text = LangaugeGlobals.gleep_to_english.get(word, "")
