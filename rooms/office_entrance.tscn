@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://dy6gk2wb21yf2" path="res://ui/dialogline.gd" id="10_x8mea"]
 [ext_resource type="PackedScene" uid="uid://b52srq1yj0mr5" path="res://ui/dictionary_manager.tscn" id="11_x8mea"]
 [ext_resource type="Script" uid="uid://diml3436rvtyt" path="res://ui/transition.gd" id="12_b2idv"]
-[ext_resource type="PackedScene" uid="uid://bmso2il7x6ei0" path="res://rooms/office_desk.tscn" id="13_oj7cl"]
+[ext_resource type="PackedScene" uid="uid://bi3crvixcrebg" path="res://rooms/office_desk.tscn" id="13_oj7cl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2o6t"]
 texture = ExtResource("1_buiua")
@@ -330,7 +330,7 @@ animations = Dictionary[NodePath, String]({
 NodePath("../Boss"): "talk",
 NodePath("../Stark"): "lookup"
 })
-content = "leave"
+content = "leave leave leave"
 duration = 1.0
 metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
