@@ -40,6 +40,7 @@ func _process(delta: float):
 			if LangaugeGlobals.player_dictionary.has(gleepword):
 				if aliases.has(LangaugeGlobals.player_dictionary[gleepword]):
 					emit_signal("satisfied")
+					LangaugeGlobals.add_word_confirmed(gleepword)
 					active = false
 					hide()
 				

@@ -482,6 +482,96 @@ content = "glorp must work"
 duration = 4.0
 metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
+[sub_resource type="Resource" id="Resource_ioblm"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../CyanNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "shakehead",
+NodePath("../PinkNPC"): "idle"
+})
+content = "where office?"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_633kq"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../PinkNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "idle",
+NodePath("../PinkNPC"): "talk"
+})
+content = "we near office"
+duration = 2.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_in1wj"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../CyanNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "talk",
+NodePath("../PinkNPC"): "idle"
+})
+content = "house near office?"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_1hlbf"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../PinkNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "idle",
+NodePath("../PinkNPC"): "talk"
+})
+content = "yes"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_mj128"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../CyanNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "talk",
+NodePath("../PinkNPC"): "idle"
+})
+content = "glorp must leave house"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_tyi3v"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../CyanNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "talk",
+NodePath("../PinkNPC"): "idle"
+})
+content = "glorp get office work"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_13328"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../CyanNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "talk",
+NodePath("../PinkNPC"): "idle"
+})
+content = "glorp get work money"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_mtghd"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../CyanNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "idle",
+NodePath("../PinkNPC"): "idle"
+})
+content = "we must get milk"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mj128"]
+
 [node name="RoomateHouse" type="Node2D" unique_id=848884293]
 y_sort_enabled = true
 script = ExtResource("1_7ofkf")
@@ -572,6 +662,19 @@ word = "work"
 instructions = "It looks like the humans want you to \"get\" this... What do you think it means? Guess by clicking it in the dictionary (press Q). You can talk to them to hear the conversation again. It’s best to try to guess some other words first. Also, you can inspect the room for clues…"
 aliases = ["job", "work", "hire", "jobs"]
 
+[node name="Questioner2" parent="CanvasLayer" unique_id=1544470291 instance=ExtResource("20_gu4tk")]
+z_index = 99
+word = "office"
+instructions = "You need to find work, that's right! Now talk to the blue person to find out what this next symbol means."
+aliases = ["job", "work", "hire", "jobs"]
+
+[node name="DialogManager2" parent="." unique_id=1395274674 instance=ExtResource("13_aesho")]
+data = Array[ExtResource("18_rxgj1")]([SubResource("Resource_ioblm"), SubResource("Resource_633kq"), SubResource("Resource_in1wj"), SubResource("Resource_1hlbf"), SubResource("Resource_mj128"), SubResource("Resource_tyi3v"), SubResource("Resource_13328"), SubResource("Resource_mtghd")])
+
+[node name="FinalNPC" parent="." unique_id=1187619114 instance=ExtResource("6_jj6hg")]
+position = Vector2(232, -78)
+spriteframes = SubResource("SpriteFrames_mj128")
+
 [connection signal="talk" from="PinkNPC" to="DialogManager" method="start_dialog"]
 [connection signal="talk" from="NPC2" to="Milk Overlay" method="appear"]
 [connection signal="talk" from="NPC4" to="Money Overlay" method="appear"]
@@ -583,3 +686,6 @@ aliases = ["job", "work", "hire", "jobs"]
 [connection signal="finished" from="DialogManager" to="." method="_on_dialog_manager_finished"]
 [connection signal="finished" from="DialogManager" to="PinkNPC" method="finished_dialog"]
 [connection signal="satisfied" from="CanvasLayer/Questioner" to="." method="_on_questioner_satisfied"]
+[connection signal="satisfied" from="CanvasLayer/Questioner2" to="." method="_on_questioner_satisfied"]
+[connection signal="finished" from="DialogManager2" to="FinalNPC" method="finished_dialog"]
+[connection signal="talk" from="FinalNPC" to="DialogManager2" method="start_dialog"]

@@ -1,5 +1,7 @@
 extends Node2D
 @onready var questioner = $CanvasLayer/Questioner
+@onready var questioner2 = $CanvasLayer/Questioner2
+@onready var final_npc = $FinalNPC
 
 
 var flags = [false, false, false]
@@ -33,4 +35,9 @@ func _on_money_overlay_finished():
 func _on_questioner_satisfied():
 	stage = 2
 	print("yeah")
-	dic
+	$DictionaryManager.force_close = true
+	questioner.queue_free()
+	questioner2.activate()
+	get_tree().get_first_node_in_group("player").can_move = false
+	final_npc.position = Vector2(230, 70)
+	
