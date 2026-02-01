@@ -54,7 +54,6 @@ func _ready() -> void:
 			LangaugeGlobals.add_word_confirmed("uum")
 			$Wife.play("wife")
 			await $Wife.animation_finished
-			pass #DO THE WIFE ANIMATION
 		if wrong_answers > 2:
 			get_tree().change_scene_to_file("res://rooms/failure.tscn")
 			return
