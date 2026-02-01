@@ -12,6 +12,7 @@ extends Node
 @onready var complete = false
 var speech_bubble = preload("res://objects/speech_bubble.tscn")
 signal finished
+signal newline
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,7 +52,10 @@ func start_dialog():
 		audio_stream_player.play_3()
 		await new_bubble.destroy_timer.timeout
 		curr_line += 1
+		emit_signal("newline")
 	complete = true
 	emit_signal("finished")
 	curr_line = 0
+	
+	if get_parent().name == "Train": get_tree().change_scene_to_file("res://rooms/victory.tscn")
 	
