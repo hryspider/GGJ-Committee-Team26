@@ -50,11 +50,11 @@ var confirmed_words = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	mentioned_words += confirmed_words
 	for k in english_to_gleep.keys():
 		gleep_to_english[english_to_gleep[k]] = k
 	for w in initial_words:
 		confirmed_words.append(english_to_gleep[w])
+	mentioned_words += confirmed_words
 
 func get_player_guess(gleep) -> String:
 	if player_dictionary.has(gleep): return player_dictionary[gleep]

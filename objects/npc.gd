@@ -25,6 +25,7 @@ func _process(delta):
 		player.can_move = false
 		talking = true
 		emit_signal("talk")
+		LangaugeGlobals.spawn_talk_selector()
 
 func play(anim):
 	animated_sprite_2d.play(anim)
@@ -39,7 +40,6 @@ func _on_area_2d_body_exited(body):
 func finished_dialog():
 	talking = false
 	get_tree().get_first_node_in_group("player").can_move = true
-	LangaugeGlobals.spawn_talk_selector()
 
 
 func _on_dialog_manager_pink_finished() -> void:
