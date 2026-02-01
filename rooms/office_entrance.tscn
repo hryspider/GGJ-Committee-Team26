@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bf44lvopd5hap" path="res://objects/glorp.tscn" id="6_daa5c"]
 [ext_resource type="AudioStream" uid="uid://dkae7lct54kbo" path="res://audio/sfx/14857__lg__office02.ogg" id="7_daa5c"]
 [ext_resource type="Texture2D" uid="uid://dofwuc4eiqjdq" path="res://images/boss_overworld.png" id="8_r2o6t"]
+[ext_resource type="PackedScene" uid="uid://xkq5i27mugvc" path="res://ui/dialogmanager.tscn" id="9_crxjg"]
+[ext_resource type="Script" uid="uid://dy6gk2wb21yf2" path="res://ui/dialogline.gd" id="10_x8mea"]
+[ext_resource type="PackedScene" uid="uid://b52srq1yj0mr5" path="res://ui/dictionary_manager.tscn" id="11_x8mea"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2o6t"]
 texture = ExtResource("1_buiua")
@@ -180,6 +183,34 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="Resource" id="Resource_b2idv"]
+script = ExtResource("10_x8mea")
+speaker = NodePath("../Stark")
+content = "hello"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_crxjg"]
+script = ExtResource("10_x8mea")
+speaker = NodePath("../Stark")
+content = "me no work"
+duration = 2.5
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_x8mea"]
+script = ExtResource("10_x8mea")
+speaker = NodePath("../Stark")
+content = "boss at office"
+duration = 2.5
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_oj7cl"]
+script = ExtResource("10_x8mea")
+speaker = NodePath("../Stark")
+content = "boss bad"
+duration = 2.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
 [node name="Node2D" type="Node2D" unique_id=1203436009]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=14837295]
@@ -192,7 +223,7 @@ layer_0/tile_data = PackedInt32Array(0, 65537, 65536, 7, 1, 268435456, 65543, 1,
 position = Vector2(289, 81.5)
 texture = ExtResource("2_7svm4")
 
-[node name="NPC" parent="." unique_id=1006169553 instance=ExtResource("3_jrkp6")]
+[node name="Stark" parent="." unique_id=1006169553 instance=ExtResource("3_jrkp6")]
 position = Vector2(224, 87.5)
 spriteframes = SubResource("SpriteFrames_pv5sg")
 
@@ -207,8 +238,15 @@ position = Vector2(35, 123)
 stream = ExtResource("7_daa5c")
 autoplay = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1119054125]
+[node name="Boss" type="AnimatedSprite2D" parent="." unique_id=1119054125]
 position = Vector2(-260, -53)
 sprite_frames = SubResource("SpriteFrames_ssgpd")
-animation = &"walk"
-frame_progress = 0.32935566
+animation = &"talk"
+frame_progress = 0.09334179
+
+[node name="SoloStarkCtscn" parent="." unique_id=515690549 instance=ExtResource("9_crxjg")]
+data = Array[ExtResource("10_x8mea")]([SubResource("Resource_b2idv"), SubResource("Resource_crxjg"), SubResource("Resource_x8mea"), SubResource("Resource_oj7cl")])
+
+[node name="DictionaryManager" parent="." unique_id=925600434 instance=ExtResource("11_x8mea")]
+
+[connection signal="talk" from="Stark" to="Stark" method="start_dialog"]
