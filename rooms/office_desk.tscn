@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://daan3m16pogfl" path="res://images/boss_desk.png" id="4_nmfii"]
 [ext_resource type="Texture2D" uid="uid://di3xtisq8b4yo" path="res://images/cherished.png" id="5_5wjrh"]
 [ext_resource type="PackedScene" uid="uid://xkq5i27mugvc" path="res://ui/dialogmanager.tscn" id="7_ljy0p"]
-[ext_resource type="PackedScene" path="res://ui/questioner.tscn" id="8_nmfii"]
+[ext_resource type="PackedScene" uid="uid://b7fney6u15mkr" path="res://ui/questioner.tscn" id="8_nmfii"]
 [ext_resource type="PackedScene" uid="uid://b52srq1yj0mr5" path="res://ui/dictionary_manager.tscn" id="9_5wjrh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r2o6t"]

@@ -10,9 +10,11 @@ extends Node2D
 	$DialogManager7,
 	$DialogManager8
 ]
-@onready var questioners = [
-	$QuestionerCanvas
-]
+
+@onready var questioner_scene = preload("res://ui/questioner.tscn")
+
+var current_quest = null
+
 var questioner_words = [
 	LangaugeGlobals.english_to_gleep[""],
 	LangaugeGlobals.english_to_gleep[""],
@@ -29,9 +31,9 @@ var current_step = 0
 
 func run_step():
 	await dialog_managers[current_step].start_dialog()
-	var this_quest = questioners[current_step]
-	var this_data = questioner_data[current_step]
-	this_quest.word = questioners[current_step]
+	current_quest = questioner_scene.instantiate()
+	current_quest.word = questioner_words[current_step]
+	current_quest.aliases = questioner_aliases[current_step]
 	
 
 # Called when the node enters the scene tree for the first time.
