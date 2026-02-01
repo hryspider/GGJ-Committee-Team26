@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://dtcmedxcjafl3"]
+
+[ext_resource type="Script" uid="uid://cse7prtcttyjw" path="res://ui/word_popup.gd" id="1_7curc"]
+[ext_resource type="FontFile" uid="uid://bheug0blsloux" path="res://text/retro-pixel-thick.ttf" id="1_u25wx"]
+[ext_resource type="FontFile" uid="uid://cpr4cgq64ufh" path="res://text/GloopGleep.ttf" id="2_7curc"]
+
+[sub_resource type="Animation" id="Animation_uhgyn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_wbfj3"]
+resource_name = "popup"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.23333333, 0.33333334, 0.73333335, 1.4333333),
+"transitions": PackedFloat32Array(4.2870927, 0.5, -2, 1, 3, 1),
+"update": 0,
+"values": [Vector2(0, -35), Vector2(0, 0), Vector2(0, -10), Vector2(0, 0), Vector2(0, 0), Vector2(-200, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_taq3l"]
+_data = {
+&"RESET": SubResource("Animation_uhgyn"),
+&"popup": SubResource("Animation_wbfj3")
+}
+
+[node name="WordPopup" type="Node2D" unique_id=1522776289]
+z_index = 999
+script = ExtResource("1_7curc")
+
+[node name="Label" type="Label" parent="." unique_id=96101215]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 143.0
+offset_bottom = 26.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_u25wx")
+text = "New word confirmed!"
+
+[node name="Word" type="Label" parent="." unique_id=404767419]
+offset_left = 3.0
+offset_top = 19.0
+offset_right = 143.0
+offset_bottom = 42.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_7curc")
+text = "asd"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1094740423]
+libraries/ = SubResource("AnimationLibrary_taq3l")
