@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bb4duxx2x4j83"]
 
 [ext_resource type="Texture2D" uid="uid://c316mdj02xdch" path="res://images/title_screen/hello.png" id="1_puy4s"]
+[ext_resource type="Script" uid="uid://do23qkb0n0y10" path="res://rooms/title_screen.gd" id="1_xsskv"]
 [ext_resource type="Script" uid="uid://dop0qqmmwty3u" path="res://rooms/button.gd" id="2_rgemh"]
 
 [node name="Control" type="Control" unique_id=1745649473]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xsskv")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=640183750]
 layout_mode = 1
@@ -43,6 +45,7 @@ text = "Proceed"
 script = ExtResource("2_rgemh")
 
 [node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1467249269]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Settings"
@@ -53,3 +56,4 @@ size_flags_horizontal = 4
 text = "Quit"
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Button" to="MarginContainer/HBoxContainer/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Button3" to="." method="quit"]
