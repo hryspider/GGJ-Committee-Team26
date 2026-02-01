@@ -17,7 +17,7 @@ func set_text(new_text):
 	for i in range(len(runes)):
 		if i < len(words):
 			var w = words[i]
-			runes[i].set_rune_text(LangaugeGlobals.english_to_gleep[w])
+			runes[i].set_rune_text(LangaugeGlobals.english_to_gleep.get(w, ""))
 			runes[i].set_text_overlay("")
 		else:
 			runes.pop_back().queue_free()
