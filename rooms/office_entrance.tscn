@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://xkq5i27mugvc" path="res://ui/dialogmanager.tscn" id="9_crxjg"]
 [ext_resource type="Script" uid="uid://dy6gk2wb21yf2" path="res://ui/dialogline.gd" id="10_x8mea"]
 [ext_resource type="PackedScene" uid="uid://b52srq1yj0mr5" path="res://ui/dictionary_manager.tscn" id="11_x8mea"]
+[ext_resource type="Script" uid="uid://diml3436rvtyt" path="res://ui/transition.gd" id="12_b2idv"]
+[ext_resource type="PackedScene" uid="uid://bmso2il7x6ei0" path="res://rooms/office_desk.tscn" id="13_oj7cl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2o6t"]
 texture = ExtResource("1_buiua")
@@ -180,7 +182,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 3.0
+"speed": 15.0
 }]
 
 [sub_resource type="Resource" id="Resource_b2idv"]
@@ -211,6 +213,127 @@ content = "boss bad"
 duration = 2.0
 metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
+[sub_resource type="Resource" id="Resource_fwgqt"]
+script = ExtResource("10_x8mea")
+speaker = NodePath("../Boss")
+animations = Dictionary[NodePath, String]({
+NodePath("../Boss"): "talk",
+NodePath("../Stark"): "lookup"
+})
+content = "hello"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_rq21w"]
+script = ExtResource("10_x8mea")
+speaker = NodePath("../Stark")
+animations = Dictionary[NodePath, String]({
+NodePath("../Boss"): "idle",
+NodePath("../Stark"): "lookuptalk"
+})
+content = "hello"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_pv5sg"]
+script = ExtResource("10_x8mea")
+speaker = NodePath("../Boss")
+animations = Dictionary[NodePath, String]({
+NodePath("../Boss"): "talk",
+NodePath("../Stark"): "lookup"
+})
+content = "you work?"
+duration = 2.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_vdahv"]
+script = ExtResource("10_x8mea")
+speaker = NodePath("../Stark")
+animations = Dictionary[NodePath, String]({
+NodePath("../Boss"): "idle",
+NodePath("../Stark"): "lookuptalk"
+})
+content = "yes"
+duration = 2.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_2fp6q"]
+script = ExtResource("10_x8mea")
+speaker = NodePath("../Stark")
+animations = Dictionary[NodePath, String]({
+NodePath("../Boss"): "idle",
+NodePath("../Stark"): "lookuptalk"
+})
+content = "me work good"
+duration = 3.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_rv64t"]
+script = ExtResource("10_x8mea")
+speaker = NodePath("../Boss")
+animations = Dictionary[NodePath, String]({
+NodePath("../Boss"): "talk",
+NodePath("../Stark"): "lookup"
+})
+content = "no"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_oh5vr"]
+script = ExtResource("10_x8mea")
+speaker = NodePath("../Boss")
+animations = Dictionary[NodePath, String]({
+NodePath("../Boss"): "talk",
+NodePath("../Stark"): "lookup"
+})
+content = "you work bad"
+duration = 2.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_ssgpd"]
+script = ExtResource("10_x8mea")
+speaker = NodePath("../Boss")
+animations = Dictionary[NodePath, String]({
+NodePath("../Boss"): "point",
+NodePath("../Stark"): "idle"
+})
+content = "you love beer"
+duration = 3.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_y4ogb"]
+script = ExtResource("10_x8mea")
+speaker = NodePath("../Boss")
+animations = Dictionary[NodePath, String]({
+NodePath("../Boss"): "point",
+NodePath("../Stark"): "lookup"
+})
+content = "leave"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_g8xf8"]
+script = ExtResource("10_x8mea")
+speaker = NodePath("../Stark")
+animations = Dictionary[NodePath, String]({
+NodePath("../Boss"): "idle",
+NodePath("../Stark"): "lookuptalk"
+})
+content = "no"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_54ptg"]
+script = ExtResource("10_x8mea")
+speaker = NodePath("../Boss")
+animations = Dictionary[NodePath, String]({
+NodePath("../Boss"): "talk",
+NodePath("../Stark"): "lookup"
+})
+content = "leave"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
 [sub_resource type="Animation" id="Animation_x8mea"]
 length = 0.001
 tracks/0/type = "value"
@@ -237,6 +360,30 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Stark:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(224, 87.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Area2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(382, -43)]
+}
 
 [sub_resource type="Animation" id="Animation_b2idv"]
 resource_name = "boss_walk_in"
@@ -261,7 +408,7 @@ tracks/1/path = NodePath("Boss:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -301,11 +448,102 @@ tracks/3/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_oj7cl"]
+resource_name = "stark_leave"
+length = 3.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Stark:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(224, 87.5), Vector2(-70, 87.5)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Stark")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["walkaway"],
+"method": &"play"
+}, {
+"args": [],
+"method": &"finished_dialog"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Boss")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"idle", 1.0, false],
+"method": &"play"
+}, {
+"args": [&"walk", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Boss:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Boss:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 3.0314326, 1, 1),
+"update": 0,
+"values": [Vector2(100, 100), Vector2(100, 100), Vector2(380, 100), Vector2(380, -400)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Area2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(382, -43), Vector2(382, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oj7cl"]
 _data = {
 &"RESET": SubResource("Animation_x8mea"),
-&"boss_walk_in": SubResource("Animation_b2idv")
+&"boss_walk_in": SubResource("Animation_b2idv"),
+&"stark_leave": SubResource("Animation_oj7cl")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwgqt"]
+size = Vector2(157, 48)
 
 [node name="Node2D" type="Node2D" unique_id=1203436009]
 
@@ -337,8 +575,7 @@ autoplay = true
 [node name="Boss" type="AnimatedSprite2D" parent="." unique_id=1119054125]
 position = Vector2(-260, -53)
 sprite_frames = SubResource("SpriteFrames_ssgpd")
-animation = &"idle"
-frame_progress = 0.6974996
+animation = &"talk"
 
 [node name="SoloStarkCtscn" parent="." unique_id=515690549 instance=ExtResource("9_crxjg")]
 data = Array[ExtResource("10_x8mea")]([SubResource("Resource_b2idv"), SubResource("Resource_crxjg"), SubResource("Resource_x8mea"), SubResource("Resource_oj7cl")])
@@ -346,9 +583,20 @@ data = Array[ExtResource("10_x8mea")]([SubResource("Resource_b2idv"), SubResourc
 [node name="DictionaryManager" parent="." unique_id=925600434 instance=ExtResource("11_x8mea")]
 
 [node name="BossCtscn" parent="." unique_id=90384605 instance=ExtResource("9_crxjg")]
+data = Array[ExtResource("10_x8mea")]([SubResource("Resource_fwgqt"), SubResource("Resource_rq21w"), SubResource("Resource_pv5sg"), SubResource("Resource_vdahv"), SubResource("Resource_2fp6q"), SubResource("Resource_rv64t"), SubResource("Resource_oh5vr"), SubResource("Resource_ssgpd"), SubResource("Resource_y4ogb"), SubResource("Resource_g8xf8"), SubResource("Resource_54ptg")])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1978787262]
 libraries/ = SubResource("AnimationLibrary_oj7cl")
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1183751259]
+position = Vector2(382, -43)
+script = ExtResource("12_b2idv")
+destination = ExtResource("13_oj7cl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1456851776]
+shape = SubResource("RectangleShape2D_fwgqt")
+
 [connection signal="talk" from="Stark" to="SoloStarkCtscn" method="start_dialog"]
 [connection signal="finished" from="SoloStarkCtscn" to="AnimationPlayer" method="play" binds= ["boss_walk_in"]]
+[connection signal="finished" from="BossCtscn" to="AnimationPlayer" method="play" binds= ["stark_leave"]]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="transition"]
