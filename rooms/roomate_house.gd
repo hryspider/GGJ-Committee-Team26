@@ -1,16 +1,35 @@
 extends Node2D
+@onready var questioner = $CanvasLayer/Questioner
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var flags = [false, false, false]
+var stage = 0
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func check_flags():
+	if flags == [true, true, true] and stage == 0:
+		questioner.activate()
+		get_tree().get_first_node_in_group("player").can_move = false
+		stage = 1
 
-func check_actions_complete():
-	var done = true
-	for npc in get_tree().get_nodes_in_group("dialogmanager"):
-		done &= npc.complete
+func _on_dialog_manager_finished():
+	flags[0] = true
+	check_flags()
+
+
+func _on_milk_overlay_finished():
+	flags[1] = true
+	check_flags()
+
+
+func _on_money_overlay_finished():
+	flags[2] = true
+	check_flags()
+
+
+		
+
+
+func _on_questioner_satisfied():
+	stage = 2
+	print("yeah")

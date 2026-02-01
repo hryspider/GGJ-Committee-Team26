@@ -12,7 +12,8 @@
 [ext_resource type="Script" uid="uid://dy6gk2wb21yf2" path="res://ui/dialogline.gd" id="10_x8mea"]
 [ext_resource type="PackedScene" uid="uid://b52srq1yj0mr5" path="res://ui/dictionary_manager.tscn" id="11_x8mea"]
 [ext_resource type="Script" uid="uid://diml3436rvtyt" path="res://ui/transition.gd" id="12_b2idv"]
-[ext_resource type="PackedScene" uid="uid://bmso2il7x6ei0" path="res://rooms/office_desk.tscn" id="13_oj7cl"]
+[ext_resource type="PackedScene" uid="uid://bi3crvixcrebg" path="res://rooms/office_desk.tscn" id="13_oj7cl"]
+[ext_resource type="PackedScene" uid="uid://cxi1s7yovutcc" path="res://ui/beer_overlay.tscn" id="14_fwgqt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2o6t"]
 texture = ExtResource("1_buiua")
@@ -330,7 +331,7 @@ animations = Dictionary[NodePath, String]({
 NodePath("../Boss"): "talk",
 NodePath("../Stark"): "lookup"
 })
-content = "leave"
+content = "leave leave leave"
 duration = 1.0
 metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
@@ -545,6 +546,8 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwgqt"]
 size = Vector2(157, 48)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_fwgqt"]
+
 [node name="Node2D" type="Node2D" unique_id=1203436009]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=14837295]
@@ -554,7 +557,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(0, 65537, 65536, 7, 1, 268435456, 65543, 1, 268435456, 131079, 1, 268435456, 196615, 65537, 65536, 196614, 1, 1879048192, 196613, 1, 1879048192, 196612, 1, 1879048192, 196611, 1, 1879048192, 196610, 1, 1879048192, 196609, 1, 1879048192, 196608, 1, 1879048192, 131072, 65537, 0, 131073, 65537, 0, 131074, 65537, 0, 131075, 65537, 0, 131076, 65537, 0, 131077, 65537, 0, 131078, 65537, 0, 65542, 65537, 0, 6, 65537, 0, 5, 65537, 0, 4, 1, 0, 3, 1, 1342177280, 2, 1, 1342177280, 1, 1, 1342177280, 65537, 65537, 0, 65538, 65537, 0, 65539, 65537, 0, 65540, 65537, 0, 65541, 65537, 0, 65536, 1, 1342177280, 65535, 65537, 65536, -65531, 1, 1342177280, -65530, 1, 1342177280, 196607, 1, 1342177280, 262144, 65537, 65536, 262145, 65537, 65536, 262146, 65537, 65536, 262147, 65537, 65536, 262148, 65537, 65536, 262149, 65537, 65536, 262150, 65537, 65536, 262151, 65537, 65536)
 
 [node name="Beer" type="Sprite2D" parent="." unique_id=235881280]
-position = Vector2(289, 81.5)
+position = Vector2(333.5, 96.5)
 texture = ExtResource("2_7svm4")
 
 [node name="Stark" parent="." unique_id=1006169553 instance=ExtResource("3_jrkp6")]
@@ -596,7 +599,16 @@ destination = ExtResource("13_oj7cl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1456851776]
 shape = SubResource("RectangleShape2D_fwgqt")
 
+[node name="NPC" parent="." unique_id=1157126481 instance=ExtResource("3_jrkp6")]
+position = Vector2(333.5, 99)
+spriteframes = SubResource("SpriteFrames_fwgqt")
+
+[node name="Beer Overlay" parent="." unique_id=49455143 instance=ExtResource("14_fwgqt")]
+visible = false
+
 [connection signal="talk" from="Stark" to="SoloStarkCtscn" method="start_dialog"]
 [connection signal="finished" from="SoloStarkCtscn" to="AnimationPlayer" method="play" binds= ["boss_walk_in"]]
 [connection signal="finished" from="BossCtscn" to="AnimationPlayer" method="play" binds= ["stark_leave"]]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="transition"]
+[connection signal="talk" from="NPC" to="Beer Overlay" method="appear"]
+[connection signal="finished" from="Beer Overlay" to="NPC" method="finished_dialog"]

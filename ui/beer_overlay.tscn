@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cxi1s7yovutcc"]
+
+[ext_resource type="Script" uid="uid://s5h05twrmbuc" path="res://objects/overlay.gd" id="1_c6876"]
+[ext_resource type="Material" uid="uid://v34j4uwqvkvk" path="res://shaders/pixel_jitter_material.tres" id="2_qf51l"]
+[ext_resource type="Shader" uid="uid://btxr4e7dfnmlk" path="res://shaders/pixel_jitter.gdshader" id="3_g5hlc"]
+[ext_resource type="Texture2D" uid="uid://covlcq568bg7j" path="res://images/beerbg.png" id="3_qf51l"]
+[ext_resource type="Texture2D" uid="uid://bx61g7an5fuee" path="res://images/beerhands.png" id="5_p3vkp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qf51l"]
+shader = ExtResource("3_g5hlc")
+
+[node name="Beer Overlay" type="CanvasGroup" unique_id=49455143]
+z_index = 999
+script = ExtResource("1_c6876")
+words_learned = Array[String](["cc"])
+
+[node name="Beerbg" type="Sprite2D" parent="." unique_id=609745426]
+material = ExtResource("2_qf51l")
+instance_shader_parameters/localjitterscale = -1.0
+texture = ExtResource("3_qf51l")
+centered = false
+
+[node name="Beerhand" type="Sprite2D" parent="." unique_id=943507470]
+material = SubResource("ShaderMaterial_qf51l")
+position = Vector2(202, 154)
+texture = ExtResource("5_p3vkp")

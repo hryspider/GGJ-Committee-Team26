@@ -8,12 +8,12 @@ friction = 0.59
 bounce = 0.65
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_31lh2"]
-radius = 41.0
-height = 98.0
+radius = 26.0
+height = 72.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2gwdq"]
-radius = 33.0
-height = 72.0
+radius = 24.0
+height = 48.0
 
 [node name="DictionaryRune" type="RigidBody2D" unique_id=82018957]
 scale = Vector2(0.5, 0.5)
@@ -23,14 +23,27 @@ script = ExtResource("1_31lh2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=109208763]
 rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
 shape = SubResource("CapsuleShape2D_31lh2")
 
 [node name="Rune" parent="." unique_id=1261957074 instance=ExtResource("1_n8142")]
-offset_top = -2.0
-offset_bottom = -2.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.000002
+offset_top = -10.000001
+offset_right = 78.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+pivot_offset_ratio = Vector2(0, 0)
 metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1757229246]
+scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1401405003]
 rotation = 1.5707964
