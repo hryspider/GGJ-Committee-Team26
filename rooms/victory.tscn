@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://dqjqd63vru0b6"]
+
+[ext_resource type="Material" uid="uid://mnx2ug0qmck6" path="res://shaders/background_material.tres" id="1_eldbo"]
+[ext_resource type="Texture2D" uid="uid://bd5fywco1xi42" path="res://images/ui/white_background.png" id="2_lxfjm"]
+[ext_resource type="Shader" uid="uid://btxr4e7dfnmlk" path="res://shaders/pixel_jitter.gdshader" id="3_355tr"]
+[ext_resource type="FontFile" uid="uid://bheug0blsloux" path="res://text/retro-pixel-thick.ttf" id="4_hen07"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_unp1r"]
+shader = ExtResource("3_355tr")
+
+[node name="Control" type="Control" unique_id=601015252]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1983883595]
+material = ExtResource("1_eldbo")
+instance_shader_parameters/primary_color = Color(0, 0.8393933, 0, 1)
+instance_shader_parameters/secondary_color = Color(0.19215687, 1, 0, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_lxfjm")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=1438637886]
+material = SubResource("ShaderMaterial_unp1r")
+instance_shader_parameters/color = Color(0, 0, 0, 1)
+instance_shader_parameters/localjitterrate = 10.835
+instance_shader_parameters/localjitterscale = 9.545
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -151.5
+offset_top = 4.0
+offset_right = 151.5
+offset_bottom = 102.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_hen07")
+theme_override_font_sizes/font_size = 77
+text = "gleep!!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="TextureRect" unique_id=133112084]
+material = SubResource("ShaderMaterial_unp1r")
+instance_shader_parameters/color = Color(0, 0, 0, 1)
+instance_shader_parameters/localjitterrate = -7.2
+instance_shader_parameters/localjitterscale = 0.92
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -157.5
+offset_top = -172.0
+offset_right = 157.5
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_hen07")
+theme_override_font_sizes/font_size = 20
+text = "You were able to mask yourself,
+successfully becoming a member
+of human society..."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="TextureRect/Label2" unique_id=212686995]
+material = SubResource("ShaderMaterial_unp1r")
+instance_shader_parameters/color = Color(0, 0, 0, 1)
+instance_shader_parameters/localjitterrate = -7.2
+instance_shader_parameters/localjitterscale = 0.92
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -157.0
+offset_top = 8.0
+offset_right = 158.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_hen07")
+theme_override_font_sizes/font_size = 20
+text = "By Harry, Anton and Zac
+GGJ 2026"
+horizontal_alignment = 1

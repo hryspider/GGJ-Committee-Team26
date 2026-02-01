@@ -1,14 +1,19 @@
-[gd_scene format=3 uid="uid://cqqw11p4qg36u"]
+[gd_scene format=3 uid="uid://cc543m6lq2hgw"]
 
 [ext_resource type="Texture2D" uid="uid://blto0kjofcnyb" path="res://images/train.png" id="1_3mu53"]
+[ext_resource type="Script" uid="uid://bv5l7yneojvvu" path="res://rooms/train.gd" id="1_sbr4p"]
 [ext_resource type="Script" uid="uid://kp6pgxri0cns" path="res://objects/randomjitter.gd" id="2_51f8d"]
 [ext_resource type="Texture2D" uid="uid://do7yrsa5j0jej" path="res://images/trainmountains.png" id="3_51f8d"]
 [ext_resource type="Texture2D" uid="uid://b6jq7u41vdf5x" path="res://images/trainsky.png" id="3_nkojg"]
-[ext_resource type="Script" uid="uid://cfqn3kno76ykh" path="res://objects/parallax.gd" id="4_hapkl"]
+[ext_resource type="Script" path="res://objects/parallax.gd" id="4_hapkl"]
 [ext_resource type="Texture2D" uid="uid://em0akcqb3k51" path="res://images/traingrass.png" id="4_nkojg"]
 [ext_resource type="Texture2D" uid="uid://bcdicsr7l0xen" path="res://images/lvl3chair.png" id="7_hapkl"]
 [ext_resource type="Texture2D" uid="uid://dca043ly81rrx" path="res://images/trainguy.png" id="8_jp836"]
 [ext_resource type="Texture2D" uid="uid://dg4bqdcm1anr5" path="res://images/milk.png" id="9_yibk6"]
+[ext_resource type="Script" uid="uid://beoaf3u2wx8co" path="res://rooms/animated_sprite_2d.gd" id="10_fy8s7"]
+[ext_resource type="PackedScene" path="res://ui/dialogmanager.tscn" id="10_xgass"]
+[ext_resource type="Script" path="res://ui/dialogline.gd" id="12_sbr4p"]
+[ext_resource type="PackedScene" uid="uid://bf44lvopd5hap" path="res://objects/glorp.tscn" id="13_kkx3h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xgass"]
 atlas = ExtResource("8_jp836")
@@ -113,7 +118,104 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_kkx3h"]
+script = ExtResource("12_sbr4p")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "talk"
+})
+content = "hello"
+duration = 5.0
+
+[sub_resource type="Resource" id="Resource_fy8s7"]
+script = ExtResource("12_sbr4p")
+speaker = NodePath("../AnimatedSprite2D")
+content = "me go house"
+duration = 5.0
+
+[sub_resource type="Resource" id="Resource_iw8hl"]
+script = ExtResource("12_sbr4p")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "happy"
+})
+content = "me love milk"
+duration = 5.0
+
+[sub_resource type="Resource" id="Resource_j80o0"]
+script = ExtResource("12_sbr4p")
+speaker = NodePath("../AnimatedSprite2D")
+content = "you have milk?"
+duration = 5.0
+
+[sub_resource type="Resource" id="Resource_qfbrt"]
+script = ExtResource("12_sbr4p")
+speaker = NodePath("../AnimatedSprite2D")
+content = "me wife no love milk"
+duration = 5.0
+
+[sub_resource type="Resource" id="Resource_b1ba3"]
+script = ExtResource("12_sbr4p")
+speaker = NodePath("../AnimatedSprite2D")
+content = "me wife leave me"
+duration = 5.0
+
+[sub_resource type="Resource" id="Resource_b2xd5"]
+script = ExtResource("12_sbr4p")
+speaker = NodePath("../AnimatedSprite2D")
+content = "me no wife"
+duration = 5.0
+
+[sub_resource type="Resource" id="Resource_y6ju7"]
+script = ExtResource("12_sbr4p")
+speaker = NodePath("../AnimatedSprite2D")
+content = "you leave office?"
+duration = 5.0
+
+[sub_resource type="Resource" id="Resource_gbvhv"]
+script = ExtResource("12_sbr4p")
+speaker = NodePath("../AnimatedSprite2D")
+content = "me no love work"
+duration = 5.0
+
+[sub_resource type="Resource" id="Resource_8bvjl"]
+script = ExtResource("12_sbr4p")
+speaker = NodePath("../AnimatedSprite2D")
+content = "me boss bad"
+duration = 5.0
+
+[sub_resource type="Resource" id="Resource_j8l6x"]
+script = ExtResource("12_sbr4p")
+speaker = NodePath("../AnimatedSprite2D")
+content = "but me get money"
+duration = 5.0
+
+[sub_resource type="Resource" id="Resource_pb7uv"]
+script = ExtResource("12_sbr4p")
+speaker = NodePath("../AnimatedSprite2D")
+content = "me no know love"
+duration = 5.0
+
+[sub_resource type="Resource" id="Resource_xsbws"]
+script = ExtResource("12_sbr4p")
+speaker = NodePath("../AnimatedSprite2D")
+content = "you love me?"
+duration = 5.0
+
+[sub_resource type="Resource" id="Resource_giim7"]
+script = ExtResource("12_sbr4p")
+speaker = NodePath("../AnimatedSprite2D")
+content = "we get beer?"
+duration = 5.0
+
+[sub_resource type="Resource" id="Resource_q1shn"]
+script = ExtResource("12_sbr4p")
+speaker = NodePath("../AnimatedSprite2D")
+content = "fuck yes!"
+duration = 5.0
+
 [node name="Train" type="Node2D" unique_id=1352542439]
+script = ExtResource("1_sbr4p")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=398356781]
 texture_repeat = 2
@@ -175,8 +277,16 @@ flip_h = true
 position = Vector2(158, 131)
 sprite_frames = SubResource("SpriteFrames_j80o0")
 animation = &"happy"
-frame_progress = 0.19751908
+script = ExtResource("10_fy8s7")
 
 [node name="Milk" type="Sprite2D" parent="." unique_id=803308898]
 position = Vector2(273, 178)
 texture = ExtResource("9_yibk6")
+
+[node name="DialogManager" parent="." unique_id=515690549 instance=ExtResource("10_xgass")]
+data = Array[ExtResource("12_sbr4p")]([SubResource("Resource_kkx3h"), SubResource("Resource_fy8s7"), SubResource("Resource_iw8hl"), SubResource("Resource_j80o0"), SubResource("Resource_qfbrt"), SubResource("Resource_b1ba3"), SubResource("Resource_b2xd5"), SubResource("Resource_y6ju7"), SubResource("Resource_gbvhv"), SubResource("Resource_8bvjl"), SubResource("Resource_j8l6x"), SubResource("Resource_pb7uv"), SubResource("Resource_xsbws"), SubResource("Resource_giim7"), SubResource("Resource_q1shn")])
+
+[node name="Glorp" parent="." unique_id=26475291 instance=ExtResource("13_kkx3h")]
+position = Vector2(303, 103)
+
+[connection signal="newline" from="DialogManager" to="Glorp" method="_on_dialog_manager_newline"]
