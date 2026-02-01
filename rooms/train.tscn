@@ -1,19 +1,20 @@
 [gd_scene format=3 uid="uid://cc543m6lq2hgw"]
 
 [ext_resource type="Texture2D" uid="uid://blto0kjofcnyb" path="res://images/train.png" id="1_3mu53"]
-[ext_resource type="Script" uid="uid://bv5l7yneojvvu" path="res://rooms/train.gd" id="1_sbr4p"]
+[ext_resource type="Script" path="res://rooms/train.gd" id="1_sbr4p"]
 [ext_resource type="Script" uid="uid://kp6pgxri0cns" path="res://objects/randomjitter.gd" id="2_51f8d"]
 [ext_resource type="Texture2D" uid="uid://do7yrsa5j0jej" path="res://images/trainmountains.png" id="3_51f8d"]
 [ext_resource type="Texture2D" uid="uid://b6jq7u41vdf5x" path="res://images/trainsky.png" id="3_nkojg"]
-[ext_resource type="Script" path="res://objects/parallax.gd" id="4_hapkl"]
+[ext_resource type="Script" uid="uid://cfqn3kno76ykh" path="res://objects/parallax.gd" id="4_hapkl"]
 [ext_resource type="Texture2D" uid="uid://em0akcqb3k51" path="res://images/traingrass.png" id="4_nkojg"]
 [ext_resource type="Texture2D" uid="uid://bcdicsr7l0xen" path="res://images/lvl3chair.png" id="7_hapkl"]
 [ext_resource type="Texture2D" uid="uid://dca043ly81rrx" path="res://images/trainguy.png" id="8_jp836"]
 [ext_resource type="Texture2D" uid="uid://dg4bqdcm1anr5" path="res://images/milk.png" id="9_yibk6"]
 [ext_resource type="Script" uid="uid://beoaf3u2wx8co" path="res://rooms/animated_sprite_2d.gd" id="10_fy8s7"]
 [ext_resource type="PackedScene" uid="uid://xkq5i27mugvc" path="res://ui/dialogmanager.tscn" id="10_xgass"]
-[ext_resource type="Script" path="res://ui/dialogline.gd" id="12_sbr4p"]
+[ext_resource type="Script" uid="uid://dy6gk2wb21yf2" path="res://ui/dialogline.gd" id="12_sbr4p"]
 [ext_resource type="PackedScene" uid="uid://bf44lvopd5hap" path="res://objects/glorp.tscn" id="13_kkx3h"]
+[ext_resource type="AudioStream" uid="uid://c1emwp6bn736l" path="res://audio/bgm/train.mp3" id="15_iw8hl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xgass"]
 atlas = ExtResource("8_jp836")
@@ -288,5 +289,11 @@ data = Array[ExtResource("12_sbr4p")]([SubResource("Resource_kkx3h"), SubResourc
 
 [node name="Glorp" parent="." unique_id=26475291 instance=ExtResource("13_kkx3h")]
 position = Vector2(303, 103)
+
+[node name="Train" type="AudioStreamPlayer" parent="." unique_id=934593024]
+stream = ExtResource("15_iw8hl")
+volume_db = -8.0
+pitch_scale = 0.6
+autoplay = true
 
 [connection signal="newline" from="DialogManager" to="Glorp" method="_on_dialog_manager_newline"]
