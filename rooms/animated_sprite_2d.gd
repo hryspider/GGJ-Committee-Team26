@@ -10,7 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if !get_node("../Glorp").is_emotion_valid():
-		suspicion += 0.7
+		suspicion += 0.5
 		suspicion = min(suspicion, 100)
 	else:
 		suspicion -= 0.1
