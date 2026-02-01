@@ -5,7 +5,7 @@ var MAX_LENGTH = 5 #Longest possible guess
 @onready var player_dictionary = {
 }
 
-@onready var english_to_gleep = {'where': 'tmtf', 'me': 'ck', 'know': 'n', 'have': 'la', 'at': 'sla', 'must': 'soa', 'glorp': 'mpt', 'get': 'sh', 'near': 'g', 'we': 'qi', 'here': 'b', 'go': 'kdma', 'but': 's', 'hello': 'ug', 'no': 'ps', 'job': 'hqpu', 'office': 'frh', 'live': 'uuhb', 'yes': 'ffm', 'leave': 'qjh', 'who': 'id', 'milk': 'ce', 'money': 'fd', 'shop': 'do', 'fuck': 'j', 'boss': 'di', 'love': 'ij', 'good': 'sg', 'bad': 'toup', 'beer': 'rg', 'wife': 'kiam'}
+@onready var english_to_gleep = {'where': 'tmtf', 'me': 'ck', 'know': 'n', 'have': 'la', 'at': 'sla', 'must': 'soa', 'glorp': 'mpt', 'get': 'sh', 'near': 'g', 'we': 'qi', 'here': 'b', 'go': 'kdma', 'but': 's', 'hello': 'ug', 'no': 'ps', 'job': 'hqpu', 'office': 'frh', 'live': 'uuhb', 'yes': 'ffm', 'leave': 'qjh', 'who': 'id', 'milk': 'mg', 'money': 'it', 'shop': 'do', 'fuck': 'j', 'boss': 'di', 'love': 'ij', 'good': 'sg', 'bad': 'toup', 'beer': 'rg', 'wife': 'kiam'}
 
 var gleep_to_english = {}
 
@@ -68,6 +68,7 @@ func add_word_mention(gleep):
 func add_word_confirmed(gleep):
 	if gleep_to_english.has(gleep) and not confirmed_words.has(gleep):
 		confirmed_words.append(gleep)
+		WordPopup.unlock(gleep)
 		
 func spawn_questioner(gleep, gleep_aliases):
 	if has_node("Questioner"):

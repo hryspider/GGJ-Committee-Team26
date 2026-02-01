@@ -93,6 +93,10 @@ region = Rect2(390, 0, 78, 106)
 atlas = ExtResource("9_vlxrc")
 region = Rect2(234, 0, 78, 106)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4khp"]
+atlas = ExtResource("9_vlxrc")
+region = Rect2(78, 212, 78, 106)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_oynf4"]
 atlas = ExtResource("9_vlxrc")
 region = Rect2(0, 106, 78, 106)
@@ -159,6 +163,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"point",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4khp")
+}],
+"loop": true,
+"name": &"pointdown",
 "speed": 5.0
 }, {
 "frames": [{
@@ -363,6 +375,17 @@ content = "you have job?"
 duration = 3.0
 metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
+[sub_resource type="Resource" id="Resource_bwj5o"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../PinkNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../PinkNPC"): "sad",
+NodePath("../CyanNPC"): "idle"
+})
+content = "no"
+duration = 2.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
 [sub_resource type="Resource" id="Resource_0wht8"]
 script = ExtResource("18_rxgj1")
 speaker = NodePath("../PinkNPC")
@@ -402,6 +425,69 @@ NodePath("../PinkNPC"): "no"
 })
 content = "no"
 duration = 1.5
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_xx6cq"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../CyanNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../PinkNPC"): "idle",
+NodePath("../CyanNPC"): "angry"
+})
+content = "fuck you"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_1osfp"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../PinkNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../PinkNPC"): "talk"
+})
+content = "glorp must get job"
+duration = 3.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_uyig2"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../CyanNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../PinkNPC"): "idle",
+NodePath("../CyanNPC"): "talk"
+})
+content = "where glorp?"
+duration = 1.5
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_pdrys"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../PinkNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../PinkNPC"): "pointdown",
+NodePath("../CyanNPC"): "idle"
+})
+content = "glorp"
+duration = 1.5
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_e4khp"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../CyanNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "talk"
+})
+content = "glorp must work glorp get job"
+duration = 4.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_ioblm"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../PinkNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../PinkNPC"): "idle",
+NodePath("../CyanNPC"): "idle"
+})
+duration = 2.0
 metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [node name="RoomateHouse" type="Node2D" unique_id=848884293]
@@ -482,7 +568,7 @@ texture = ExtResource("16_rxgj1")
 [node name="DictionaryManager" parent="." unique_id=925600434 instance=ExtResource("17_aesho")]
 
 [node name="DialogManager" parent="." unique_id=167636923 instance=ExtResource("13_aesho")]
-data = Array[ExtResource("18_rxgj1")]([SubResource("Resource_rxgj1"), SubResource("Resource_7ofkf"), SubResource("Resource_gu4tk"), SubResource("Resource_yumyu"), SubResource("Resource_oynf4"), SubResource("Resource_q6hrm"), SubResource("Resource_cxmtu"), SubResource("Resource_gxmdy"), SubResource("Resource_0wht8"), SubResource("Resource_jffb1"), SubResource("Resource_neqdv"), SubResource("Resource_usfno")])
+data = Array[ExtResource("18_rxgj1")]([SubResource("Resource_rxgj1"), SubResource("Resource_7ofkf"), SubResource("Resource_gu4tk"), SubResource("Resource_yumyu"), SubResource("Resource_oynf4"), SubResource("Resource_q6hrm"), SubResource("Resource_cxmtu"), SubResource("Resource_gxmdy"), SubResource("Resource_bwj5o"), SubResource("Resource_0wht8"), SubResource("Resource_jffb1"), SubResource("Resource_neqdv"), SubResource("Resource_usfno"), SubResource("Resource_xx6cq"), SubResource("Resource_1osfp"), SubResource("Resource_uyig2"), SubResource("Resource_pdrys"), SubResource("Resource_e4khp"), SubResource("Resource_ioblm")])
 
 [connection signal="talk" from="PinkNPC" to="DialogManager" method="start_dialog"]
 [connection signal="talk" from="NPC2" to="Milk Overlay" method="appear"]

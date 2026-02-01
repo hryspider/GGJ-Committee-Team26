@@ -66,7 +66,7 @@ _data = {
 }
 
 [node name="WordPopup" type="Node2D" unique_id=1522776289]
-z_index = 999
+z_index = 4096
 script = ExtResource("1_7curc")
 
 [node name="Label" type="Label" parent="." unique_id=96101215]
