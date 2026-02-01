@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://bhegfx40b8v30"]
+
+[ext_resource type="AudioStream" uid="uid://c6qijkm70uh47" path="res://audio/sfx/dialog/boss.ogg" id="1_nayjw"]
+
+[resource]
+random_pitch = 1.0594631
+streams_count = 1
+stream_0/stream = ExtResource("1_nayjw")

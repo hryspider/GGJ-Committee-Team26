@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://7xc8gdaju5jt" path="res://images/pinkroomie.png" id="9_vlxrc"]
 [ext_resource type="Texture2D" uid="uid://k6n7jgx8110j" path="res://images/blueroomie.png" id="10_jj6hg"]
 [ext_resource type="PackedScene" uid="uid://bxuuy3tvpyyci" path="res://ui/milk_overlay.tscn" id="10_vlxrc"]
+[ext_resource type="AudioStream" uid="uid://ckob56j57wlsp" path="res://audio/sfx/dialog/talkstream.tres" id="11_yumyu"]
 [ext_resource type="PackedScene" uid="uid://btm8jiydeyk7u" path="res://ui/money_overlay.tscn" id="12_asref"]
 [ext_resource type="Material" uid="uid://mnx2ug0qmck6" path="res://shaders/background_material.tres" id="12_u4kp1"]
 [ext_resource type="PackedScene" uid="uid://xkq5i27mugvc" path="res://ui/dialogmanager.tscn" id="13_aesho"]
@@ -624,6 +625,10 @@ autoplay = true
 [node name="PinkNPC" parent="." unique_id=1006169553 instance=ExtResource("6_jj6hg")]
 position = Vector2(73, 113)
 spriteframes = SubResource("SpriteFrames_cf0wr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="PinkNPC" unique_id=1112285040]
+stream = ExtResource("11_yumyu")
+pitch_scale = 1.49
 
 [node name="CyanNPC" type="AnimatedSprite2D" parent="." unique_id=44470719]
 position = Vector2(232, 47)

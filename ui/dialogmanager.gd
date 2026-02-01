@@ -1,6 +1,13 @@
 extends Node
+@onready var audio_stream_player = $AudioStreamPlayer
+
+@onready var voices_list = [
+	preload("res://audio/sfx/dialog/talkstream.tres"),
+	preload("res://audio/sfx/dialog/starkstream.tres")
+]
 
 @export var data : Array[DialogLine]
+@export var voices_order : Array[int]
 @onready var curr_line = 0
 @onready var complete = false
 var speech_bubble = preload("res://objects/speech_bubble.tscn")
@@ -18,6 +25,10 @@ func _process(delta):
 
 func start_dialog():
 	while curr_line < len(data):
+		if curr_line < len(voices_order):
+			audio_stream_player.stream = voices_list[voices_order[curr_line]]
+		else:
+			audio_stream_player.stream = voices_list[0]
 		var new_bubble = speech_bubble.instantiate()
 		var this_dialog = data[curr_line]
 		get_parent().add_child(new_bubble)
@@ -37,6 +48,7 @@ func start_dialog():
 		new_bubble.position = speaker_position
 		new_bubble.destroy_timer.wait_time = this_dialog.duration
 		new_bubble.play()
+		audio_stream_player.play_3()
 		await new_bubble.destroy_timer.timeout
 		curr_line += 1
 	complete = true
