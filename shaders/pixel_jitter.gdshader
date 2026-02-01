@@ -5,6 +5,7 @@ global uniform float jitterscale;
 global uniform float jitterstrength;
 instance uniform vec4 color : source_color = vec4(1.,1.,1.,1.);
 instance uniform float localjitterscale = 1.;
+instance uniform float localjitterrate = 1.;
 
 float rand (vec2 uv) {
     return fract(sin(dot(uv.xy,

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b52srq1yj0mr5"]
+
+[ext_resource type="Script" uid="uid://cimi8vilngied" path="res://ui/dictionary_manager.gd" id="1_gl63p"]
+
+[node name="DictionaryManager" type="Node" unique_id=925600434]
+script = ExtResource("1_gl63p")

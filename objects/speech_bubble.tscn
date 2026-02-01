@@ -9,7 +9,9 @@
 shader = ExtResource("1_l3rl6")
 
 [node name="SpeechBubble" type="TextureRect" unique_id=978684587]
+z_index = 100
 material = SubResource("ShaderMaterial_tigkg")
+custom_minimum_size = Vector2(320, 108)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

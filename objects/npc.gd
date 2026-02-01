@@ -19,8 +19,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if interactbubble.visible && Input.is_action_just_pressed("interact"):
-		get_tree().get_first_node_in_group("player").can_move = false
+	var player = get_tree().get_first_node_in_group("player")
+	if interactbubble.visible && Input.is_action_just_pressed("interact") && player.can_move:
+		player.can_move = false
 		talking = true
 		emit_signal("talk")
 

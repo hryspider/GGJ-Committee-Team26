@@ -27,16 +27,17 @@ func _ready():
 			dict_rune_inst.rune.set_text_overlay(LangaugeGlobals.get_player_guess(word))
 			dict_rune_inst.rune.set_rune_fade(true)
 
-
 func editing(rune_pos):
 	for r in rune_children:
 		r.apply_central_force((r.position-rune_pos)*10)
 		if r.position == rune_pos: r.apply_random_spin()
 		r.unhoverable = true
 func edit_finished():
+	LangaugeGlobals.player_dictionary = {}
 	for r in rune_children:
 		r.unhoverable = false
 		r.apply_central_force(Vector2(randf(), randf())*10000)
+		LangaugeGlobals.player_dictionary[r.get_rune_text()] = r.get_text_overlay()
 
 
 func _on_button_pressed():

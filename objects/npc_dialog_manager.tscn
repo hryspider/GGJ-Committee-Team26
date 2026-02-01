@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ofjgt2emidck"]
+
+[ext_resource type="Script" path="res://objects/npc_dialog_manager.gd" id="1_mi63u"]
+
+[node name="NpcDialogManager" type="Control" unique_id=580604926 groups=["dialogmanager"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mi63u")

@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://cvdnahnj0najw"]
 
 [ext_resource type="Texture2D" uid="uid://cffw8us0a351b" path="res://glorp.webp" id="1_ig7tw"]
-[ext_resource type="Material" uid="uid://0sfqatycqqod" path="res://shaders/background_material.tres" id="3_1bvp3"]
-[ext_resource type="Script" path="res://character_body_2d.gd" id="3_h2yge"]
+[ext_resource type="Material" uid="uid://mnx2ug0qmck6" path="res://shaders/background_material.tres" id="3_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://bd5fywco1xi42" path="res://images/ui/white_background.png" id="4_1bvp3"]
 
 [node name="Node2D" type="Control" unique_id=947331922]
@@ -16,7 +15,6 @@ grow_vertical = 2
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=565222465]
 position = Vector2(220.00002, 89.99999)
 scale = Vector2(0.15534979, 0.1553498)
-script = ExtResource("3_h2yge")
 
 [node name="Glorp" type="Sprite2D" parent="CharacterBody2D" unique_id=1708849540]
 scale = Vector2(1, 1.0000001)
