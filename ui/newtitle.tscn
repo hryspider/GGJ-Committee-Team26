@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://byca1sh4f6l8f"]
+
+[ext_resource type="Material" uid="uid://mnx2ug0qmck6" path="res://shaders/background_material.tres" id="1_grn02"]
+[ext_resource type="Texture2D" uid="uid://bd5fywco1xi42" path="res://images/ui/white_background.png" id="2_rosuy"]
+[ext_resource type="Shader" uid="uid://btxr4e7dfnmlk" path="res://shaders/pixel_jitter.gdshader" id="3_33ya6"]
+[ext_resource type="FontFile" uid="uid://cpr4cgq64ufh" path="res://text/GloopGleep.ttf" id="4_csh7x"]
+[ext_resource type="FontFile" uid="uid://bheug0blsloux" path="res://text/retro-pixel-thick.ttf" id="5_1ixiv"]
+[ext_resource type="Script" uid="uid://diml3436rvtyt" path="res://ui/transition.gd" id="6_mnnh1"]
+[ext_resource type="Material" uid="uid://v34j4uwqvkvk" path="res://shaders/pixel_jitter_material.tres" id="7_4s5sv"]
+[ext_resource type="PackedScene" uid="uid://4lbbfd2e5la3" path="res://rooms/roomate_house.tscn" id="7_rosuy"]
+[ext_resource type="Texture2D" uid="uid://bjid0iprcl0wk" path="res://images/title_alien.png" id="8_nii0g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e7yv1"]
+shader = ExtResource("3_33ya6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_unp1r"]
+shader = ExtResource("3_33ya6")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6s2sd"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.12540002, 0.5403599, 0.57, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 70.0
+
+[node name="TextureRect" type="TextureRect" unique_id=252398796]
+material = ExtResource("1_grn02")
+instance_shader_parameters/primary_color = Color(0.090299994, 0.43, 0.25448835, 1)
+instance_shader_parameters/secondary_color = Color(0.29036, 0.51, 0.1224, 1)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_rosuy")
+
+[node name="Label3" type="Label" parent="." unique_id=847911718]
+material = SubResource("ShaderMaterial_e7yv1")
+instance_shader_parameters/color = Color(0, 0.24200009, 0.44, 0.53333336)
+instance_shader_parameters/localjitterrate = 5.0
+instance_shader_parameters/localjitterscale = 3.0
+layout_mode = 1
+offset_left = -26.0
+offset_top = -1.0
+offset_right = 277.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("4_csh7x")
+theme_override_font_sizes/font_size = 77
+text = "al"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=1665995137]
+material = SubResource("ShaderMaterial_unp1r")
+instance_shader_parameters/localjitterrate = 5.0
+instance_shader_parameters/localjitterscale = 2.0
+layout_mode = 1
+offset_left = -33.0
+offset_top = -7.0
+offset_right = 270.0
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("5_1ixiv")
+theme_override_font_sizes/font_size = 77
+text = "Hello!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=155738968]
+layout_mode = 1
+offset_left = 226.0
+offset_top = 21.0
+offset_right = 477.0
+offset_bottom = 271.0
+theme_override_fonts/font = ExtResource("5_1ixiv")
+theme_override_font_sizes/font_size = 16
+text = "WASD - Move
+Q - Dictionary
+E, Enter and Click - Interaction
+
+You're an alien and you've crashed with some human roomates. Looks like they want something.
+Learn and record a language you don't know...
+
+3 Scenarios"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=1047286475]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 83.0
+offset_right = 136.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("5_1ixiv")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_6s2sd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6s2sd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6s2sd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6s2sd")
+text = "Begin"
+script = ExtResource("6_mnnh1")
+destination = ExtResource("7_rosuy")
+
+[node name="TitleAlien" type="Sprite2D" parent="." unique_id=396674410]
+material = ExtResource("7_4s5sv")
+instance_shader_parameters/localjitterrate = 50.0
+instance_shader_parameters/localjitterscale = 0.4
+position = Vector2(165, 160)
+texture = ExtResource("8_nii0g")
+flip_h = true
+
+[connection signal="pressed" from="Button" to="Button" method="transition"]
