@@ -6,14 +6,19 @@ var MAX_LENGTH = 5 #Longest possible guess
 }
 
 @onready var english_to_gleep = {
-	"hello":"d",
+	"where":"d",
 	"me":"db",
-	"want":"od",
-	"food":"da",
-	"milk":"mg",
-	"test":"a",
-	"bepis":"tf",
-	"slop":"eee"
+	"know":"od",
+	"have":"da",
+	"at":"mg",
+	"must":"a",
+	"glorp":"tf",
+	"get":"bta",
+	"near":"di",
+	"we":"dap",
+	"here":"lap",
+	"go":"ein",
+	"but":"ane",
 }
 
 var gleep_to_english = {}
@@ -28,29 +33,34 @@ var mentioned_words = [
 	"a"
 ]
 var confirmed_words = [
-	"mg",
+	"d",
+	"od",
 	"da",
-	"d",
-	"tf",
+	"mg",
 	"a",
-	"d",
-	"d",
-	"d",
-	"d",
-	"d",
-	"d",
-	"d",
+	"tf",
+	"bta",
+	"di",
+	"dap",
+	"lap",
+	"ein",
+	"ane"
 ]
 
 @onready var rune_colors = {
-	"hello":Color(0.0, 0.0, 0.0, 1.0),
-	"me":Color(0.0, 0.0, 0.0, 1.0),
-	"want":Color(0.0, 0.0, 0.0, 1.0),
-	"food":Color(0.0, 0.0, 0.0, 1.0),
-	"milk":Color(0.0, 0.0, 0.0, 1.0),
-	"test":Color(0.0, 0.0, 0.0, 1.0),
-	"bepis":Color(0.0, 0.0, 0.0, 1.0),
-	"slop":Color(0.0, 0.576, 0.0, 1.0)
+	"where":Color(0.0, 0.0, 0.0, 1.0),
+	"me":Color(0.655, 0.0, 0.0, 1.0),
+	"know":Color(0.0, 0.0, 0.0, 1.0),
+	"have":Color(0.0, 0.0, 0.0, 1.0),
+	"at":Color(0.0, 0.0, 0.0, 1.0),
+	"must":Color(0.0, 0.0, 0.0, 1.0),
+	"glorp":Color(0.0, 0.0, 0.0, 1.0),
+	"get":Color(0.0, 0.0, 0.0, 1.0),
+	"near":Color(0.0, 0.0, 0.0, 1.0),
+	"we":Color(0.0, 0.0, 0.0, 1.0),
+	"here":Color(0.0, 0.0, 0.0, 1.0),
+	"go":Color(0.0, 0.0, 0.0, 1.0),
+	"but":Color(0.0, 0.0, 0.0, 1.0),
 }
 
 # Called when the node enters the scene tree for the first time.
