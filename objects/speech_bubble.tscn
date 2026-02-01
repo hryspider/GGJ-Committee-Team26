@@ -70,3 +70,13 @@ rune_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
 rune_color_faded = Color(0.8132577, 0.81325775, 0.8132574, 1)
 default_label_text = "goodbye"
 default_rune_text = "dc"
+
+[node name="AppearTimer" type="Timer" parent="." unique_id=210018379]
+wait_time = 0.1
+
+[node name="DestroyTimer" type="Timer" parent="." unique_id=2090066736]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="AppearTimer" to="." method="_on_appear_timer_timeout"]
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]
