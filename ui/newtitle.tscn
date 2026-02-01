@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://byca1sh4f6l8f"]
+[gd_scene format=3 uid="uid://bd3dksvp1b865"]
 
 [ext_resource type="Material" uid="uid://mnx2ug0qmck6" path="res://shaders/background_material.tres" id="1_grn02"]
 [ext_resource type="Texture2D" uid="uid://bd5fywco1xi42" path="res://images/ui/white_background.png" id="2_rosuy"]

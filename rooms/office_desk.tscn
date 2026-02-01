@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://daan3m16pogfl" path="res://images/boss_desk.png" id="4_nmfii"]
 [ext_resource type="Texture2D" uid="uid://di3xtisq8b4yo" path="res://images/cherished.png" id="5_5wjrh"]
 [ext_resource type="PackedScene" uid="uid://xkq5i27mugvc" path="res://ui/dialogmanager.tscn" id="7_ljy0p"]
-[ext_resource type="Script" uid="uid://dy6gk2wb21yf2" path="res://ui/dialogline.gd" id="8_ce1fx"]
+[ext_resource type="Script" path="res://ui/dialogline.gd" id="8_ce1fx"]
 [ext_resource type="PackedScene" uid="uid://b52srq1yj0mr5" path="res://ui/dictionary_manager.tscn" id="9_5wjrh"]
 [ext_resource type="Texture2D" uid="uid://baatyuntdqsvr" path="res://images/the memories.png" id="10_4vdte"]
 [ext_resource type="AudioStream" uid="uid://srec1gs3nd6n" path="res://audio/bgm/love.mp3" id="11_1exii"]
