@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bcdicsr7l0xen" path="res://images/lvl3chair.png" id="7_hapkl"]
 [ext_resource type="Texture2D" uid="uid://dca043ly81rrx" path="res://images/trainguy.png" id="8_jp836"]
 [ext_resource type="Texture2D" uid="uid://dg4bqdcm1anr5" path="res://images/milk.png" id="9_yibk6"]
+[ext_resource type="Script" uid="uid://beoaf3u2wx8co" path="res://rooms/animated_sprite_2d.gd" id="10_fy8s7"]
 [ext_resource type="PackedScene" path="res://ui/dialogmanager.tscn" id="10_xgass"]
 [ext_resource type="Script" path="res://ui/dialogline.gd" id="12_sbr4p"]
 [ext_resource type="PackedScene" uid="uid://bf44lvopd5hap" path="res://objects/glorp.tscn" id="13_kkx3h"]
@@ -144,9 +145,6 @@ duration = 5.0
 [sub_resource type="Resource" id="Resource_j80o0"]
 script = ExtResource("12_sbr4p")
 speaker = NodePath("../AnimatedSprite2D")
-animations = Dictionary[NodePath, String]({
-NodePath("../AnimatedSprite2D"): "talk"
-})
 content = "you have milk?"
 duration = 5.0
 
@@ -213,9 +211,6 @@ duration = 5.0
 [sub_resource type="Resource" id="Resource_q1shn"]
 script = ExtResource("12_sbr4p")
 speaker = NodePath("../AnimatedSprite2D")
-animations = Dictionary[NodePath, String]({
-NodePath("../AnimatedSprite2D"): "happy"
-})
 content = "fuck yes!"
 duration = 5.0
 
@@ -281,7 +276,8 @@ flip_h = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1812223755]
 position = Vector2(158, 131)
 sprite_frames = SubResource("SpriteFrames_j80o0")
-animation = &"talk"
+animation = &"happy"
+script = ExtResource("10_fy8s7")
 
 [node name="Milk" type="Sprite2D" parent="." unique_id=803308898]
 position = Vector2(273, 178)

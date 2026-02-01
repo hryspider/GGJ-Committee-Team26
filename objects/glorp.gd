@@ -89,6 +89,12 @@ func get_wanted_emotion(line):
 	return [true, true, true, true, false, false, false, true, false, false, true, false, true, true, true][line];
 	# you can't stop me harry
 
+func is_emotion_valid():
+	if get_wanted_emotion(linecount): # smile or laugh required
+		return current_emotion == 0 || current_emotion == 1
+	else: # sad required
+		return current_emotion == 2
+
 func _on_sprite_frame_changed():
 	if sprite.animation == "walk" and fmod(sprite.frame, 3) == 1: splat.play()
 

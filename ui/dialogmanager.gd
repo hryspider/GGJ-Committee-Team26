@@ -45,3 +45,5 @@ func start_dialog():
 	emit_signal("finished")
 	curr_line = 0
 	
+	if get_parent().name == "Train": get_tree().change_scene_to_file("res://rooms/victory.tscn")
+	
