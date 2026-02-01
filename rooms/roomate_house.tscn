@@ -544,8 +544,18 @@ animations = Dictionary[NodePath, String]({
 NodePath("../CyanNPC"): "talk",
 NodePath("../PinkNPC"): "idle"
 })
-content = "glorp get office work"
-duration = 1.0
+content = "glorp get work at office"
+duration = 2.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_2wmk8"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../CyanNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "shake"
+})
+content = "office where glorp work"
+duration = 2.0
 metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_13328"]
@@ -618,7 +628,7 @@ spriteframes = SubResource("SpriteFrames_cf0wr")
 [node name="CyanNPC" type="AnimatedSprite2D" parent="." unique_id=44470719]
 position = Vector2(232, 47)
 sprite_frames = SubResource("SpriteFrames_e4khp")
-animation = &"talk"
+animation = &"shakehead"
 
 [node name="NPC2" parent="." unique_id=1470391285 instance=ExtResource("6_jj6hg")]
 position = Vector2(382, 151)
@@ -666,10 +676,10 @@ aliases = ["job", "work", "hire", "jobs"]
 z_index = 99
 word = "office"
 instructions = "You need to find work, that's right! Now talk to the blue person to find out what this next symbol means."
-aliases = ["job", "work", "hire", "jobs"]
+aliases = ["office", "site", "studio", "center", "centre"]
 
 [node name="DialogManager2" parent="." unique_id=1395274674 instance=ExtResource("13_aesho")]
-data = Array[ExtResource("18_rxgj1")]([SubResource("Resource_ioblm"), SubResource("Resource_633kq"), SubResource("Resource_in1wj"), SubResource("Resource_1hlbf"), SubResource("Resource_mj128"), SubResource("Resource_tyi3v"), SubResource("Resource_13328"), SubResource("Resource_mtghd")])
+data = Array[ExtResource("18_rxgj1")]([SubResource("Resource_ioblm"), SubResource("Resource_633kq"), SubResource("Resource_in1wj"), SubResource("Resource_1hlbf"), SubResource("Resource_mj128"), SubResource("Resource_tyi3v"), SubResource("Resource_2wmk8"), SubResource("Resource_13328"), SubResource("Resource_mtghd")])
 
 [node name="FinalNPC" parent="." unique_id=1187619114 instance=ExtResource("6_jj6hg")]
 position = Vector2(232, -78)
@@ -686,6 +696,7 @@ spriteframes = SubResource("SpriteFrames_mj128")
 [connection signal="finished" from="DialogManager" to="." method="_on_dialog_manager_finished"]
 [connection signal="finished" from="DialogManager" to="PinkNPC" method="finished_dialog"]
 [connection signal="satisfied" from="CanvasLayer/Questioner" to="." method="_on_questioner_satisfied"]
+[connection signal="satisfied" from="CanvasLayer/Questioner2" to="." method="_on_questioner_2_satisfied"]
 [connection signal="satisfied" from="CanvasLayer/Questioner2" to="." method="_on_questioner_satisfied"]
 [connection signal="finished" from="DialogManager2" to="FinalNPC" method="finished_dialog"]
 [connection signal="talk" from="FinalNPC" to="DialogManager2" method="start_dialog"]

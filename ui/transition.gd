@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 @export var destination : PackedScene
 
 func transition(body=null):

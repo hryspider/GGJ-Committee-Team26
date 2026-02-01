@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cwce5uhj7v0bu"]
+
+[ext_resource type="FontFile" uid="uid://bheug0blsloux" path="res://text/retro-pixel-thick.ttf" id="1_14vu8"]
+[ext_resource type="Script" uid="uid://diml3436rvtyt" path="res://ui/transition.gd" id="2_cfkag"]
+[ext_resource type="PackedScene" uid="uid://coysb7cv5oprx" path="res://rooms/office_entrance.tscn" id="3_gitew"]
+
+[node name="Control" type="Control" unique_id=1474556032]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=519220628]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1001691016]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_14vu8")
+text = "You decide to go to the office to get a job...
+...but people have been wary of the boss.
+Remember your words!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1785106837]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.5
+offset_top = -71.0
+offset_right = 39.5
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_14vu8")
+text = "Continue"
+script = ExtResource("2_cfkag")
+destination = ExtResource("3_gitew")
+
+[connection signal="pressed" from="Button" to="Button" method="transition"]

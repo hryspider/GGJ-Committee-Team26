@@ -41,3 +41,7 @@ func _on_questioner_satisfied():
 	get_tree().get_first_node_in_group("player").can_move = false
 	final_npc.position = Vector2(230, 70)
 	
+
+
+func _on_questioner_2_satisfied():
+	get_tree().change_scene_to_file("res://rooms/12transition.tscn")
