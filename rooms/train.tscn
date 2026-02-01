@@ -7,6 +7,111 @@
 [ext_resource type="Script" uid="uid://cfqn3kno76ykh" path="res://objects/parallax.gd" id="4_hapkl"]
 [ext_resource type="Texture2D" uid="uid://em0akcqb3k51" path="res://images/traingrass.png" id="4_nkojg"]
 [ext_resource type="Texture2D" uid="uid://bcdicsr7l0xen" path="res://images/lvl3chair.png" id="7_hapkl"]
+[ext_resource type="Texture2D" uid="uid://dca043ly81rrx" path="res://images/trainguy.png" id="8_jp836"]
+[ext_resource type="Texture2D" uid="uid://dg4bqdcm1anr5" path="res://images/milk.png" id="9_yibk6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgass"]
+atlas = ExtResource("8_jp836")
+region = Rect2(190, 0, 95, 138)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yibk6"]
+atlas = ExtResource("8_jp836")
+region = Rect2(0, 0, 95, 138)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soitx"]
+atlas = ExtResource("8_jp836")
+region = Rect2(95, 0, 95, 138)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbr4p"]
+atlas = ExtResource("8_jp836")
+region = Rect2(285, 0, 95, 138)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkx3h"]
+atlas = ExtResource("8_jp836")
+region = Rect2(0, 138, 95, 138)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy8s7"]
+atlas = ExtResource("8_jp836")
+region = Rect2(95, 138, 95, 138)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw8hl"]
+atlas = ExtResource("8_jp836")
+region = Rect2(190, 138, 95, 138)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j80o0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgass")
+}],
+"loop": true,
+"name": &"confused",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yibk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soitx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgass")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbr4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkx3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy8s7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw8hl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw8hl")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yibk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soitx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkx3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy8s7")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbr4p")
+}],
+"loop": true,
+"name": &"upset",
+"speed": 5.0
+}]
 
 [node name="Train" type="Node2D" unique_id=1352542439]
 
@@ -44,15 +149,34 @@ position = Vector2(-56, -10)
 texture = ExtResource("1_3mu53")
 centered = false
 
-[node name="Node" type="Node" parent="Sprite2D" unique_id=1516087204]
+[node name="Node" type="Node" parent="." unique_id=1516087204]
 script = ExtResource("2_51f8d")
 intensity = 0.7
 
-[node name="Lvl3Chair" type="Sprite2D" parent="Sprite2D" unique_id=742451748]
-position = Vector2(218, 147)
+[node name="Lvl3Chair" type="Sprite2D" parent="." unique_id=742451748]
+position = Vector2(162, 137)
 texture = ExtResource("7_hapkl")
 
-[node name="Lvl3Chair2" type="Sprite2D" parent="Sprite2D" unique_id=1372569694]
-position = Vector2(360, 147)
+[node name="Lvl3Chair4" type="Sprite2D" parent="." unique_id=783688507]
+position = Vector2(18, 137)
+texture = ExtResource("7_hapkl")
+
+[node name="Lvl3Chair2" type="Sprite2D" parent="." unique_id=1372569694]
+position = Vector2(304, 137)
 texture = ExtResource("7_hapkl")
 flip_h = true
+
+[node name="Lvl3Chair3" type="Sprite2D" parent="." unique_id=1309928731]
+position = Vector2(464, 137)
+texture = ExtResource("7_hapkl")
+flip_h = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1812223755]
+position = Vector2(158, 131)
+sprite_frames = SubResource("SpriteFrames_j80o0")
+animation = &"happy"
+frame_progress = 0.19751908
+
+[node name="Milk" type="Sprite2D" parent="." unique_id=803308898]
+position = Vector2(273, 178)
+texture = ExtResource("9_yibk6")
