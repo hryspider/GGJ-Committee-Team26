@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2ipg12qumu5l"
-path="res://.godot/imported/pissboss.png-3a8b2fc2ea0f5a3193bf242efd7fb10a.ctex"
+uid="uid://b81kq8vlqb777"
+path="res://.godot/imported/bossoffice.png-3989bffe0b30dc12ec3abc2814d7e51a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/pissboss.png"
-dest_files=["res://.godot/imported/pissboss.png-3a8b2fc2ea0f5a3193bf242efd7fb10a.ctex"]
+source_file="res://images/bossoffice.png"
+dest_files=["res://.godot/imported/bossoffice.png-3989bffe0b30dc12ec3abc2814d7e51a.ctex"]
 
 [params]
 

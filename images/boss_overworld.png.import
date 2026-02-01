@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mo70sp62eh4m"
-path="res://.godot/imported/002.png-bff8020d5147118631a8008ce89197bd.ctex"
+uid="uid://dofwuc4eiqjdq"
+path="res://.godot/imported/boss_overworld.png-663a65da6207fff0aff498f965568366.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/002.png"
-dest_files=["res://.godot/imported/002.png-bff8020d5147118631a8008ce89197bd.ctex"]
+source_file="res://images/boss_overworld.png"
+dest_files=["res://.godot/imported/boss_overworld.png-663a65da6207fff0aff498f965568366.ctex"]
 
 [params]
 

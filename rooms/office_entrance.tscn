@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://duuwpcl1aixk6"]
+
+[ext_resource type="Texture2D" uid="uid://mhd5ljpdtudt" path="res://images/officetiles.png" id="1_buiua"]
+[ext_resource type="Texture2D" uid="uid://cnosc0bktjcoj" path="res://images/beer.png" id="2_7svm4"]
+[ext_resource type="PackedScene" uid="uid://uqyc7ltu8uf1" path="res://objects/npc.tscn" id="3_jrkp6"]
+[ext_resource type="Texture2D" uid="uid://xsgrjw4wxd6q" path="res://images/stark.png" id="4_daa5c"]
+[ext_resource type="Texture2D" uid="uid://bu0u30sdphnfi" path="res://images/laptop.png" id="5_jrkp6"]
+[ext_resource type="PackedScene" uid="uid://bf44lvopd5hap" path="res://objects/glorp.tscn" id="6_daa5c"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2o6t"]
+texture = ExtResource("1_buiua")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/next_alternative_id = 2
+1:0/0 = 0
+1:0/1 = 1
+1:0/1/modulate = Color(0.664, 0.7276333, 0.83, 1)
+
+[sub_resource type="TileSet" id="TileSet_3tvw4"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_r2o6t")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crxjg"]
+atlas = ExtResource("4_daa5c")
+region = Rect2(0, 0, 88, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8mea"]
+atlas = ExtResource("4_daa5c")
+region = Rect2(0, 95, 88, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2idv"]
+atlas = ExtResource("4_daa5c")
+region = Rect2(88, 95, 88, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oj7cl"]
+atlas = ExtResource("4_daa5c")
+region = Rect2(88, 0, 88, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwgqt"]
+atlas = ExtResource("4_daa5c")
+region = Rect2(176, 0, 88, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq21w"]
+atlas = ExtResource("4_daa5c")
+region = Rect2(176, 95, 88, 95)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pv5sg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crxjg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8mea")
+}],
+"loop": true,
+"name": &"lookup",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8mea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2idv")
+}],
+"loop": true,
+"name": &"lookuptalk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crxjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oj7cl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwgqt")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq21w")
+}],
+"loop": true,
+"name": &"walkaway",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1203436009]
+
+[node name="TileMap" type="TileMap" parent="." unique_id=14837295]
+tile_set = SubResource("TileSet_3tvw4")
+rendering_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 65537, 65536, 7, 1, 268435456, 65543, 1, 268435456, 131079, 1, 268435456, 196615, 65537, 65536, 196614, 1, 1879048192, 196613, 1, 1879048192, 196612, 1, 1879048192, 196611, 1, 1879048192, 196610, 1, 1879048192, 196609, 1, 1879048192, 196608, 1, 1879048192, 131072, 65537, 0, 131073, 65537, 0, 131074, 65537, 0, 131075, 65537, 0, 131076, 65537, 0, 131077, 65537, 0, 131078, 65537, 0, 65542, 65537, 0, 6, 65537, 0, 5, 65537, 0, 4, 1, 0, 3, 1, 1342177280, 2, 1, 1342177280, 1, 1, 1342177280, 65537, 65537, 0, 65538, 65537, 0, 65539, 65537, 0, 65540, 65537, 0, 65541, 65537, 0, 65536, 1, 1342177280, 65535, 65537, 65536, -65531, 1, 1342177280, -65530, 1, 1342177280, 196607, 1, 1342177280, 262144, 65537, 65536, 262145, 65537, 65536, 262146, 65537, 65536, 262147, 65537, 65536, 262148, 65537, 65536, 262149, 65537, 65536, 262150, 65537, 65536, 262151, 65537, 65536)
+
+[node name="Beer" type="Sprite2D" parent="." unique_id=235881280]
+position = Vector2(289, 81.5)
+texture = ExtResource("2_7svm4")
+
+[node name="NPC" parent="." unique_id=1006169553 instance=ExtResource("3_jrkp6")]
+position = Vector2(224, 87.5)
+spriteframes = SubResource("SpriteFrames_pv5sg")
+
+[node name="Laptop" type="Sprite2D" parent="." unique_id=23386426]
+position = Vector2(257, 117.5)
+texture = ExtResource("5_jrkp6")
+
+[node name="Glorp" parent="." unique_id=26475291 instance=ExtResource("6_daa5c")]
+position = Vector2(91, 128)
