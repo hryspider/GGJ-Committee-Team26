@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bv3ue6hoghjtb"]
+
+[ext_resource type="Material" uid="uid://v34j4uwqvkvk" path="res://shaders/pixel_jitter_material.tres" id="1_jwbwj"]
+[ext_resource type="Script" uid="uid://d3rimrqhll5f0" path="res://ui/questioner.gd" id="1_rrcm0"]
+[ext_resource type="FontFile" uid="uid://bheug0blsloux" path="res://text/retro-pixel-thick.ttf" id="2_78wh3"]
+[ext_resource type="Texture2D" uid="uid://cjs6bw1qqvl4s" path="res://images/cloud.png" id="2_qhjgo"]
+[ext_resource type="FontFile" uid="uid://cpr4cgq64ufh" path="res://text/GloopGleep.ttf" id="4_qhjgo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rrcm0"]
+font = ExtResource("4_qhjgo")
+font_size = 80
+
+[node name="Questioner" type="Control" unique_id=2128525150]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rrcm0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1128165139]
+material = ExtResource("1_jwbwj")
+instance_shader_parameters/localjitterscale = -1.0
+texture = ExtResource("2_qhjgo")
+centered = false
+
+[node name="Label" type="Label" parent="." unique_id=1166098225]
+material = ExtResource("1_jwbwj")
+instance_shader_parameters/color = Color(0.96862745, 0, 0, 1)
+instance_shader_parameters/localjitterscale = 1.0
+layout_mode = 0
+offset_left = 109.0
+offset_top = 47.0
+offset_right = 379.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0.75, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_78wh3")
+theme_override_font_sizes/font_size = 32
+text = "What's That Word?"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1399972467]
+material = ExtResource("1_jwbwj")
+instance_shader_parameters/color = Color(0, 0, 0, 1)
+instance_shader_parameters/localjitterscale = 1.0
+layout_mode = 0
+offset_left = 126.0
+offset_top = 190.0
+offset_right = 548.0
+offset_bottom = 273.0
+scale = Vector2(0.56, 0.56)
+theme_override_colors/font_color = Color(0, 0.75, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_78wh3")
+theme_override_font_sizes/font_size = 32
+text = "Put a guess in your DICTIONARY
+for this word."
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=637386748]
+material = ExtResource("1_jwbwj")
+instance_shader_parameters/color = Color(0, 0.60383826, 0.5069849, 1)
+instance_shader_parameters/localjitterscale = 1.0
+layout_mode = 0
+offset_left = 109.0
+offset_top = 101.0
+offset_right = 379.0
+offset_bottom = 181.0
+theme_override_colors/font_color = Color(0, 0.75, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_78wh3")
+theme_override_font_sizes/font_size = 32
+text = "op"
+label_settings = SubResource("LabelSettings_rrcm0")
+horizontal_alignment = 1
