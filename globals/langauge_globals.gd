@@ -77,3 +77,12 @@ func add_word_mention(gleep):
 func add_word_confirmed(gleep):
 	if gleep_to_english.has(gleep) and not confirmed_words.has(gleep):
 		confirmed_words.append(gleep)
+		
+func spawn_questioner(gleep):
+	var questioner = load("res://ui/questioner.tscn")
+	var instance = questioner.instantiate()
+	
+	instance.word = gleep
+	instance.move_to_front()
+	
+	add_child(instance)
