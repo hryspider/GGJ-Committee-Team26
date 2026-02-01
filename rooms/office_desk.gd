@@ -23,6 +23,7 @@ var questioner_words = [
 	LangaugeGlobals.english_to_gleep[""],
 	LangaugeGlobals.english_to_gleep[""],
 	LangaugeGlobals.english_to_gleep[""],
+	LangaugeGlobals.english_to_gleep[""]
 ]
 var questioner_aliases = [
 	[],
