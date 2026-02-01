@@ -22,7 +22,7 @@ void vertex() {
 
 void fragment() {
 	vec2 pixelUV = floor(UV / TEXTURE_PIXEL_SIZE) * TEXTURE_PIXEL_SIZE;
-	float steppedTime = floor(TIME * jitterrate);
+	float steppedTime = floor(TIME * jitterrate * localjitterscale);
 	//float randtime = rand(steppedTime);
 	vec2 uvOffset = vec2(
 		sin(pixelUV.y * jitterscale + 10.+ steppedTime),

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dtcmedxcjafl3"]
+[gd_scene format=3 uid="uid://dnrxyyiriovoi"]
 
 [ext_resource type="Script" uid="uid://cse7prtcttyjw" path="res://ui/word_popup.gd" id="1_7curc"]
 [ext_resource type="FontFile" uid="uid://bheug0blsloux" path="res://text/retro-pixel-thick.ttf" id="1_u25wx"]

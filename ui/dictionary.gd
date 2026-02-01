@@ -15,6 +15,7 @@ func _ready():
 		dict_assoc_inst = dict_assoc_scene.instantiate()
 		dict_assoc_inst.word = word
 		v_box_container.add_child(dict_assoc_inst)
+	print(LangaugeGlobals.mentioned_words)
 	for word in LangaugeGlobals.mentioned_words:
 		if not LangaugeGlobals.is_known(word):
 			dict_rune_inst = dict_rune_scene.instantiate()

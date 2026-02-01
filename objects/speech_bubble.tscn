@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://5l0cney3hjrd" path="res://objects/rune.tscn" id="2_l3rl6"]
 [ext_resource type="Texture2D" uid="uid://d2f2qelp2eopa" path="res://images/ui/white_textbox.png" id="2_tigkg"]
 [ext_resource type="Script" uid="uid://di3xm10lmgwvf" path="res://objects/speech_bubble.gd" id="3_tigkg"]
+[ext_resource type="Material" uid="uid://v34j4uwqvkvk" path="res://shaders/pixel_jitter_material.tres" id="5_bqibr"]
+[ext_resource type="Texture2D" uid="uid://6qnk8jtkvqb" path="res://images/ui/q_mark.png" id="6_gcwle"]
+[ext_resource type="Texture2D" uid="uid://dr8t75ip1nfel" path="res://images/ui/e_mark.png" id="7_gcwle"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tigkg"]
 shader = ExtResource("1_l3rl6")
@@ -74,6 +77,32 @@ wait_time = 0.1
 [node name="DestroyTimer" type="Timer" parent="." unique_id=2090066736]
 wait_time = 1.5
 one_shot = true
+
+[node name="Qmark" type="TextureRect" parent="." unique_id=2091166881]
+material = ExtResource("5_bqibr")
+instance_shader_parameters/color = Color(1, 1, 1, 0.5019608)
+instance_shader_parameters/localjitterrate = 10.0
+layout_mode = 0
+offset_left = 288.83908
+offset_top = 91.91999
+offset_right = 372.83908
+offset_bottom = 211.55635
+rotation = 0.24047087
+scale = Vector2(0.47307497, 0.47307497)
+texture = ExtResource("6_gcwle")
+
+[node name="Emark" type="TextureRect" parent="." unique_id=845442332]
+material = ExtResource("5_bqibr")
+instance_shader_parameters/color = Color(1, 1, 1, 0.5019608)
+instance_shader_parameters/localjitterrate = 10.0
+layout_mode = 0
+offset_left = 280.8391
+offset_top = 92.92
+offset_right = 364.8391
+offset_bottom = 212.55637
+rotation = 0.24047087
+scale = Vector2(0.47307497, 0.47307497)
+texture = ExtResource("7_gcwle")
 
 [connection signal="timeout" from="AppearTimer" to="." method="_on_appear_timer_timeout"]
 [connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]
