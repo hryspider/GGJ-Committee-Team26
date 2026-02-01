@@ -3,7 +3,8 @@ extends Node
 
 @onready var voices_list = [
 	preload("res://audio/sfx/dialog/talkstream.tres"),
-	preload("res://audio/sfx/dialog/starkstream.tres")
+	preload("res://audio/sfx/dialog/starkstream.tres"),
+	preload("res://audio/sfx/dialog/bossstream.tres")
 ]
 
 @export var data : Array[DialogLine]

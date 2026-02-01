@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://e8baowi8u0u"]
+
+[ext_resource type="FontFile" uid="uid://bheug0blsloux" path="res://text/retro-pixel-thick.ttf" id="1_k0tuh"]
+[ext_resource type="Script" uid="uid://diml3436rvtyt" path="res://ui/transition.gd" id="2_yfru7"]
+[ext_resource type="PackedScene" uid="uid://cqqw11p4qg36u" path="res://rooms/train.tscn" id="3_yfru7"]
+[ext_resource type="Texture2D" uid="uid://bbal5p570v2i4" path="res://images/masks.png" id="4_yfru7"]
+
+[node name="Control" type="Control" unique_id=1474556032]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=519220628]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1001691016]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_k0tuh")
+text = "example 2-3 transition screen.
+tutorial on the masks"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1785106837]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.5
+offset_top = -71.0
+offset_right = 39.5
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_k0tuh")
+text = "Continue"
+script = ExtResource("2_yfru7")
+destination = ExtResource("3_yfru7")
+
+[node name="Masks" type="Sprite2D" parent="." unique_id=1384979353]
+position = Vector2(237, 212)
+texture = ExtResource("4_yfru7")
+
+[connection signal="pressed" from="Button" to="Button" method="transition"]

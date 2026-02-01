@@ -32,21 +32,7 @@ var confirmed_words = [
 
 ]
 
-@onready var rune_colors = {
-	"where":Color(0.0, 0.0, 0.0, 1.0),
-	"me":Color(0.655, 0.0, 0.0, 1.0),
-	"know":Color(0.0, 0.0, 0.0, 1.0),
-	"have":Color(0.0, 0.0, 0.0, 1.0),
-	"at":Color(0.0, 0.0, 0.0, 1.0),
-	"must":Color(0.0, 0.0, 0.0, 1.0),
-	"glorp":Color(0.0, 0.0, 0.0, 1.0),
-	"get":Color(0.0, 0.0, 0.0, 1.0),
-	"near":Color(0.0, 0.0, 0.0, 1.0),
-	"we":Color(0.0, 0.0, 0.0, 1.0),
-	"here":Color(0.0, 0.0, 0.0, 1.0),
-	"go":Color(0.0, 0.0, 0.0, 1.0),
-	"but":Color(0.0, 0.0, 0.0, 1.0),
-}
+@onready var rune_colors = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -55,6 +41,8 @@ func _ready() -> void:
 	for w in initial_words:
 		confirmed_words.append(english_to_gleep[w])
 	mentioned_words += confirmed_words
+	for i in english_to_gleep:
+		rune_colors[i] = Color.from_hsv(randf(), randf_range(0.3, 0.6), 0.5)
 
 func get_player_guess(gleep) -> String:
 	if player_dictionary.has(gleep): return player_dictionary[gleep]
