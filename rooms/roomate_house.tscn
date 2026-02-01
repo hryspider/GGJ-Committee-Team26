@@ -5,19 +5,19 @@
 [ext_resource type="Texture2D" uid="uid://bxpmhkic5eybk" path="res://images/rug.png" id="3_qutpp"]
 [ext_resource type="Texture2D" uid="uid://bidoytke4rwqn" path="res://images/fridge.png" id="4_gcgwm"]
 [ext_resource type="Texture2D" uid="uid://dfdiusnpug5y2" path="res://images/roommate_chair.png" id="5_vlxrc"]
-[ext_resource type="PackedScene" uid="uid://dhberchskwb4i" path="res://objects/npc.tscn" id="6_jj6hg"]
+[ext_resource type="PackedScene" uid="uid://uqyc7ltu8uf1" path="res://objects/npc.tscn" id="6_jj6hg"]
 [ext_resource type="PackedScene" uid="uid://bf44lvopd5hap" path="res://objects/glorp.tscn" id="7_feemj"]
 [ext_resource type="AudioStream" uid="uid://dffxco2oi8adw" path="res://audio/bgm/glorphouse.ogg" id="8_qutpp"]
 [ext_resource type="Texture2D" uid="uid://7xc8gdaju5jt" path="res://images/pinkroomie.png" id="9_vlxrc"]
 [ext_resource type="Texture2D" uid="uid://k6n7jgx8110j" path="res://images/blueroomie.png" id="10_jj6hg"]
 [ext_resource type="PackedScene" uid="uid://cxi1s7yovutcc" path="res://ui/milk_overlay.tscn" id="10_vlxrc"]
-[ext_resource type="PackedScene" uid="uid://btm8jiydeyk7u" path="res://ui/money_overlay.tscn" id="12_asref"]
+[ext_resource type="PackedScene" path="res://ui/money_overlay.tscn" id="12_asref"]
 [ext_resource type="Material" uid="uid://mnx2ug0qmck6" path="res://shaders/background_material.tres" id="12_u4kp1"]
-[ext_resource type="PackedScene" uid="uid://xkq5i27mugvc" path="res://ui/dialogmanager.tscn" id="13_aesho"]
+[ext_resource type="PackedScene" path="res://ui/dialogmanager.tscn" id="13_aesho"]
 [ext_resource type="Texture2D" uid="uid://bd5fywco1xi42" path="res://images/ui/white_background.png" id="13_cf0wr"]
 [ext_resource type="Texture2D" uid="uid://cjbe6p8x0ecch" path="res://images/dolar.png" id="16_rxgj1"]
-[ext_resource type="PackedScene" uid="uid://b52srq1yj0mr5" path="res://ui/dictionary_manager.tscn" id="17_aesho"]
-[ext_resource type="Script" uid="uid://dy6gk2wb21yf2" path="res://ui/dialogline.gd" id="18_rxgj1"]
+[ext_resource type="PackedScene" path="res://ui/dictionary_manager.tscn" id="17_aesho"]
+[ext_resource type="Script" path="res://ui/dialogline.gd" id="18_rxgj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kiath"]
 texture = ExtResource("1_ovko6")
@@ -297,7 +297,6 @@ NodePath("../PinkNPC"): "talk"
 })
 content = "hello"
 duration = 1.0
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_7ofkf"]
 script = ExtResource("18_rxgj1")
@@ -308,7 +307,6 @@ NodePath("../CyanNPC"): "wave"
 })
 content = "hello"
 duration = 1.0
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_gu4tk"]
 script = ExtResource("18_rxgj1")
@@ -319,7 +317,6 @@ NodePath("../PinkNPC"): "talk"
 })
 content = "where milk?"
 duration = 3.0
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_yumyu"]
 script = ExtResource("18_rxgj1")
@@ -330,7 +327,6 @@ NodePath("../CyanNPC"): "shakehead"
 })
 content = "me no know"
 duration = 3.0
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_oynf4"]
 script = ExtResource("18_rxgj1")
@@ -341,7 +337,6 @@ NodePath("../PinkNPC"): "curse"
 })
 content = "fuck"
 duration = 1.0
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_q6hrm"]
 script = ExtResource("18_rxgj1")
@@ -352,7 +347,6 @@ NodePath("../PinkNPC"): "idle"
 })
 content = "get milk at shop"
 duration = 3.0
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_cxmtu"]
 script = ExtResource("18_rxgj1")
@@ -363,7 +357,6 @@ NodePath("../PinkNPC"): "broke"
 })
 content = "me no have money"
 duration = 3.0
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_gxmdy"]
 script = ExtResource("18_rxgj1")
@@ -373,7 +366,6 @@ NodePath("../CyanNPC"): "talk"
 })
 content = "you have job?"
 duration = 3.0
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_bwj5o"]
 script = ExtResource("18_rxgj1")
@@ -384,7 +376,6 @@ NodePath("../CyanNPC"): "idle"
 })
 content = "no"
 duration = 2.0
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_0wht8"]
 script = ExtResource("18_rxgj1")
@@ -395,7 +386,6 @@ NodePath("../CyanNPC"): "idle"
 })
 content = "me no job"
 duration = 2.0
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_jffb1"]
 script = ExtResource("18_rxgj1")
@@ -405,7 +395,6 @@ NodePath("../CyanNPC"): "shakehead"
 })
 content = "you must get job"
 duration = 2.5
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_neqdv"]
 script = ExtResource("18_rxgj1")
@@ -415,7 +404,6 @@ NodePath("../CyanNPC"): "shakehead"
 })
 content = "at office"
 duration = 2.0
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_usfno"]
 script = ExtResource("18_rxgj1")
@@ -425,7 +413,6 @@ NodePath("../PinkNPC"): "no"
 })
 content = "no"
 duration = 1.5
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_xx6cq"]
 script = ExtResource("18_rxgj1")
@@ -436,7 +423,6 @@ NodePath("../CyanNPC"): "angry"
 })
 content = "fuck you"
 duration = 1.0
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_1osfp"]
 script = ExtResource("18_rxgj1")
@@ -446,7 +432,6 @@ NodePath("../PinkNPC"): "talk"
 })
 content = "glorp must get job"
 duration = 3.0
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_uyig2"]
 script = ExtResource("18_rxgj1")
@@ -457,7 +442,6 @@ NodePath("../CyanNPC"): "talk"
 })
 content = "where glorp?"
 duration = 1.5
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_pdrys"]
 script = ExtResource("18_rxgj1")
@@ -468,7 +452,6 @@ NodePath("../CyanNPC"): "idle"
 })
 content = "glorp"
 duration = 1.5
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_e4khp"]
 script = ExtResource("18_rxgj1")
@@ -478,7 +461,6 @@ NodePath("../CyanNPC"): "talk"
 })
 content = "glorp must work"
 duration = 4.0
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [sub_resource type="Resource" id="Resource_ioblm"]
 script = ExtResource("18_rxgj1")
@@ -489,7 +471,6 @@ NodePath("../CyanNPC"): "idle"
 })
 content = "you get job glorp"
 duration = 2.0
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [node name="RoomateHouse" type="Node2D" unique_id=848884293]
 y_sort_enabled = true

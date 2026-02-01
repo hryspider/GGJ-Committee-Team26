@@ -16,7 +16,11 @@ var speed = 200
 
 var eye_direction = 0
 var can_move = true
+var can_walk = true
 var masks = [false, false, false]
+
+var linecount = 0
+
 var current_emotion = -1:
 	set(value):
 		current_emotion = value
@@ -35,12 +39,15 @@ func _ready():
 		arm_inst.index = i
 		mask_sprite.add_child(arm_inst)
 		arms.append(arm_inst)
+	
+	if get_parent().name == "Train": can_walk = false
 
 
 func _physics_process(delta):
 	if can_move:
 		var direction = Input.get_vector("left", "right", "up", "down")
 		speed = 200 if current_emotion == -1 else 100
+		if !can_walk: speed = 0
 		velocity = direction * speed
 		if direction and current_emotion == -1:
 			sprite.play("walk")
@@ -75,8 +82,13 @@ func mask_behaviour():
 func _on_sprite_animation_changed():
 	eye.visible = sprite.animation == "idle"
 	
-
-
+func get_wanted_emotion(line):
+	return [true, true, true, true, false, false, false, true, false, false, true, false, true, true, true][line];
+	# you can't stop me harry
 
 func _on_sprite_frame_changed():
 	if sprite.animation == "walk" and fmod(sprite.frame, 3) == 1: splat.play()
+
+
+func _on_dialog_manager_newline() -> void:
+	linecount += 1
