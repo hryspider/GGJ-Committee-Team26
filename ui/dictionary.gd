@@ -37,7 +37,7 @@ func edit_finished():
 	for r in rune_children:
 		r.unhoverable = false
 		r.apply_central_force(Vector2(randf(), randf())*10000)
-		LangaugeGlobals.player_dictionary[r.get_rune_text()] = r.get_text_overlay()
+		LangaugeGlobals.player_dictionary[r.rune.get_rune_text()] = r.rune.get_text_overlay()
 
 
 func _on_button_pressed():
