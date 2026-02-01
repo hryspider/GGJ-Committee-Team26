@@ -2,10 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://mhd5ljpdtudt" path="res://images/officetiles.png" id="1_buiua"]
 [ext_resource type="Texture2D" uid="uid://cnosc0bktjcoj" path="res://images/beer.png" id="2_7svm4"]
-[ext_resource type="PackedScene" uid="uid://uqyc7ltu8uf1" path="res://objects/npc.tscn" id="3_jrkp6"]
+[ext_resource type="PackedScene" uid="uid://dhberchskwb4i" path="res://objects/npc.tscn" id="3_jrkp6"]
 [ext_resource type="Texture2D" uid="uid://xsgrjw4wxd6q" path="res://images/stark.png" id="4_daa5c"]
 [ext_resource type="Texture2D" uid="uid://bu0u30sdphnfi" path="res://images/laptop.png" id="5_jrkp6"]
 [ext_resource type="PackedScene" uid="uid://bf44lvopd5hap" path="res://objects/glorp.tscn" id="6_daa5c"]
+[ext_resource type="AudioStream" uid="uid://dkae7lct54kbo" path="res://audio/sfx/14857__lg__office02.ogg" id="7_daa5c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2o6t"]
 texture = ExtResource("1_buiua")
@@ -119,4 +120,8 @@ position = Vector2(257, 117.5)
 texture = ExtResource("5_jrkp6")
 
 [node name="Glorp" parent="." unique_id=26475291 instance=ExtResource("6_daa5c")]
-position = Vector2(91, 128)
+position = Vector2(35, 123)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=328736916]
+stream = ExtResource("7_daa5c")
+autoplay = true
