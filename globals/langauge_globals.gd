@@ -5,23 +5,7 @@ var MAX_LENGTH = 5 #Longest possible guess
 @onready var player_dictionary = {
 }
 
-@onready var english_to_gleep = {
-	"where":"d",
-	"me":"db",
-	"know":"od",
-	"have":"da",
-	"at":"mg",
-	"must":"a",
-	"glorp":"tf",
-	"get":"bta",
-	"near":"di",
-	"we":"dap",
-	"here":"lap",
-	"go":"ein",
-	"but":"ane",
-	"no":"oo",
-	"hi": "eee"
-}
+@onready var english_to_gleep = {'where': 'tmtf', 'me': 'ck', 'know': 'n', 'have': 'la', 'at': 'sla', 'must': 'soa', 'glorp': 'mpt', 'get': 'sh', 'near': 'g', 'we': 'qi', 'here': 'b', 'go': 'kdma', 'but': 's', 'hello': 'ug', 'no': 'ps', 'job': 'hqpu', 'office': 'frh', 'live': 'uuhb', 'yes': 'ffm', 'leave': 'qjh', 'who': 'id', 'milk': 'ce', 'money': 'fd', 'shop': 'do', 'fuck': 'j', 'boss': 'di', 'love': 'ij', 'good': 'sg', 'bad': 'toup', 'beer': 'rg', 'wife': 'kiam'}
 
 var gleep_to_english = {}
 
@@ -45,18 +29,7 @@ var initial_words = [
 ]
 
 var confirmed_words = [
-	"d",
-	"od",
-	"da",
-	"mg",
-	"a",
-	"tf",
-	"bta",
-	"di",
-	"dap",
-	"lap",
-	"ein",
-	"ane"
+
 ]
 
 @onready var rune_colors = {
@@ -79,6 +52,8 @@ var confirmed_words = [
 func _ready() -> void:
 	for k in english_to_gleep.keys():
 		gleep_to_english[english_to_gleep[k]] = k
+	for w in initial_words:
+		confirmed_words.append(english_to_gleep[w])
 
 func get_player_guess(gleep) -> String:
 	if player_dictionary.has(gleep): return player_dictionary[gleep]
