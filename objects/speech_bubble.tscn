@@ -28,6 +28,32 @@ texture = ExtResource("2_tigkg")
 expand_mode = 1
 script = ExtResource("3_tigkg")
 
+[node name="Emark" type="TextureRect" parent="." unique_id=845442332]
+material = ExtResource("5_bqibr")
+instance_shader_parameters/color = Color(1, 1, 1, 1)
+instance_shader_parameters/localjitterrate = 10.0
+layout_mode = 0
+offset_left = 286.35995
+offset_top = 7.919983
+offset_right = 414.24423
+offset_bottom = 173.38306
+rotation = 0.24047087
+scale = Vector2(0.47307497, 0.47307497)
+texture = ExtResource("7_gcwle")
+
+[node name="Qmark" type="TextureRect" parent="." unique_id=2091166881]
+material = ExtResource("5_bqibr")
+instance_shader_parameters/color = Color(1, 1, 1, 1)
+instance_shader_parameters/localjitterrate = 10.0
+layout_mode = 0
+offset_left = 286.36
+offset_top = 4.9199867
+offset_right = 431.55725
+offset_bottom = 201.17816
+rotation = 0.24047087
+scale = Vector2(0.47307497, 0.47307497)
+texture = ExtResource("6_gcwle")
+
 [node name="Control" type="GridContainer" parent="." unique_id=285124860]
 layout_mode = 1
 anchors_preset = 15
@@ -77,32 +103,6 @@ wait_time = 0.1
 [node name="DestroyTimer" type="Timer" parent="." unique_id=2090066736]
 wait_time = 1.5
 one_shot = true
-
-[node name="Qmark" type="TextureRect" parent="." unique_id=2091166881]
-material = ExtResource("5_bqibr")
-instance_shader_parameters/color = Color(1, 1, 1, 0.5019608)
-instance_shader_parameters/localjitterrate = 10.0
-layout_mode = 0
-offset_left = 288.83908
-offset_top = 91.91999
-offset_right = 372.83908
-offset_bottom = 211.55635
-rotation = 0.24047087
-scale = Vector2(0.47307497, 0.47307497)
-texture = ExtResource("6_gcwle")
-
-[node name="Emark" type="TextureRect" parent="." unique_id=845442332]
-material = ExtResource("5_bqibr")
-instance_shader_parameters/color = Color(1, 1, 1, 0.5019608)
-instance_shader_parameters/localjitterrate = 10.0
-layout_mode = 0
-offset_left = 280.8391
-offset_top = 92.92
-offset_right = 364.8391
-offset_bottom = 212.55637
-rotation = 0.24047087
-scale = Vector2(0.47307497, 0.47307497)
-texture = ExtResource("7_gcwle")
 
 [connection signal="timeout" from="AppearTimer" to="." method="_on_appear_timer_timeout"]
 [connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]
