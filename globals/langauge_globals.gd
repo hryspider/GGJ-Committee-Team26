@@ -28,7 +28,6 @@ var initial_words = [
 	"but",
 	"you",
 	"live",
-	"home",
 	"good"
 ]
 
