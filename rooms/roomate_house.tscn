@@ -11,8 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://7xc8gdaju5jt" path="res://images/pinkroomie.png" id="9_vlxrc"]
 [ext_resource type="Texture2D" uid="uid://k6n7jgx8110j" path="res://images/blueroomie.png" id="10_jj6hg"]
 [ext_resource type="PackedScene" uid="uid://cxi1s7yovutcc" path="res://ui/milk_overlay.tscn" id="10_vlxrc"]
+[ext_resource type="PackedScene" uid="uid://btm8jiydeyk7u" path="res://ui/money_overlay.tscn" id="12_asref"]
 [ext_resource type="Material" uid="uid://mnx2ug0qmck6" path="res://shaders/background_material.tres" id="12_u4kp1"]
+[ext_resource type="PackedScene" uid="uid://cncvbpf3x740i" path="res://ui/dialogmanager.tscn" id="13_aesho"]
 [ext_resource type="Texture2D" uid="uid://bd5fywco1xi42" path="res://images/ui/white_background.png" id="13_cf0wr"]
+[ext_resource type="Texture2D" uid="uid://cjbe6p8x0ecch" path="res://images/dolar.png" id="16_rxgj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kiath"]
 texture = ExtResource("1_ovko6")
@@ -323,10 +326,17 @@ spriteframes = SubResource("SpriteFrames_e4khp")
 position = Vector2(382, 151)
 spriteframes = SubResource("SpriteFrames_gcgwm")
 
+[node name="NPC4" parent="." unique_id=840642358 instance=ExtResource("6_jj6hg")]
+position = Vector2(60, 269)
+spriteframes = SubResource("SpriteFrames_gcgwm")
+
 [node name="Milk Overlay" parent="." unique_id=217854680 instance=ExtResource("10_vlxrc")]
 visible = false
 
-[node name="Node" type="Node" parent="." unique_id=1529247320]
+[node name="Money Overlay" parent="." unique_id=49455143 instance=ExtResource("12_asref")]
+visible = false
+
+[node name="Node" parent="." unique_id=515690549 instance=ExtResource("13_aesho")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=706171653]
 visible = false
@@ -336,5 +346,12 @@ instance_shader_parameters/secondary_color = Color(0.20699991, 0, 0.46, 0.462745
 texture = ExtResource("13_cf0wr")
 centered = false
 
+[node name="Dolar" type="Sprite2D" parent="." unique_id=1903973681]
+position = Vector2(75, 234)
+texture = ExtResource("16_rxgj1")
+
 [connection signal="talk" from="NPC2" to="Milk Overlay" method="appear"]
+[connection signal="talk" from="NPC4" to="Money Overlay" method="appear"]
 [connection signal="finished" from="Milk Overlay" to="NPC2" method="finished_dialog"]
+[connection signal="finished" from="Money Overlay" to="Glorp" method="finished_dialog"]
+[connection signal="finished" from="Money Overlay" to="NPC4" method="finished_dialog"]

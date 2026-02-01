@@ -13,8 +13,10 @@ material = SubResource("ShaderMaterial_tigkg")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -164.0
-offset_bottom = -162.0
+offset_left = 10.64
+offset_top = 33.08
+offset_right = -165.35999
+offset_bottom = -142.91998
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_tigkg")
@@ -26,18 +28,26 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -5.0
+offset_right = 2.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 3
 
 [node name="Rune1" parent="Control" unique_id=286204624 instance=ExtResource("2_l3rl6")]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 rune_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
 rune_color_faded = Color(0.8132577, 0.81325775, 0.8132574, 1)
 default_rune_text = "ab"
 
 [node name="Rune2" parent="Control" unique_id=1261957074 instance=ExtResource("2_l3rl6")]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 rune_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
 rune_color_faded = Color(0.8132577, 0.81325775, 0.8132574, 1)
 default_label_text = "goodbye"
@@ -45,6 +55,8 @@ default_rune_text = "dc"
 
 [node name="Rune3" parent="Control" unique_id=136487217 instance=ExtResource("2_l3rl6")]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 rune_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
 rune_color_faded = Color(0.8132577, 0.81325775, 0.8132574, 1)
 default_label_text = "goodbye"
@@ -52,6 +64,8 @@ default_rune_text = "dc"
 
 [node name="Rune4" parent="Control" unique_id=787395564 instance=ExtResource("2_l3rl6")]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 rune_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
 rune_color_faded = Color(0.8132577, 0.81325775, 0.8132574, 1)
 default_label_text = "goodbye"
@@ -59,6 +73,8 @@ default_rune_text = "dc"
 
 [node name="Rune5" parent="Control" unique_id=1275164979 instance=ExtResource("2_l3rl6")]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 rune_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
 rune_color_faded = Color(0.8132577, 0.81325775, 0.8132574, 1)
 default_label_text = "goodbye"
@@ -66,6 +82,8 @@ default_rune_text = "dc"
 
 [node name="Rune6" parent="Control" unique_id=881972527 instance=ExtResource("2_l3rl6")]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 rune_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
 rune_color_faded = Color(0.8132577, 0.81325775, 0.8132574, 1)
 default_label_text = "goodbye"

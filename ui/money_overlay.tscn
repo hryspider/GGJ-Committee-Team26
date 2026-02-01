@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://btm8jiydeyk7u"]
+
+[ext_resource type="Script" uid="uid://s5h05twrmbuc" path="res://objects/overlay.gd" id="1_xm215"]
+[ext_resource type="Material" uid="uid://v34j4uwqvkvk" path="res://shaders/pixel_jitter_material.tres" id="2_kke1g"]
+[ext_resource type="Texture2D" uid="uid://cbtp2m6j38wv" path="res://images/moneybg.png" id="3_65h02"]
+[ext_resource type="Texture2D" uid="uid://ccxnby8xu7e44" path="res://images/moneyhand.png" id="5_socgi"]
+[ext_resource type="Shader" uid="uid://btxr4e7dfnmlk" path="res://shaders/pixel_jitter.gdshader" id="6_arj8s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qf51l"]
+shader = ExtResource("6_arj8s")
+
+[node name="Money Overlay" type="CanvasGroup" unique_id=49455143]
+z_index = 999
+script = ExtResource("1_xm215")
+
+[node name="Moneybg" type="Sprite2D" parent="." unique_id=609745426]
+material = ExtResource("2_kke1g")
+instance_shader_parameters/localjitterscale = -1.0
+texture = ExtResource("3_65h02")
+centered = false
+
+[node name="Moneyhand" type="Sprite2D" parent="." unique_id=943507470]
+material = SubResource("ShaderMaterial_qf51l")
+position = Vector2(234, 140)
+texture = ExtResource("5_socgi")

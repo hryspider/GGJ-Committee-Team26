@@ -40,12 +40,13 @@ offset_right = 64.0
 offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "d"
+text = "it"
 label_settings = SubResource("LabelSettings_2gr1p")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextOverlay" type="Label" parent="." unique_id=1319333999]
+visible = false
 material = ExtResource("4_ru05i")
 instance_shader_parameters/color = Color(0, 0, 0, 1)
 instance_shader_parameters/localjitterscale = 2.5
