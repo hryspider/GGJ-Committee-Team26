@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://duuwpcl1aixk6"]
+[gd_scene format=3 uid="uid://coysb7cv5oprx"]
 
 [ext_resource type="Texture2D" uid="uid://mhd5ljpdtudt" path="res://images/officetiles.png" id="1_buiua"]
 [ext_resource type="Texture2D" uid="uid://cnosc0bktjcoj" path="res://images/beer.png" id="2_7svm4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bu0u30sdphnfi" path="res://images/laptop.png" id="5_jrkp6"]
 [ext_resource type="PackedScene" uid="uid://bf44lvopd5hap" path="res://objects/glorp.tscn" id="6_daa5c"]
 [ext_resource type="AudioStream" uid="uid://dkae7lct54kbo" path="res://audio/sfx/14857__lg__office02.ogg" id="7_daa5c"]
+[ext_resource type="Texture2D" uid="uid://dofwuc4eiqjdq" path="res://images/boss_overworld.png" id="8_r2o6t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2o6t"]
 texture = ExtResource("1_buiua")
@@ -99,6 +100,86 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tvw4"]
+atlas = ExtResource("8_r2o6t")
+region = Rect2(0, 0, 209, 209)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv5sg"]
+atlas = ExtResource("8_r2o6t")
+region = Rect2(209, 0, 209, 209)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdahv"]
+atlas = ExtResource("8_r2o6t")
+region = Rect2(418, 209, 209, 209)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fp6q"]
+atlas = ExtResource("8_r2o6t")
+region = Rect2(209, 209, 209, 209)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv64t"]
+atlas = ExtResource("8_r2o6t")
+region = Rect2(418, 0, 209, 209)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh5vr"]
+atlas = ExtResource("8_r2o6t")
+region = Rect2(0, 209, 209, 209)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ssgpd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tvw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv5sg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdahv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fp6q")
+}],
+"loop": true,
+"name": &"point",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tvw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv5sg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fp6q")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tvw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv64t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv5sg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh5vr")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
 [node name="Node2D" type="Node2D" unique_id=1203436009]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=14837295]
@@ -125,3 +206,9 @@ position = Vector2(35, 123)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=328736916]
 stream = ExtResource("7_daa5c")
 autoplay = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1119054125]
+position = Vector2(-260, -53)
+sprite_frames = SubResource("SpriteFrames_ssgpd")
+animation = &"walk"
+frame_progress = 0.32935566
