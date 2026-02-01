@@ -476,7 +476,7 @@ speaker = NodePath("../CyanNPC")
 animations = Dictionary[NodePath, String]({
 NodePath("../CyanNPC"): "talk"
 })
-content = "glorp must work glorp get job"
+content = "glorp must work"
 duration = 4.0
 metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
@@ -487,6 +487,7 @@ animations = Dictionary[NodePath, String]({
 NodePath("../PinkNPC"): "idle",
 NodePath("../CyanNPC"): "idle"
 })
+content = "you get job glorp"
 duration = 2.0
 metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
