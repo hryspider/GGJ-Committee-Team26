@@ -32,5 +32,3 @@ func appear():
 	can_close = false
 	open = true
 	show()
-	
-	

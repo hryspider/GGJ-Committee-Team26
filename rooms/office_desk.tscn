@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://daan3m16pogfl" path="res://images/boss_desk.png" id="4_nmfii"]
 [ext_resource type="Texture2D" uid="uid://di3xtisq8b4yo" path="res://images/cherished.png" id="5_5wjrh"]
 [ext_resource type="PackedScene" uid="uid://xkq5i27mugvc" path="res://ui/dialogmanager.tscn" id="7_ljy0p"]
-[ext_resource type="PackedScene" uid="uid://b7fney6u15mkr" path="res://ui/questioner.tscn" id="8_nmfii"]
+[ext_resource type="Script" path="res://ui/dialogline.gd" id="8_ce1fx"]
 [ext_resource type="PackedScene" uid="uid://b52srq1yj0mr5" path="res://ui/dictionary_manager.tscn" id="9_5wjrh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r2o6t"]
@@ -139,6 +139,141 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="Resource" id="Resource_5wjrh"]
+script = ExtResource("8_ce1fx")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "talk"
+})
+content = "hello"
+duration = 1.5
+
+[sub_resource type="Resource" id="Resource_1exii"]
+script = ExtResource("8_ce1fx")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "talk"
+})
+content = "me boss"
+duration = 1.5
+
+[sub_resource type="Resource" id="Resource_2jiii"]
+script = ExtResource("8_ce1fx")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "talk"
+})
+content = "who you?"
+duration = 1.5
+
+[sub_resource type="Resource" id="Resource_4vdte"]
+script = ExtResource("8_ce1fx")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "talk"
+})
+content = "hello glorp"
+duration = 1.5
+
+[sub_resource type="Resource" id="Resource_ce1fx"]
+script = ExtResource("8_ce1fx")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "talk"
+})
+content = "you work good?"
+duration = 1.5
+
+[sub_resource type="Resource" id="Resource_l2lsj"]
+script = ExtResource("8_ce1fx")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "talk"
+})
+content = "you get beer?"
+duration = 1.5
+
+[sub_resource type="Resource" id="Resource_e4bvw"]
+script = ExtResource("8_ce1fx")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "talk"
+})
+content = "where you live?"
+duration = 1.5
+
+[sub_resource type="Resource" id="Resource_ix27u"]
+script = ExtResource("8_ce1fx")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "talk"
+})
+content = "where we?"
+duration = 1.5
+
+[sub_resource type="Resource" id="Resource_x6xde"]
+script = ExtResource("8_ce1fx")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "talk"
+})
+content = "who me?"
+duration = 1.5
+
+[sub_resource type="Resource" id="Resource_hsufr"]
+script = ExtResource("8_ce1fx")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "talk"
+})
+content = "you leave job?"
+duration = 1.5
+
+[sub_resource type="Resource" id="Resource_wnqlc"]
+script = ExtResource("8_ce1fx")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "talk"
+})
+content = "glorp"
+duration = 1.5
+
+[sub_resource type="Resource" id="Resource_saw4h"]
+script = ExtResource("8_ce1fx")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "talk"
+})
+content = "you good!"
+duration = 1.5
+
+[sub_resource type="Resource" id="Resource_entql"]
+script = ExtResource("8_ce1fx")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "talk"
+})
+content = "me love you glorp"
+duration = 1.5
+
+[sub_resource type="Resource" id="Resource_ekkmh"]
+script = ExtResource("8_ce1fx")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "talk"
+})
+content = "you job"
+duration = 1.5
+
+[sub_resource type="Resource" id="Resource_4f8pq"]
+script = ExtResource("8_ce1fx")
+speaker = NodePath("../AnimatedSprite2D")
+animations = Dictionary[NodePath, String]({
+NodePath("../AnimatedSprite2D"): "talk"
+})
+content = "you get money"
+duration = 1.5
+
 [node name="Node2D" type="Node2D" unique_id=1203436009]
 script = ExtResource("1_wbdee")
 
@@ -156,29 +291,39 @@ autoplay = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1565392650]
 position = Vector2(236, 68)
 sprite_frames = SubResource("SpriteFrames_rv64t")
-animation = &"pissed"
-frame_progress = 0.74619323
+animation = &"wifeshow"
 
 [node name="Cherished" type="Sprite2D" parent="." unique_id=1379936919]
 position = Vector2(287, 138)
 texture = ExtResource("5_5wjrh")
 
 [node name="DialogManager1" parent="." unique_id=515690549 instance=ExtResource("7_ljy0p")]
+data = Array[ExtResource("8_ce1fx")]([SubResource("Resource_5wjrh"), SubResource("Resource_1exii"), SubResource("Resource_2jiii")])
 
 [node name="DialogManager2" parent="." unique_id=1795876779 instance=ExtResource("7_ljy0p")]
+data = Array[ExtResource("8_ce1fx")]([SubResource("Resource_4vdte"), SubResource("Resource_ce1fx")])
 
 [node name="DialogManager3" parent="." unique_id=161035600 instance=ExtResource("7_ljy0p")]
+data = Array[ExtResource("8_ce1fx")]([SubResource("Resource_l2lsj")])
 
 [node name="DialogManager4" parent="." unique_id=598165853 instance=ExtResource("7_ljy0p")]
+data = Array[ExtResource("8_ce1fx")]([SubResource("Resource_e4bvw")])
 
 [node name="DialogManager5" parent="." unique_id=453733407 instance=ExtResource("7_ljy0p")]
+data = Array[ExtResource("8_ce1fx")]([SubResource("Resource_ix27u")])
 
 [node name="DialogManager6" parent="." unique_id=380043087 instance=ExtResource("7_ljy0p")]
+data = Array[ExtResource("8_ce1fx")]([SubResource("Resource_x6xde")])
 
 [node name="DialogManager7" parent="." unique_id=528648266 instance=ExtResource("7_ljy0p")]
+data = Array[ExtResource("8_ce1fx")]([SubResource("Resource_hsufr")])
 
 [node name="DialogManager8" parent="." unique_id=346330959 instance=ExtResource("7_ljy0p")]
+data = Array[ExtResource("8_ce1fx")]([SubResource("Resource_wnqlc"), SubResource("Resource_saw4h")])
 
-[node name="QuestionerCanvas" parent="." unique_id=2030957626 instance=ExtResource("8_nmfii")]
+[node name="DialogManager9" parent="." unique_id=204983538 instance=ExtResource("7_ljy0p")]
+data = Array[ExtResource("8_ce1fx")]([SubResource("Resource_wnqlc"), SubResource("Resource_saw4h"), SubResource("Resource_entql"), SubResource("Resource_ekkmh"), SubResource("Resource_4f8pq")])
 
 [node name="DictionaryManager" parent="." unique_id=925600434 instance=ExtResource("9_5wjrh")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=282083642]
