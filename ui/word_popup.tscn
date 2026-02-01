@@ -77,7 +77,7 @@ offset_bottom = 26.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_u25wx")
-text = "New word confirmed!"
+text = "New word confirmed! Press Q to view dictionary"
 
 [node name="Word" type="Label" parent="." unique_id=404767419]
 offset_left = 3.0
