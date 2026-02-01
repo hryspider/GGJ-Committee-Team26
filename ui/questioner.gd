@@ -23,8 +23,12 @@ func activate():
 func _process(delta: float):
 	if active:
 		if visible:
-			if Input.is_action_just_pressed("click"): visible = false
+			get_tree().get_first_node_in_group("player").can_move = false
+			if Input.is_action_just_pressed("click"):
+				visible = false
+				get_tree().get_first_node_in_group("player").can_move = true
 		else:
 			if aliases.has(LangaugeGlobals.player_dictionary[word]):
 				emit_signal("satisfied")
 				active = false
+				
