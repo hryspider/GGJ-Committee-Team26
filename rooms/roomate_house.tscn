@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bd5fywco1xi42" path="res://images/ui/white_background.png" id="13_cf0wr"]
 [ext_resource type="Texture2D" uid="uid://cjbe6p8x0ecch" path="res://images/dolar.png" id="16_rxgj1"]
 [ext_resource type="PackedScene" uid="uid://b52srq1yj0mr5" path="res://ui/dictionary_manager.tscn" id="17_aesho"]
-[ext_resource type="Script" path="res://ui/dialogline.gd" id="18_rxgj1"]
+[ext_resource type="Script" uid="uid://dy6gk2wb21yf2" path="res://ui/dialogline.gd" id="18_rxgj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kiath"]
 texture = ExtResource("1_ovko6")
@@ -276,8 +276,133 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_rxgj1"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../PinkNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "idle",
+NodePath("../PinkNPC"): "talk"
+})
+content = "hello"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
 [sub_resource type="Resource" id="Resource_7ofkf"]
 script = ExtResource("18_rxgj1")
+speaker = NodePath("../CyanNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../PinkNPC"): "idle",
+NodePath("../CyanNPC"): "wave"
+})
+content = "hello"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_gu4tk"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../PinkNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "idle",
+NodePath("../PinkNPC"): "talk"
+})
+content = "where milk?"
+duration = 3.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_yumyu"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../CyanNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../PinkNPC"): "idle",
+NodePath("../CyanNPC"): "shakehead"
+})
+content = "me no know"
+duration = 3.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_oynf4"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../PinkNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "idle",
+NodePath("../PinkNPC"): "curse"
+})
+content = "fuck"
+duration = 1.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_q6hrm"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../CyanNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "talk",
+NodePath("../PinkNPC"): "idle"
+})
+content = "get milk at shop"
+duration = 3.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_cxmtu"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../PinkNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "idle",
+NodePath("../PinkNPC"): "broke"
+})
+content = "me no have money"
+duration = 3.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_gxmdy"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../CyanNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "talk"
+})
+content = "you have job?"
+duration = 3.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_0wht8"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../PinkNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../PinkNPC"): "sad",
+NodePath("../CyanNPC"): "idle"
+})
+content = "me no job"
+duration = 2.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_jffb1"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../CyanNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "shakehead"
+})
+content = "you must get job"
+duration = 2.5
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_neqdv"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../CyanNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../CyanNPC"): "shakehead"
+})
+content = "at office"
+duration = 2.0
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
+
+[sub_resource type="Resource" id="Resource_usfno"]
+script = ExtResource("18_rxgj1")
+speaker = NodePath("../PinkNPC")
+animations = Dictionary[NodePath, String]({
+NodePath("../PinkNPC"): "no"
+})
+content = "no"
+duration = 1.5
+metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [node name="RoomateHouse" type="Node2D" unique_id=848884293]
 y_sort_enabled = true
@@ -317,13 +442,14 @@ position = Vector2(297, 139)
 stream = ExtResource("8_qutpp")
 autoplay = true
 
-[node name="NPC" parent="." unique_id=1006169553 instance=ExtResource("6_jj6hg")]
+[node name="PinkNPC" parent="." unique_id=1006169553 instance=ExtResource("6_jj6hg")]
 position = Vector2(73, 113)
 spriteframes = SubResource("SpriteFrames_cf0wr")
 
-[node name="NPC3" parent="." unique_id=1502806247 instance=ExtResource("6_jj6hg")]
-position = Vector2(234, 225)
-spriteframes = SubResource("SpriteFrames_e4khp")
+[node name="CyanNPC" type="AnimatedSprite2D" parent="." unique_id=44470719]
+position = Vector2(232, 47)
+sprite_frames = SubResource("SpriteFrames_e4khp")
+animation = &"talk"
 
 [node name="NPC2" parent="." unique_id=1470391285 instance=ExtResource("6_jj6hg")]
 position = Vector2(382, 151)
@@ -355,17 +481,13 @@ texture = ExtResource("16_rxgj1")
 
 [node name="DictionaryManager" parent="." unique_id=925600434 instance=ExtResource("17_aesho")]
 
-[node name="DialogManager_Pink" parent="." unique_id=33405281 instance=ExtResource("13_aesho")]
-data = Array[ExtResource("18_rxgj1")]([SubResource("Resource_7ofkf")])
+[node name="DialogManager" parent="." unique_id=167636923 instance=ExtResource("13_aesho")]
+data = Array[ExtResource("18_rxgj1")]([SubResource("Resource_rxgj1"), SubResource("Resource_7ofkf"), SubResource("Resource_gu4tk"), SubResource("Resource_yumyu"), SubResource("Resource_oynf4"), SubResource("Resource_q6hrm"), SubResource("Resource_cxmtu"), SubResource("Resource_gxmdy"), SubResource("Resource_0wht8"), SubResource("Resource_jffb1"), SubResource("Resource_neqdv"), SubResource("Resource_usfno")])
 
-[node name="DialogManager_Blue" parent="." unique_id=167636923 instance=ExtResource("13_aesho")]
-
-[connection signal="talk" from="NPC" to="DialogManager_Pink" method="start_dialog"]
-[connection signal="talk" from="NPC3" to="DialogManager_Blue" method="start_dialog"]
+[connection signal="talk" from="PinkNPC" to="DialogManager" method="start_dialog"]
 [connection signal="talk" from="NPC2" to="Milk Overlay" method="appear"]
 [connection signal="talk" from="NPC4" to="Money Overlay" method="appear"]
 [connection signal="finished" from="Milk Overlay" to="NPC2" method="finished_dialog"]
 [connection signal="finished" from="Money Overlay" to="Glorp" method="finished_dialog"]
 [connection signal="finished" from="Money Overlay" to="NPC4" method="finished_dialog"]
-[connection signal="finished" from="DialogManager_Pink" to="NPC" method="finished_dialog"]
-[connection signal="finished" from="DialogManager_Blue" to="NPC3" method="finished_dialog"]
+[connection signal="finished" from="DialogManager" to="PinkNPC" method="finished_dialog"]

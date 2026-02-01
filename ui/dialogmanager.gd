@@ -20,6 +20,14 @@ func start_dialog():
 		var this_dialog = data[curr_line]
 		get_parent().add_child(new_bubble)
 		new_bubble.set_text(this_dialog.content)
+		var target
+		for path in this_dialog.animations.keys():
+			target = get_node(path)
+			print(target, path)
+			#if not target is AnimatedSprite2D:
+				#if target.has_node("/AnimatedSprite2D"):
+					#target = target.get_node("/AnimatedSprite2D")
+			target.play(this_dialog.animations[path])
 		
 		var speaker_position = get_node(this_dialog.speaker).global_position
 		speaker_position.x = clampf(speaker_position.x, 0., 480. - new_bubble.size.x)
@@ -30,4 +38,5 @@ func start_dialog():
 		await new_bubble.destroy_timer.timeout
 		curr_line += 1
 	emit_signal("finished")
+	curr_line = 0
 	

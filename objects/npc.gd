@@ -25,6 +25,8 @@ func _process(delta):
 		talking = true
 		emit_signal("talk")
 
+func play(anim):
+	animated_sprite_2d.play(anim)
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"): interactbubble.show()
