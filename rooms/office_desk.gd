@@ -47,9 +47,13 @@ func run_step():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Cherished.show()
 	for i in range(8):
 		await run_step()
 		if i == 6:
+			LangaugeGlobals.add_word_confirmed("uum")
+			$Wife.play("wife")
+			await $Wife.animation_finished
 			pass #DO THE WIFE ANIMATION
 		if wrong_answers > 2:
 			get_tree().change_scene_to_file("res://rooms/failure.tscn")
