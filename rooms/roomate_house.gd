@@ -36,12 +36,14 @@ func _on_questioner_satisfied():
 	stage = 2
 	print("yeah")
 	$DictionaryManager.force_close = true
-	questioner.queue_free()
-	questioner2.activate()
+	#questioner.queue_free()
 	get_tree().get_first_node_in_group("player").can_move = false
 	final_npc.position = Vector2(230, 70)
+	questioner2.activate()
 	
 
 
 func _on_questioner_2_satisfied():
+	questioner2.queue_free()
+	await await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://rooms/12transition.tscn")

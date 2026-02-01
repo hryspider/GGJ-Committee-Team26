@@ -103,3 +103,8 @@ theme_override_font_sizes/font_size = 12
 text = "instruction"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="." unique_id=2072734514]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

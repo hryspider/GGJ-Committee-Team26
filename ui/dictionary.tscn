@@ -37,7 +37,7 @@ position = Vector2(16, 0)
 shape = SubResource("WorldBoundaryShape2D_cbj34")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Dictionary/StaticBody2D" unique_id=69633386]
-position = Vector2(460, 121)
+position = Vector2(327, 124)
 rotation = 3.1415927
 shape = SubResource("WorldBoundaryShape2D_o2lu5")
 
@@ -52,7 +52,7 @@ rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_cbj34")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Dictionary/StaticBody2D" unique_id=1710814418]
-position = Vector2(233, 16)
+position = Vector2(231, 52)
 rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_cbj34")
 

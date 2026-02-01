@@ -8,6 +8,7 @@ extends Control
 @onready var word_label = $Main/VBoxContainer/Word
 @onready var minihint = $Minihint
 @onready var main = $Main
+@onready var timer = $Timer
 
 var active = false
 
@@ -25,8 +26,9 @@ func _ready():
 	
 func activate():
 	main.show()
-	await get_tree().create_timer(1.0).timeout
-	active = true
+	timer.start()
+
+
 
 func _process(delta: float):
 	if active:
@@ -44,3 +46,7 @@ func _process(delta: float):
 					active = false
 					hide()
 				
+
+
+func _on_timer_timeout():
+	active = true
