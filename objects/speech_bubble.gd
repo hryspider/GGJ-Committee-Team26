@@ -33,6 +33,8 @@ func refresh_text():
 
 func play():
 	show()
+	for word in words:
+		LangaugeGlobals.add_word_mention(word)
 	set_visible_words(0)
 	appear_timer.start()
 

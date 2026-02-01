@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://7xc8gdaju5jt" path="res://images/pinkroomie.png" id="9_vlxrc"]
 [ext_resource type="Texture2D" uid="uid://k6n7jgx8110j" path="res://images/blueroomie.png" id="10_jj6hg"]
 [ext_resource type="PackedScene" uid="uid://cxi1s7yovutcc" path="res://ui/milk_overlay.tscn" id="10_vlxrc"]
-[ext_resource type="PackedScene" uid="uid://btm8jiydeyk7u" path="res://ui/money_overlay.tscn" id="12_asref"]
+[ext_resource type="PackedScene" path="res://ui/money_overlay.tscn" id="12_asref"]
 [ext_resource type="Material" uid="uid://mnx2ug0qmck6" path="res://shaders/background_material.tres" id="12_u4kp1"]
 [ext_resource type="PackedScene" uid="uid://xkq5i27mugvc" path="res://ui/dialogmanager.tscn" id="13_aesho"]
 [ext_resource type="Texture2D" uid="uid://bd5fywco1xi42" path="res://images/ui/white_background.png" id="13_cf0wr"]

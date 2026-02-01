@@ -42,6 +42,17 @@ var confirmed_words = [
 	"d",
 ]
 
+@onready var rune_colors = {
+	"hello":Color(0.0, 0.0, 0.0, 1.0),
+	"me":Color(0.0, 0.0, 0.0, 1.0),
+	"want":Color(0.0, 0.0, 0.0, 1.0),
+	"food":Color(0.0, 0.0, 0.0, 1.0),
+	"milk":Color(0.0, 0.0, 0.0, 1.0),
+	"test":Color(0.0, 0.0, 0.0, 1.0),
+	"bepis":Color(0.0, 0.0, 0.0, 1.0),
+	"slop":Color(0.0, 0.576, 0.0, 1.0)
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for k in english_to_gleep.keys():

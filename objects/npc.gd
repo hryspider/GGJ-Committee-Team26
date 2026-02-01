@@ -44,3 +44,7 @@ func _on_dialog_manager_pink_finished() -> void:
 
 func _on_dialog_manager_blue_finished() -> void:
 	pass # Replace with function body.
+
+
+func _on_dialog_manager_pink_guy_finished() -> void:
+	pass # Replace with function body.
