@@ -16,17 +16,24 @@ extends Node2D
 var current_quest = null
 
 var questioner_words = [
-	LangaugeGlobals.english_to_gleep[""],
-	LangaugeGlobals.english_to_gleep[""],
-	LangaugeGlobals.english_to_gleep[""],
-	LangaugeGlobals.english_to_gleep[""],
-	LangaugeGlobals.english_to_gleep[""],
-	LangaugeGlobals.english_to_gleep[""],
-	LangaugeGlobals.english_to_gleep[""],
-	LangaugeGlobals.english_to_gleep[""]
+	LangaugeGlobals.english_to_gleep["me"],
+	LangaugeGlobals.english_to_gleep["yes"],
+	LangaugeGlobals.english_to_gleep["bad"],
+	LangaugeGlobals.english_to_gleep["house"],
+	LangaugeGlobals.english_to_gleep["office"],
+	LangaugeGlobals.english_to_gleep["boss"],
+	LangaugeGlobals.english_to_gleep["no"],
+	LangaugeGlobals.english_to_gleep["yes"]
 ]
 var questioner_aliases = [
-	[],
+	["glorp", "i"],
+	["glorp", "i"],
+	["glorp", "i"],
+	["glorp", "i"],
+	["glorp", "i"],
+	["glorp", "i"],
+	["glorp", "i"],
+	["glorp", "i"],
 ]
 var current_step = 0
 

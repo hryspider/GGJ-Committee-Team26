@@ -1,6 +1,6 @@
 extends Node
 
-var MAX_LENGTH = 5 #Longest possible guess
+var MAX_LENGTH = 6 #Longest possible guess
 
 @onready var player_dictionary = {
 }
