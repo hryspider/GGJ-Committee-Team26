@@ -5,6 +5,8 @@ var words = []
 var visible_chars = 0
 @onready var appear_timer = $AppearTimer
 @onready var destroy_timer = $DestroyTimer
+@onready var q_mark = $Qmark
+@onready var e_mark = $Emark
 var is_question = false
 var is_exclamation = false
 
@@ -13,13 +15,15 @@ func _ready() -> void:
 	hide()
 	set_text("me want food want me food")
 	set_instance_shader_parameter("color", Color.WHITE)
+	q_mark.visible = false
+	e_mark.visible = false
 	
 func set_text(new_text):
 	if new_text[-1] == "?":
-		is_question = true
+		q_mark.visible = true
 		new_text = new_text.left(-1)
 	if new_text[-1] == "!":
-		is_question = true
+		e_mark.visible = true
 		new_text = new_text.left(-1)
 	words = new_text.split(" ",false,len(runes))
 	for i in range(len(runes)):

@@ -5,7 +5,7 @@ var MAX_LENGTH = 5 #Longest possible guess
 @onready var player_dictionary = {
 }
 
-@onready var english_to_gleep = {'where': 'tmtf', 'me': 'ck', 'know': 'n', 'have': 'la', 'at': 'sla', 'must': 'soa', 'glorp': 'mpt', 'get': 'sh', 'near': 'g', 'we': 'qi', 'here': 'b', 'go': 'kdma', 'but': 's', 'hello': 'ug', 'no': 'ps', 'job': 'hqpu', 'office': 'frh', 'live': 'uuhb', 'yes': 'ffm', 'leave': 'qjh', 'who': 'id', 'milk': 'mg', 'money': 'it', 'shop': 'do', 'fuck': 'j', 'boss': 'di', 'love': 'ij', 'good': 'sg', 'bad': 'toup', 'beer': 'rg', 'wife': 'kiam'}
+@onready var english_to_gleep = {'where': 'pdl', 'me': 'n', 'know': 'na', 'have': 'mt', 'at': 'ujk', 'must': 'ko', 'glorp': 'ml', 'get': 'ubh', 'near': 'b', 'we': 'j', 'here': 'jbg', 'go': 'sm', 'but': 'cb', 'hello': 'al', 'no': 'nq', 'job': 'ke', 'office': 'l', 'live': 'ab', 'yes': 'ao', 'leave': 'kt', 'who': 'sq', 'milk': 'mg', 'money': 'it', 'shop': 'bp', 'fuck': 'p', 'boss': 'jq', 'love': 'gum', 'good': 'fks', 'bad': 'ss', 'beer': 'prg', 'wife': 'rt', 'you': 'jn', 'work': 'pd'}
 
 var gleep_to_english = {}
 
@@ -50,15 +50,26 @@ var confirmed_words = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	mentioned_words += confirmed_words
 	for k in english_to_gleep.keys():
 		gleep_to_english[english_to_gleep[k]] = k
 	for w in initial_words:
 		confirmed_words.append(english_to_gleep[w])
+	mentioned_words += confirmed_words
 
 func get_player_guess(gleep) -> String:
 	if player_dictionary.has(gleep): return player_dictionary[gleep]
 	return ""
+
+func get_complete_dictionary():
+	var dict = {}
+		
+	for item in mentioned_words:
+		dict[item] = get_player_guess(item)
+		
+	for item in confirmed_words:
+		dict[item] = gleep_to_english[item]
+		
+	return dict
 
 func is_known(gleep):
 	return confirmed_words.has(gleep)
