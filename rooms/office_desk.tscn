@@ -235,27 +235,27 @@ duration = 1.5
 script = ExtResource("8_ce1fx")
 speaker = NodePath("../AnimatedSprite2D")
 animations = Dictionary[NodePath, String]({
-NodePath("../AnimatedSprite2D"): "talk"
+NodePath("../AnimatedSprite2D"): "wifetalk"
 })
-content = "glorp"
+content = "me wife"
 duration = 1.5
 
 [sub_resource type="Resource" id="Resource_saw4h"]
 script = ExtResource("8_ce1fx")
 speaker = NodePath("../AnimatedSprite2D")
 animations = Dictionary[NodePath, String]({
-NodePath("../AnimatedSprite2D"): "talk"
+NodePath("../AnimatedSprite2D"): "wifetalk"
 })
-content = "you good!"
+content = "love me wife"
 duration = 1.5
 
 [sub_resource type="Resource" id="Resource_entql"]
 script = ExtResource("8_ce1fx")
 speaker = NodePath("../AnimatedSprite2D")
 animations = Dictionary[NodePath, String]({
-NodePath("../AnimatedSprite2D"): "talk"
+NodePath("../AnimatedSprite2D"): "wifetalk"
 })
-content = "me love you glorp"
+content = "wife good"
 duration = 1.5
 
 [sub_resource type="Resource" id="Resource_ekkmh"]
@@ -264,7 +264,6 @@ speaker = NodePath("../AnimatedSprite2D")
 animations = Dictionary[NodePath, String]({
 NodePath("../AnimatedSprite2D"): "talk"
 })
-content = "you job"
 duration = 1.5
 
 [sub_resource type="Resource" id="Resource_4f8pq"]
@@ -441,6 +440,9 @@ data = Array[ExtResource("8_ce1fx")]([SubResource("Resource_wnqlc"), SubResource
 
 [node name="DialogManager9" parent="." unique_id=204983538 instance=ExtResource("7_ljy0p")]
 data = Array[ExtResource("8_ce1fx")]([SubResource("Resource_wnqlc"), SubResource("Resource_saw4h"), SubResource("Resource_entql"), SubResource("Resource_ekkmh"), SubResource("Resource_4f8pq")])
+
+[node name="DialogManager10" parent="." unique_id=1981156490 instance=ExtResource("7_ljy0p")]
+data = Array[ExtResource("8_ce1fx")]([SubResource("Resource_wnqlc"), SubResource("Resource_saw4h"), SubResource("Resource_entql")])
 
 [node name="DictionaryManager" parent="." unique_id=925600434 instance=ExtResource("9_5wjrh")]
 
