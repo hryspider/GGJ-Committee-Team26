@@ -49,7 +49,10 @@ func _physics_process(delta):
 			sprite.play("idle")
 		point_eye_to_mouse()
 		move_and_slide()
+	else:
+		sprite.play("idle")
 	mask_behaviour()
+	
 
 func point_eye_to_mouse():
 	eye.offset = (eye.global_position - get_global_mouse_position()).normalized() * -2

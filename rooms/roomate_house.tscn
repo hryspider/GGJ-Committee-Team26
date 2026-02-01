@@ -11,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://dffxco2oi8adw" path="res://audio/bgm/glorphouse.ogg" id="8_qutpp"]
 [ext_resource type="Texture2D" uid="uid://7xc8gdaju5jt" path="res://images/pinkroomie.png" id="9_vlxrc"]
 [ext_resource type="Texture2D" uid="uid://k6n7jgx8110j" path="res://images/blueroomie.png" id="10_jj6hg"]
-[ext_resource type="PackedScene" uid="uid://cxi1s7yovutcc" path="res://ui/milk_overlay.tscn" id="10_vlxrc"]
+[ext_resource type="PackedScene" uid="uid://bxuuy3tvpyyci" path="res://ui/milk_overlay.tscn" id="10_vlxrc"]
 [ext_resource type="PackedScene" uid="uid://btm8jiydeyk7u" path="res://ui/money_overlay.tscn" id="12_asref"]
 [ext_resource type="Material" uid="uid://mnx2ug0qmck6" path="res://shaders/background_material.tres" id="12_u4kp1"]
 [ext_resource type="PackedScene" uid="uid://xkq5i27mugvc" path="res://ui/dialogmanager.tscn" id="13_aesho"]
@@ -476,7 +476,7 @@ metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 script = ExtResource("18_rxgj1")
 speaker = NodePath("../CyanNPC")
 animations = Dictionary[NodePath, String]({
-NodePath("../CyanNPC"): "talk"
+NodePath("../CyanNPC"): "idle"
 })
 content = "glorp must work"
 duration = 4.0
@@ -538,10 +538,10 @@ spriteframes = SubResource("SpriteFrames_gcgwm")
 position = Vector2(60, 269)
 spriteframes = SubResource("SpriteFrames_gcgwm")
 
-[node name="Milk Overlay" parent="." unique_id=217854680 instance=ExtResource("10_vlxrc")]
+[node name="Money Overlay" parent="." unique_id=49455143 instance=ExtResource("12_asref")]
 visible = false
 
-[node name="Money Overlay" parent="." unique_id=49455143 instance=ExtResource("12_asref")]
+[node name="Milk Overlay" parent="." unique_id=1224613659 instance=ExtResource("10_vlxrc")]
 visible = false
 
 [node name="Node" parent="." unique_id=515690549 instance=ExtResource("13_aesho")]
@@ -563,12 +563,10 @@ texture = ExtResource("16_rxgj1")
 [node name="DialogManager" parent="." unique_id=167636923 instance=ExtResource("13_aesho")]
 data = Array[ExtResource("18_rxgj1")]([SubResource("Resource_rxgj1"), SubResource("Resource_7ofkf"), SubResource("Resource_gu4tk"), SubResource("Resource_yumyu"), SubResource("Resource_oynf4"), SubResource("Resource_q6hrm"), SubResource("Resource_cxmtu"), SubResource("Resource_gxmdy"), SubResource("Resource_bwj5o"), SubResource("Resource_0wht8"), SubResource("Resource_jffb1"), SubResource("Resource_neqdv"), SubResource("Resource_usfno"), SubResource("Resource_xx6cq"), SubResource("Resource_1osfp"), SubResource("Resource_uyig2"), SubResource("Resource_pdrys"), SubResource("Resource_e4khp")])
 
-[node name="Questioner" parent="." unique_id=2128525150 instance=ExtResource("20_gu4tk")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1096116649]
+
+[node name="Questioner" parent="CanvasLayer" unique_id=2128525150 instance=ExtResource("20_gu4tk")]
 z_index = 99
-offset_left = 237.0
-offset_top = 145.0
-offset_right = 237.0
-offset_bottom = 145.0
 word = "work"
 instructions = "It looks like the humans want you to \"get\" this... What do you think it means? Guess by clicking it in the dictionary (press Q). You can talk to them to hear the conversation again. It’s best to try to guess some other words first. Also, you can inspect the room for clues…"
 aliases = ["job", "work", "hire", "jobs"]
@@ -576,11 +574,11 @@ aliases = ["job", "work", "hire", "jobs"]
 [connection signal="talk" from="PinkNPC" to="DialogManager" method="start_dialog"]
 [connection signal="talk" from="NPC2" to="Milk Overlay" method="appear"]
 [connection signal="talk" from="NPC4" to="Money Overlay" method="appear"]
-[connection signal="finished" from="Milk Overlay" to="." method="_on_milk_overlay_finished"]
-[connection signal="finished" from="Milk Overlay" to="NPC2" method="finished_dialog"]
 [connection signal="finished" from="Money Overlay" to="." method="_on_money_overlay_finished"]
 [connection signal="finished" from="Money Overlay" to="Glorp" method="finished_dialog"]
 [connection signal="finished" from="Money Overlay" to="NPC4" method="finished_dialog"]
+[connection signal="finished" from="Milk Overlay" to="." method="_on_milk_overlay_finished"]
+[connection signal="finished" from="Milk Overlay" to="NPC2" method="finished_dialog"]
 [connection signal="finished" from="DialogManager" to="." method="_on_dialog_manager_finished"]
 [connection signal="finished" from="DialogManager" to="PinkNPC" method="finished_dialog"]
-[connection signal="satisfied" from="Questioner" to="." method="_on_questioner_satisfied"]
+[connection signal="satisfied" from="CanvasLayer/Questioner" to="." method="_on_questioner_satisfied"]

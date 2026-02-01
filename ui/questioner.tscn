@@ -20,7 +20,36 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_rrcm0")
 
-[node name="Sprite2D" type="TextureRect" parent="." unique_id=1199595506]
+[node name="Minihint" type="Label" parent="." unique_id=2065532270]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -80.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.9666667, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_qhjgo")
+theme_override_font_sizes/font_size = 32
+text = "c"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Main" type="Control" parent="." unique_id=817568808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="TextureRect" parent="Main" unique_id=1199595506]
 material = ExtResource("1_jwbwj")
 instance_shader_parameters/localjitterscale = -1.0
 layout_mode = 1
@@ -31,22 +60,22 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_qhjgo")
 
-[node name="Label" type="Label" parent="." unique_id=1166098225]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main" unique_id=1966316281]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_right = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Main/VBoxContainer" unique_id=1166098225]
 material = ExtResource("1_jwbwj")
 instance_shader_parameters/color = Color(0.96862745, 0, 0, 1)
 instance_shader_parameters/localjitterscale = 1.0
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -135.0
-offset_top = -92.0
-offset_right = 135.0
-offset_bottom = -52.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.75, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_78wh3")
@@ -54,44 +83,27 @@ theme_override_font_sizes/font_size = 32
 text = "What's That Word?"
 horizontal_alignment = 1
 
-[node name="Instructions" type="Label" parent="." unique_id=1098329615]
-material = ExtResource("1_jwbwj")
-instance_shader_parameters/color = Color(0, 0, 0, 1)
-instance_shader_parameters/localjitterscale = 1.0
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -212.0
-offset_top = 17.0
-offset_right = 212.0
-offset_bottom = 121.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_78wh3")
-text = "instruction"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Word" type="Label" parent="." unique_id=637386748]
+[node name="Word" type="Label" parent="Main/VBoxContainer" unique_id=637386748]
 material = ExtResource("1_jwbwj")
 instance_shader_parameters/color = Color(0, 0.60383826, 0.5069849, 1)
 instance_shader_parameters/localjitterscale = 1.0
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -16.0
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.75, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_78wh3")
 theme_override_font_sizes/font_size = 32
-text = "op"
+text = "c"
 label_settings = SubResource("LabelSettings_rrcm0")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Instructions" type="Label" parent="Main/VBoxContainer" unique_id=1098329615]
+material = ExtResource("1_jwbwj")
+instance_shader_parameters/color = Color(0, 0, 0, 1)
+instance_shader_parameters/localjitterscale = 1.0
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_78wh3")
+theme_override_font_sizes/font_size = 12
+text = "instruction"
+horizontal_alignment = 1
+autowrap_mode = 2

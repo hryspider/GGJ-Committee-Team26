@@ -1,5 +1,5 @@
 extends Node2D
-@onready var questioner = $Questioner
+@onready var questioner = $CanvasLayer/Questioner
 
 
 var flags = [false, false, false]
@@ -32,3 +32,4 @@ func _on_money_overlay_finished():
 
 func _on_questioner_satisfied():
 	stage = 2
+	print("yeah")

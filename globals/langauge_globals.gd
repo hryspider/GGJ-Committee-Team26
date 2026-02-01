@@ -5,7 +5,7 @@ var MAX_LENGTH = 5 #Longest possible guess
 @onready var player_dictionary = {
 }
 
-@onready var english_to_gleep = {'where': 'pdl', 'me': 'n', 'know': 'na', 'have': 'mt', 'at': 'ujk', 'must': 'ko', 'glorp': 'ml', 'get': 'ubh', 'near': 'b', 'we': 'j', 'here': 'jbg', 'go': 'sm', 'but': 'cb', 'hello': 'al', 'no': 'nq', 'job': 'ke', 'office': 'l', 'live': 'ab', 'yes': 'ao', 'leave': 'kt', 'who': 'sq', 'milk': 'mg', 'money': 'it', 'shop': 'bp', 'fuck': 'p', 'boss': 'jq', 'love': 'gum', 'good': 'fks', 'bad': 'ss', 'beer': 'prg', 'wife': 'rt', 'you': 'jn', 'work': 'pd'}
+@onready var english_to_gleep = {'where': 'pdl', 'me': 'n', 'know': 'na', 'have': 'mt', 'at': 'ujk', 'must': 'ko', 'glorp': 'ml', 'get': 'ubh', 'near': 'b', 'we': 'j', 'here': 'jbg', 'go': 'sm', 'but': 'cb', 'hello': 'al', 'no': 'nq', 'job': 'ke', 'office': 'l', 'live': 'ab', 'yes': 'ao', 'leave': 'kt', 'who': 'sq', 'milk': 'mg', 'money': 'it', 'shop': 'bp', 'fuck': 'p', 'boss': 'jq', 'love': 'gum', 'good': 'fks', 'bad': 'ss', 'beer': 'cc', 'wife': 'rt', 'you': 'jn', 'work': 'pd'}
 
 var gleep_to_english = {}
 
