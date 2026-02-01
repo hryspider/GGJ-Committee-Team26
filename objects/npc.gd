@@ -16,6 +16,7 @@ func _ready():
 	if spriteframes:
 		animated_sprite_2d.sprite_frames = spriteframes
 	animated_sprite_2d.play("idle")
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://duuwpcl1aixk6"]
+[gd_scene format=3 uid="uid://bmso2il7x6ei0"]
 
 [ext_resource type="Texture2D" uid="uid://b81kq8vlqb777" path="res://images/bossoffice.png" id="1_se205"]
 [ext_resource type="PackedScene" uid="uid://bf44lvopd5hap" path="res://objects/glorp.tscn" id="2_wbdee"]

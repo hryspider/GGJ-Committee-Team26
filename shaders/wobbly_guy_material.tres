@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bph1vlab85tud"]
+
+[ext_resource type="Shader" uid="uid://bshqj0co6ov7x" path="res://shaders/wobbly_guy.gdshader" id="1_o0re1"]
+
+[resource]
+shader = ExtResource("1_o0re1")
