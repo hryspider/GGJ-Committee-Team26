@@ -1,10 +1,14 @@
-[gd_scene format=3 uid="uid://bmso2il7x6ei0"]
+[gd_scene format=3 uid="uid://bi3crvixcrebg"]
 
 [ext_resource type="Texture2D" uid="uid://b81kq8vlqb777" path="res://images/bossoffice.png" id="1_se205"]
+[ext_resource type="Script" uid="uid://cqlblewou858c" path="res://rooms/office_desk.gd" id="1_wbdee"]
 [ext_resource type="PackedScene" uid="uid://bf44lvopd5hap" path="res://objects/glorp.tscn" id="2_wbdee"]
 [ext_resource type="AudioStream" uid="uid://bjir1bx1jxyl1" path="res://audio/bgm/bossinterview.ogg" id="3_ljy0p"]
 [ext_resource type="Texture2D" uid="uid://daan3m16pogfl" path="res://images/boss_desk.png" id="4_nmfii"]
 [ext_resource type="Texture2D" uid="uid://di3xtisq8b4yo" path="res://images/cherished.png" id="5_5wjrh"]
+[ext_resource type="PackedScene" uid="uid://xkq5i27mugvc" path="res://ui/dialogmanager.tscn" id="7_ljy0p"]
+[ext_resource type="PackedScene" path="res://ui/questioner.tscn" id="8_nmfii"]
+[ext_resource type="PackedScene" uid="uid://b52srq1yj0mr5" path="res://ui/dictionary_manager.tscn" id="9_5wjrh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r2o6t"]
 atlas = ExtResource("4_nmfii")
@@ -136,6 +140,7 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D" unique_id=1203436009]
+script = ExtResource("1_wbdee")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=559519409]
 texture = ExtResource("1_se205")
@@ -157,3 +162,23 @@ frame_progress = 0.74619323
 [node name="Cherished" type="Sprite2D" parent="." unique_id=1379936919]
 position = Vector2(287, 138)
 texture = ExtResource("5_5wjrh")
+
+[node name="DialogManager1" parent="." unique_id=515690549 instance=ExtResource("7_ljy0p")]
+
+[node name="DialogManager2" parent="." unique_id=1795876779 instance=ExtResource("7_ljy0p")]
+
+[node name="DialogManager3" parent="." unique_id=161035600 instance=ExtResource("7_ljy0p")]
+
+[node name="DialogManager4" parent="." unique_id=598165853 instance=ExtResource("7_ljy0p")]
+
+[node name="DialogManager5" parent="." unique_id=453733407 instance=ExtResource("7_ljy0p")]
+
+[node name="DialogManager6" parent="." unique_id=380043087 instance=ExtResource("7_ljy0p")]
+
+[node name="DialogManager7" parent="." unique_id=528648266 instance=ExtResource("7_ljy0p")]
+
+[node name="DialogManager8" parent="." unique_id=346330959 instance=ExtResource("7_ljy0p")]
+
+[node name="QuestionerCanvas" parent="." unique_id=2030957626 instance=ExtResource("8_nmfii")]
+
+[node name="DictionaryManager" parent="." unique_id=925600434 instance=ExtResource("9_5wjrh")]
