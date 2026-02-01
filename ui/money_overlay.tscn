@@ -12,6 +12,7 @@ shader = ExtResource("6_arj8s")
 [node name="Money Overlay" type="CanvasGroup" unique_id=49455143]
 z_index = 999
 script = ExtResource("1_xm215")
+words_learned = Array[String](["it"])
 
 [node name="Moneybg" type="Sprite2D" parent="." unique_id=609745426]
 material = ExtResource("2_kke1g")

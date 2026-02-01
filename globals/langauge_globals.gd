@@ -7,13 +7,11 @@ var MAX_LENGTH = 5 #Longest possible guess
 
 @onready var english_to_gleep = {
 	"hello":"d",
+	"money":"it",
 	"me":"db",
 	"want":"od",
 	"food":"da",
 	"milk":"mg",
-	"test":"a",
-	"bepis":"tf",
-	"slop":"eee"
 }
 
 var gleep_to_english = {}
@@ -28,18 +26,6 @@ var mentioned_words = [
 	"a"
 ]
 var confirmed_words = [
-	"mg",
-	"da",
-	"d",
-	"tf",
-	"a",
-	"d",
-	"d",
-	"d",
-	"d",
-	"d",
-	"d",
-	"d",
 ]
 
 @onready var rune_colors = {

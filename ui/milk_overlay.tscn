@@ -14,6 +14,7 @@ shader = ExtResource("3_g5hlc")
 [node name="Milk Overlay" type="CanvasGroup" unique_id=49455143]
 z_index = 999
 script = ExtResource("1_c6876")
+words_learned = Array[String](["mg"])
 
 [node name="Milkbg" type="Sprite2D" parent="." unique_id=609745426]
 material = ExtResource("2_qf51l")
