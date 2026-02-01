@@ -60,6 +60,17 @@ func get_player_guess(gleep) -> String:
 	if player_dictionary.has(gleep): return player_dictionary[gleep]
 	return ""
 
+func get_complete_dictionary():
+	var dict = {}
+		
+	for item in mentioned_words:
+		dict[item] = get_player_guess(item)
+		
+	for item in confirmed_words:
+		dict[item] = gleep_to_english[item]
+		
+	return dict
+
 func is_known(gleep):
 	return confirmed_words.has(gleep)
 
