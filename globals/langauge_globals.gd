@@ -5,33 +5,29 @@ var MAX_LENGTH = 5 #Longest possible guess
 @onready var player_dictionary = {
 }
 
-@onready var english_to_gleep = {
-	"where":"d",
-	"me":"db",
-	"know":"od",
-	"have":"da",
-	"at":"mg",
-	"must":"a",
-	"glorp":"tf",
-	"get":"bta",
-	"near":"di",
-	"we":"dap",
-	"here":"lap",
-	"go":"ein",
-	"but":"ane",
-}
+@onready var english_to_gleep = {'where': 'd', 'me': 'tpq', 'know': 'fo', 'have': 'lsl', 'at': 'brpo', 'must': 'lhuh', 'glorp': 'qk', 'get': 'dmt', 'near': 'f', 'we': 'kre', 'here': 'orf', 'go': 'og', 'but': 'cuud', 'hello': 'qint', 'no': 't', 'job': 'scr', 'office': 'h', 'live': 'ial', 'yes': 'gtf', 'leave': 'n', 'who': 'a', 'milk': 'mpff', 'money': 'o', 'shop': 'ean', 'expletive': 'jsts', 'boss': 'jgf', 'love': 'ci', 'good': 'tfj', 'bad': 'if', 'beer': 'jib', 'wife': 'p'}
 
 var gleep_to_english = {}
 
 var mentioned_words = [
-	"mg",
-	"da",
-	"d",
-	"od",
-	"eee",
-	"tf",
-	"a"
+
 ]
+var initial_words = [
+	"where",
+	"me",
+	"know",
+	"have",
+	"at",
+	"must",
+	"glorp",
+	"get",
+	"near",
+	"we",
+	"here",
+	"go",
+	"but"
+]
+
 var confirmed_words = [
 	"d",
 	"od",
