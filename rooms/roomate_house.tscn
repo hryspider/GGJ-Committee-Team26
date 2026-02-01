@@ -564,6 +564,7 @@ texture = ExtResource("16_rxgj1")
 data = Array[ExtResource("18_rxgj1")]([SubResource("Resource_rxgj1"), SubResource("Resource_7ofkf"), SubResource("Resource_gu4tk"), SubResource("Resource_yumyu"), SubResource("Resource_oynf4"), SubResource("Resource_q6hrm"), SubResource("Resource_cxmtu"), SubResource("Resource_gxmdy"), SubResource("Resource_bwj5o"), SubResource("Resource_0wht8"), SubResource("Resource_jffb1"), SubResource("Resource_neqdv"), SubResource("Resource_usfno"), SubResource("Resource_xx6cq"), SubResource("Resource_1osfp"), SubResource("Resource_uyig2"), SubResource("Resource_pdrys"), SubResource("Resource_e4khp")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1096116649]
+layer = 999
 
 [node name="Questioner" parent="CanvasLayer" unique_id=2128525150 instance=ExtResource("20_gu4tk")]
 z_index = 99

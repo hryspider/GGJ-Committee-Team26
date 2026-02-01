@@ -23,15 +23,12 @@ script = ExtResource("1_rrcm0")
 [node name="Minihint" type="Label" parent="." unique_id=2065532270]
 visible = false
 layout_mode = 1
-anchors_preset = 3
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
 offset_left = -80.0
-offset_top = -80.0
+offset_bottom = 80.0
 grow_horizontal = 0
-grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0.9666667, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
@@ -39,7 +36,6 @@ theme_override_fonts/font = ExtResource("4_qhjgo")
 theme_override_font_sizes/font_size = 32
 text = "c"
 horizontal_alignment = 2
-vertical_alignment = 2
 
 [node name="Main" type="Control" parent="." unique_id=817568808]
 layout_mode = 1

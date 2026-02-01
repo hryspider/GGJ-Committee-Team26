@@ -33,3 +33,4 @@ func _on_money_overlay_finished():
 func _on_questioner_satisfied():
 	stage = 2
 	print("yeah")
+	dic
