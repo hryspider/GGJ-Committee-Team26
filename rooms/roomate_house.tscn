@@ -373,7 +373,7 @@ speaker = NodePath("../CyanNPC")
 animations = Dictionary[NodePath, String]({
 NodePath("../CyanNPC"): "talk"
 })
-content = "you have job?"
+content = "you have work?"
 duration = 3.0
 metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
@@ -395,7 +395,7 @@ animations = Dictionary[NodePath, String]({
 NodePath("../PinkNPC"): "sad",
 NodePath("../CyanNPC"): "idle"
 })
-content = "me no job"
+content = "me no work"
 duration = 2.0
 metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
@@ -405,7 +405,7 @@ speaker = NodePath("../CyanNPC")
 animations = Dictionary[NodePath, String]({
 NodePath("../CyanNPC"): "shakehead"
 })
-content = "you must get job"
+content = "you must get work"
 duration = 2.5
 metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
@@ -446,7 +446,7 @@ speaker = NodePath("../PinkNPC")
 animations = Dictionary[NodePath, String]({
 NodePath("../PinkNPC"): "talk"
 })
-content = "glorp must get job"
+content = "glorp must get work"
 duration = 3.0
 metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
@@ -480,17 +480,6 @@ NodePath("../CyanNPC"): "talk"
 })
 content = "glorp must work"
 duration = 4.0
-metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
-
-[sub_resource type="Resource" id="Resource_ioblm"]
-script = ExtResource("18_rxgj1")
-speaker = NodePath("../PinkNPC")
-animations = Dictionary[NodePath, String]({
-NodePath("../PinkNPC"): "idle",
-NodePath("../CyanNPC"): "idle"
-})
-content = "you get job glorp"
-duration = 2.0
 metadata/_custom_type_script = "uid://dy6gk2wb21yf2"
 
 [node name="RoomateHouse" type="Node2D" unique_id=848884293]
@@ -572,7 +561,7 @@ texture = ExtResource("16_rxgj1")
 [node name="DictionaryManager" parent="." unique_id=925600434 instance=ExtResource("17_aesho")]
 
 [node name="DialogManager" parent="." unique_id=167636923 instance=ExtResource("13_aesho")]
-data = Array[ExtResource("18_rxgj1")]([SubResource("Resource_rxgj1"), SubResource("Resource_7ofkf"), SubResource("Resource_gu4tk"), SubResource("Resource_yumyu"), SubResource("Resource_oynf4"), SubResource("Resource_q6hrm"), SubResource("Resource_cxmtu"), SubResource("Resource_gxmdy"), SubResource("Resource_bwj5o"), SubResource("Resource_0wht8"), SubResource("Resource_jffb1"), SubResource("Resource_neqdv"), SubResource("Resource_usfno"), SubResource("Resource_xx6cq"), SubResource("Resource_1osfp"), SubResource("Resource_uyig2"), SubResource("Resource_pdrys"), SubResource("Resource_e4khp"), SubResource("Resource_ioblm")])
+data = Array[ExtResource("18_rxgj1")]([SubResource("Resource_rxgj1"), SubResource("Resource_7ofkf"), SubResource("Resource_gu4tk"), SubResource("Resource_yumyu"), SubResource("Resource_oynf4"), SubResource("Resource_q6hrm"), SubResource("Resource_cxmtu"), SubResource("Resource_gxmdy"), SubResource("Resource_bwj5o"), SubResource("Resource_0wht8"), SubResource("Resource_jffb1"), SubResource("Resource_neqdv"), SubResource("Resource_usfno"), SubResource("Resource_xx6cq"), SubResource("Resource_1osfp"), SubResource("Resource_uyig2"), SubResource("Resource_pdrys"), SubResource("Resource_e4khp")])
 
 [node name="Questioner" parent="." unique_id=2128525150 instance=ExtResource("20_gu4tk")]
 z_index = 99
@@ -581,7 +570,7 @@ offset_top = 145.0
 offset_right = 237.0
 offset_bottom = 145.0
 word = "work"
-instructions = "The humans were talking a lot about this, Glorp. They might want you to get one... Open your dictionary with Q to make a guess."
+instructions = "It looks like the humans want you to \"get\" this... What do you think it means? Guess by clicking it in the dictionary (press Q). You can talk to them to hear the conversation again. It’s best to try to guess some other words first. Also, you can inspect the room for clues…"
 aliases = ["job", "work", "hire", "jobs"]
 
 [connection signal="talk" from="PinkNPC" to="DialogManager" method="start_dialog"]
