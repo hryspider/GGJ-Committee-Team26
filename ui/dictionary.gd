@@ -19,7 +19,7 @@ func _ready():
 	for word in LangaugeGlobals.mentioned_words:
 		if not LangaugeGlobals.is_known(word):
 			dict_rune_inst = dict_rune_scene.instantiate()
-			dict_rune_inst.position = Vector2(randf(), randf())*(get_viewport_rect().size/2)
+			dict_rune_inst.position = Vector2(randf(), randf())*(get_viewport_rect().size/2) + (get_viewport_rect().size/4)
 			add_child(dict_rune_inst)
 			rune_children.append(dict_rune_inst)
 			dict_rune_inst.rune.set_rune_text(word)

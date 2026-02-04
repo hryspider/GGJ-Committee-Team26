@@ -6,7 +6,7 @@ signal button_click(id)
 
 var runetext = ""
 var id = 0
-@onready var rune = $Button/Rune
+@onready var rune = $Rune
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -20,11 +20,11 @@ extends Node2D
 
 var questioner_aliases = [
 	["glorp", "i", "me"],
-	["yes"],
+	["yes", "good"],
 	["bad", "no"],
 	["house", "near"],
-	["office"],
-	["boss"],
+	["office", "here"],
+	["boss", "you"],
 	["no"],
 	["yes"]
 ]
@@ -52,14 +52,16 @@ func _ready() -> void:
 	$Cherished.show()
 	for i in range(8):
 		await run_step()
-		if i == 6:
-			await wife_dialogue.start_dialog()
-			LangaugeGlobals.add_word_confirmed("uum")
-			$Wife.play("wife")
-			await $Wife.animation_finished
-		if wrong_answers > 9999:
+		if wrong_answers > 4:
 			get_tree().change_scene_to_file("res://rooms/failurelevel2.tscn")
 			return
+		if i == 5:
+			$Cherished.hide()
+		if i == 6:
+			await wife_dialogue.start_dialog()
+			$Wife.play("wife")
+			await $Wife.animation_finished
+			LangaugeGlobals.add_word_confirmed("uum")
 	await ending_dialogue.start_dialog()
 	get_tree().change_scene_to_file("res://rooms/23transition.tscn")
 	

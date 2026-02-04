@@ -193,7 +193,7 @@ duration = 1.5
 script = ExtResource("8_ce1fx")
 speaker = NodePath("../AnimatedSprite2D")
 animations = Dictionary[NodePath, String]({
-NodePath("../AnimatedSprite2D"): "talk"
+NodePath("../AnimatedSprite2D"): "suspicious"
 })
 content = "you work good?"
 duration = 1.5
@@ -202,7 +202,7 @@ duration = 1.5
 script = ExtResource("8_ce1fx")
 speaker = NodePath("../AnimatedSprite2D")
 animations = Dictionary[NodePath, String]({
-NodePath("../AnimatedSprite2D"): "talk"
+NodePath("../AnimatedSprite2D"): "suspicious"
 })
 content = "you get beer?"
 duration = 1.5
@@ -220,7 +220,7 @@ duration = 1.5
 script = ExtResource("8_ce1fx")
 speaker = NodePath("../AnimatedSprite2D")
 animations = Dictionary[NodePath, String]({
-NodePath("../AnimatedSprite2D"): "talk"
+NodePath("../AnimatedSprite2D"): "question"
 })
 content = "where we?"
 duration = 1.5
@@ -229,7 +229,7 @@ duration = 1.5
 script = ExtResource("8_ce1fx")
 speaker = NodePath("../AnimatedSprite2D")
 animations = Dictionary[NodePath, String]({
-NodePath("../AnimatedSprite2D"): "talk"
+NodePath("../AnimatedSprite2D"): "question"
 })
 content = "who me?"
 duration = 1.5
@@ -238,7 +238,7 @@ duration = 1.5
 script = ExtResource("8_ce1fx")
 speaker = NodePath("../AnimatedSprite2D")
 animations = Dictionary[NodePath, String]({
-NodePath("../AnimatedSprite2D"): "talk"
+NodePath("../AnimatedSprite2D"): "suspicious"
 })
 content = "you leave job?"
 duration = 1.5
@@ -274,7 +274,7 @@ duration = 1.5
 script = ExtResource("8_ce1fx")
 speaker = NodePath("../AnimatedSprite2D")
 animations = Dictionary[NodePath, String]({
-NodePath("../AnimatedSprite2D"): "talk"
+NodePath("../AnimatedSprite2D"): "approve"
 })
 content = "you job"
 duration = 1.5
@@ -283,7 +283,7 @@ duration = 1.5
 script = ExtResource("8_ce1fx")
 speaker = NodePath("../AnimatedSprite2D")
 animations = Dictionary[NodePath, String]({
-NodePath("../AnimatedSprite2D"): "talk"
+NodePath("../AnimatedSprite2D"): "approve"
 })
 content = "you get money"
 duration = 1.5
@@ -404,6 +404,9 @@ _data = {
 &"wife": SubResource("Animation_ce1fx")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vdte"]
+size = Vector2(485, 213)
+
 [node name="Node2D" type="Node2D" unique_id=1203436009]
 script = ExtResource("1_wbdee")
 
@@ -433,7 +436,7 @@ voices_order = Array[int]([2, 2, 2, 2, 2, 0])
 
 [node name="DialogManager2" parent="." unique_id=1795876779 instance=ExtResource("7_ljy0p")]
 data = Array[ExtResource("8_ce1fx")]([SubResource("Resource_4vdte"), SubResource("Resource_ce1fx")])
-voices_order = Array[int]([2, 2, 2, 2, 2, 0])
+voices_order = Array[int]([2, 2, 2, 2, 2, 2])
 
 [node name="DialogManager3" parent="." unique_id=161035600 instance=ExtResource("7_ljy0p")]
 data = Array[ExtResource("8_ce1fx")]([SubResource("Resource_l2lsj")])
@@ -482,3 +485,21 @@ centered = false
 [node name="Love" type="AudioStreamPlayer" parent="." unique_id=112004851]
 stream = ExtResource("11_1exii")
 pitch_scale = 1.15
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1840927210]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1639674483]
+position = Vector2(232.5, 96.5)
+shape = SubResource("RectangleShape2D_4vdte")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=249143679]
+position = Vector2(-203, 216)
+shape = SubResource("RectangleShape2D_4vdte")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=449712381]
+position = Vector2(681, 212)
+shape = SubResource("RectangleShape2D_4vdte")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1609899248]
+position = Vector2(236, 373)
+shape = SubResource("RectangleShape2D_4vdte")

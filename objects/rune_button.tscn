@@ -3,40 +3,36 @@
 [ext_resource type="PackedScene" uid="uid://5l0cney3hjrd" path="res://objects/rune.tscn" id="1_2p0r1"]
 [ext_resource type="Script" uid="uid://bx3ucs1wldfw7" path="res://objects/rune_button.gd" id="1_peajx"]
 [ext_resource type="FontFile" uid="uid://bheug0blsloux" path="res://text/retro-pixel-thick.ttf" id="3_ak20w"]
-[ext_resource type="Texture2D" uid="uid://cqicvcdk41wtj" path="res://images/speechbubble.png" id="3_bljni"]
 
 [node name="RuneButton" type="Control" unique_id=494487788]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 3
+anchors_preset = 0
+offset_right = 100.0
+offset_bottom = 50.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_peajx")
+
+[node name="Rune" parent="." unique_id=1261957074 instance=ExtResource("1_2p0r1")]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-script = ExtResource("1_peajx")
+pivot_offset_ratio = Vector2(0, 0)
 
-[node name="Button" type="Button" parent="." unique_id=1377232483]
-layout_mode = 0
-offset_right = 79.0
-offset_bottom = 42.0
+[node name="Button" type="Button" parent="Rune" unique_id=1377232483]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_ak20w")
-icon = ExtResource("3_bljni")
 flat = true
 icon_alignment = 1
 
-[node name="Rune" parent="Button" unique_id=1261957074 instance=ExtResource("1_2p0r1")]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 1.5000076
-offset_top = 44.000004
-offset_right = 120.25
-offset_bottom = 52.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[connection signal="pressed" from="Button" to="." method="_on_click"]
+[connection signal="pressed" from="Rune/Button" to="." method="_on_click"]

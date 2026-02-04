@@ -6,19 +6,19 @@
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1214237214]
 script = ExtResource("1_60262")
 
-[node name="TalkSelector" type="Control" parent="." unique_id=1173603143]
-layout_mode = 3
+[node name="TalkSelector" type="ScrollContainer" parent="." unique_id=449476546]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = 7.0
+offset_right = 27.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
+follow_focus = true
 script = ExtResource("2_42hrp")
 
 [node name="GridContainer" type="GridContainer" parent="TalkSelector" unique_id=1394089749]
-layout_mode = 0
-offset_left = -79.0
-offset_top = -46.0
-offset_right = 401.0
-offset_bottom = 224.0
+layout_mode = 2
 columns = 4
